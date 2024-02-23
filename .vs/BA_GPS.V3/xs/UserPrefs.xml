@@ -1,0 +1,53 @@
+﻿<Properties StartupConfiguration="{C40A2414-BACE-4DEC-AE35-226A5C6D11E6}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.BA__GPS.Host PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="docker-compose.yml">
+    <Files>
+      <File FileName="BA_GPS.Host/Dockerfile" Line="8" Column="76" />
+      <File FileName="docker-compose.yml" Line="9" Column="1" />
+      <File FileName="docker-compose.override.yml" Line="17" Column="6" />
+      <File FileName="BA_GPS.Host/Controllers/UserController.cs" Line="177" Column="30" />
+      <File FileName="BA_GPS.Host/Program.cs" Line="73" Column="1" />
+      <File FileName="BA_GPS.Host/appsettings.json" Line="17" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BA_GPS.V3" expanded="True">
+            <Node name="BA_GPS.Application" expanded="True" />
+            <Node name="BA_GPS.Common" expanded="True" />
+            <Node name="BA_GPS.Domain" expanded="True">
+              <Node name="Entity" expanded="True" />
+            </Node>
+            <Node name="BA_GPS.Host" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+            <Node name="BA_GPS.Infrastructure" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Authentication" expanded="True" />
+              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="BA_GPS.Test" expanded="True" />
+            <Node name="docker-compose" expanded="True">
+              <Node name="docker-compose.yml" expanded="True" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="BA_GPS.V3" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>docker-compose.dcproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

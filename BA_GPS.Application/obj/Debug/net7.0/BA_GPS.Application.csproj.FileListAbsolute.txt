@@ -1,0 +1,17 @@
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Application.deps.json
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Application.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Application.pdb
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Domain.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Domain.pdb
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.csproj.AssemblyReference.cache
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.AssemblyInfoInputs.cache
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.AssemblyInfo.cs
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.csproj.CoreCompileInputs.cache
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.csproj.CopyComplete
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/refint/BA_GPS.Application.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.pdb
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/ref/BA_GPS.Application.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Common.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/bin/Debug/net7.0/BA_GPS.Common.pdb

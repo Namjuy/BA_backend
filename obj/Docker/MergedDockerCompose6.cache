@@ -1,0 +1,38 @@
+name: dockercompose13529830163772615172
+services:
+  ba_gps.host:
+    build:
+      context: /Users/user/Projects/BA_GPS.V3
+      dockerfile: BA_GPS.Host/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+      ConnectionStrings:BAconnection: Server=host.docker.internal,1433;Database=BaGPSproject;User Id=BAdata;Password=123456aA@$$,TrustServerCertificate=True;Trusted_Connection=False;Encrypt=True
+    image: bagps
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "80"
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        published: "443"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /Users/user/.aspnet/https
+        target: /root/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: /Users/user/.microsoft/usersecrets
+        target: /root/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose13529830163772615172_default

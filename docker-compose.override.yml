@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  ba_gps.host:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - "ConnectionStrings:BAconnection=Server=10.1.21.129;Database=BaGPSproject;User Id=BAdata;Password=123456aA@$;TrustServerCertificate=True;Trusted_Connection=False;Encrypt=True"
+      - "ConnectionStrings:Default=Server=host.docker.internal,1433;Database=BaGPSproject;User Id=sa;Password=123456aA@$"  
+    ports:
+      - "80:80"
+      - "443:443"
+
+    volumes:
+      - ~/.aspnet/https:/root/.aspnet/https:ro
+      - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
