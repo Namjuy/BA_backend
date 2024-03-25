@@ -1,0 +1,304 @@
+2024-03-14 13:16:49.256 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-14 13:16:49.435 +07:00 [INF] Now listening on: http://localhost:5086
+2024-03-14 13:16:49.436 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-14 13:16:49.436 +07:00 [INF] Hosting environment: Development
+2024-03-14 13:16:49.436 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Host
+2024-03-14 13:16:50.547 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/index.html - null null
+2024-03-14 13:16:50.611 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/index.html - 200 null text/html;charset=utf-8 64.7971ms
+2024-03-14 13:16:50.617 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/swagger-ui-bundle.js - null null
+2024-03-14 13:16:50.617 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/swagger-ui-standalone-preset.js - null null
+2024-03-14 13:16:50.872 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-03-14 13:16:50.872 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-03-14 13:16:50.874 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 257.2908ms
+2024-03-14 13:16:50.874 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 257.2869ms
+2024-03-14 13:16:50.965 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - null null
+2024-03-14 13:16:51.038 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 73.7231ms
+2024-03-14 13:16:53.248 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/User - null null
+2024-03-14 13:16:53.256 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-03-14 13:16:53.303 +07:00 [INF] Executing endpoint 'BA_GPS.Host.Controllers.UserController.Get (BA_GPS.Host)'
+2024-03-14 13:16:53.315 +07:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Get() on controller BA_GPS.Host.Controllers.UserController (BA_GPS.Host).
+2024-03-14 13:16:54.013 +07:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [u].[LastModifyDate] DESC
+2024-03-14 13:16:54.071 +07:00 [INF] User Information => [{"UserId":"ec1a9864-cab4-497f-f1a2-08dc39971302","UserName":"duy123","PassWordHash":"i/QFO1Lh9qHNbb0qlDpdrQ==;jFcCs+GGtzLAyTSIrAG3X3zwdH/ILyNVvp5Jd2j+0rc=","FullName":"Phùng Nam Duy","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":null,"PhoneNumber":"0981949455","Email":"duy123@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-03-01T07:23:32.3490000","LastModifyDate":"2024-03-01T07:23:32.3490000","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"9c6e0395-9da8-4ce5-f1a1-08dc39971302","UserName":"test1234","PassWordHash":"3bokGCMc5XjiwF/5ccrmSg==;AsuIynmcYBSzI8tY+L5Qou2mCCZYp1jcuqMhTTQhtDM=","FullName":"Phùng Nam Duy","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":0,"PhoneNumber":"0981949455","Email":"test@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-03-01T03:19:50.8760000","LastModifyDate":"2024-03-01T03:27:00.5834454","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"159580e2-7213-4314-f1a0-08dc39971302","UserName":"test123","PassWordHash":"CekBt43JHRGM4CDEq+hbGA==;/VuPX0uT3UBJPP8drPylUitUUOAq0+wSu4Qv+NlyG0g=","FullName":"Phùng Nam Duyyy","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":null,"PhoneNumber":"0981949455","Email":"test123@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-03-01T02:26:59.9870000","LastModifyDate":"2024-03-01T03:19:06.6553303","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"7606c18f-8a67-42cd-cde7-08dc38eee2e1","UserName":"test13","PassWordHash":"S0zzrGyVs5KAV4RvmOxDuw==;IhPR4okRFhIPuqtMklHhv4nNxLgoFwhHDrwWwjgD4iU=","FullName":"Phùng Nam Duy","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":null,"PhoneNumber":"0981949455","Email":"test13@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-02-29T10:12:28.3510000","LastModifyDate":"2024-02-29T10:12:28.3510000","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"c635d05c-2792-4d99-cde6-08dc38eee2e1","UserName":"test5","PassWordHash":"Blfc1az4oQ152z4vvWDl7w==;7eIwFy9nM4UEQu0U8crXWAVQ6+s5Gh11zJKDcC1MkXQ=","FullName":"Duy","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":1,"PhoneNumber":"0981949455","Email":"duy@gmail.com","Address":"","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-02-29T06:23:03.8260000","LastModifyDate":"2024-02-29T06:23:03.8260000","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"82151d4f-8cea-4209-63d4-08dc38ccd205","UserName":"test06","PassWordHash":"8JsG8eweShScQ039RDZujw==;P7Jw7xzOFkMp6rueR8FJImHJHkL7Kis95CHeDmsAygg=","FullName":"Du","DateOfBirth":"2000-04-19T00:00:00.0000000","IsMale":null,"PhoneNumber":"0981949495","Email":"","Address":"","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-02-29T02:19:12.6790000","LastModifyDate":"2024-02-29T02:19:12.6790000","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"6bb775bc-fe0a-44d5-9be7-08dc38cc97f3","UserName":"test12234","PassWordHash":"E3+pkArth78DcBwq6jAJvg==;RO9DZSoaOaVXjuuXggdgYvgeAhZciMFwqEXpFaeQ1PI=","FullName":"Duy","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":null,"PhoneNumber":"0981949455","Email":"","Address":"","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-02-29T02:17:35.2990000","LastModifyDate":"2024-02-29T02:17:35.2990000","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"2ef46328-39b2-4616-d0a9-08dc36b32655","UserName":"test12","PassWordHash":"S41k3FaBkH/HVBwgKXkk5w==;brLG595Ax9Wo2VojgevosbBzCEQlD+baKKVyFHSf/qM=","FullName":"Duy1233","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":1,"PhoneNumber":"0981949455","Email":"duy@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-02-26T10:38:07.7620000","LastModifyDate":"2024-02-28T09:11:47.4935109","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"7ebdf766-a62d-4263-d0a8-08dc36b32655","UserName":"test11","PassWordHash":"p1kzqeOi8bPF8XxgOjkWTQ==;DqqKRhVoZumROlr/Wx88SCJNqtKtcR8hnsbWKxP75ts=","FullName":"Phùnggg","DateOfBirth":"2000-07-18T00:00:00.0000000","IsMale":1,"PhoneNumber":"0966351375","Email":"namduy@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","LastModifyUserId":"\"bb142eaf-3e39-4808-83c9-08dc27800679\"","CreateDate":"2024-02-26T10:10:24.8950000","LastModifyDate":"2024-02-26T10:37:11.1474576","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"a9d5384f-7e90-401b-2f1a-08dc367c8d98","UserName":"test10","PassWordHash":"39bh3l/zNqUG/i4KvsoGnA==;jEOr4v4Qe8ngdFk6iMH/IcYvMOSdvggE713/WaF8EIk=","FullName":"Nhàng","DateOfBirth":"1998-07-08T00:00:00.0000000","IsMale":1,"PhoneNumber":"0988888517","Email":"nhan@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"5bd7bba0-5ad9-4f08-83c6-08dc27800679\"","LastModifyUserId":"\"5bd7bba0-5ad9-4f08-83c6-08dc27800679\"","CreateDate":"2024-02-26T03:54:30.5650000","LastModifyDate":"2024-02-26T10:04:17.7649390","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"e889680d-6ba2-4d77-2f19-08dc367c8d98","UserName":"test09","PassWordHash":"J89qt6ICKBVc2tWkqINAig==;sdeBYOcwgKGhpVrw2N+mm7j1/Fxfg0bZtTwp2YoUe0E=","FullName":"Phùng Nam Duy","DateOfBirth":"2000-02-08T00:00:00.0000000","IsMale":1,"PhoneNumber":"0981949455","Email":"duy12345@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"5bd7bba0-5ad9-4f08-83c6-08dc27800679\"","LastModifyUserId":"\"5bd7bba0-5ad9-4f08-83c6-08dc27800679\"","CreateDate":"2024-02-26T03:39:35.7870000","LastModifyDate":"2024-02-26T03:42:04.2859170","IsDeleted":false,"DeletedDate":null,"$type":"User"},{"UserId":"bb142eaf-3e39-4808-83c9-08dc27800679","UserName":"test08","PassWordHash":"yzz/kgXC9EFn8wyZSsYD0g==;cJ39AW5K1EvrNFeh/RjH7s29AYxFZXrt03/0fj9MsIg=","FullName":"Hải","DateOfBirth":"2000-07-17T00:00:00.0000000","IsMale":1,"PhoneNumber":"0981949455","Email":"hai@gmail.com","Address":"Hà Nội","UserType":1,"CompanyId":123,"CreatorUserId":"\"5bd7bba0-5ad9-4f08-83c6-08dc27800679\"","LastModifyUserId":"\"5bd7bba0-5ad9-4f08-83c6-08dc27800679\"","CreateDate":"2024-02-07T04:18:11.6300000","LastModifyDate":"2024-02-07T05:11:08.6702300","IsDeleted":false,"DeletedDate":null,"$type":"User"}]
+2024-03-14 13:16:54.080 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 13:16:54.095 +07:00 [INF] Executed action BA_GPS.Host.Controllers.UserController.Get (BA_GPS.Host) in 778.2248ms
+2024-03-14 13:16:54.096 +07:00 [INF] Executed endpoint 'BA_GPS.Host.Controllers.UserController.Get (BA_GPS.Host)'
+2024-03-14 13:16:54.097 +07:00 [INF] HTTP GET /User responded 200 in 844.2866 ms
+2024-03-14 13:16:54.100 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/User - 200 null application/json; charset=utf-8 852.2714ms
+2024-03-14 14:48:45.975 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-14 14:48:46.153 +07:00 [INF] Now listening on: http://localhost:5086
+2024-03-14 14:48:46.154 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-14 14:48:46.154 +07:00 [INF] Hosting environment: Development
+2024-03-14 14:48:46.154 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Host
+2024-03-14 14:48:47.330 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/index.html - null null
+2024-03-14 14:48:47.389 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/index.html - 200 null text/html;charset=utf-8 59.2447ms
+2024-03-14 14:48:47.519 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - null null
+2024-03-14 14:48:47.576 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.9131ms
+2024-03-14 14:48:56.441 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - null null
+2024-03-14 14:48:56.448 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-03-14 14:48:56.500 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 14:48:56.515 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 14:48:56.519 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 2.1072ms
+2024-03-14 14:48:56.520 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 14:48:56.521 +07:00 [ERR] HTTP GET /UserApi responded 500 in 75.1159 ms
+System.InvalidOperationException: Unable to resolve service for type 'BA_GPS.Infrastructure.Services.UserServices' while attempting to activate 'BA_GPS.API.Apis.UserApi'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-03-14 14:48:56.528 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'BA_GPS.Infrastructure.Services.UserServices' while attempting to activate 'BA_GPS.API.Apis.UserApi'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-03-14 14:48:56.530 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - 500 null text/plain; charset=utf-8 89.3347ms
+2024-03-14 14:50:59.386 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-14 14:50:59.560 +07:00 [INF] Now listening on: http://localhost:5086
+2024-03-14 14:50:59.561 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-14 14:50:59.561 +07:00 [INF] Hosting environment: Development
+2024-03-14 14:50:59.561 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Host
+2024-03-14 14:51:00.721 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/index.html - null null
+2024-03-14 14:51:00.779 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/index.html - 200 null text/html;charset=utf-8 58.7669ms
+2024-03-14 14:51:00.841 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - null null
+2024-03-14 14:51:00.896 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 54.3103ms
+2024-03-14 14:52:54.136 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-14 14:52:54.304 +07:00 [INF] Now listening on: http://localhost:5086
+2024-03-14 14:52:54.306 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-14 14:52:54.306 +07:00 [INF] Hosting environment: Development
+2024-03-14 14:52:54.306 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Host
+2024-03-14 14:52:55.432 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/index.html - null null
+2024-03-14 14:52:55.489 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/index.html - 200 null text/html;charset=utf-8 57.6342ms
+2024-03-14 14:52:55.551 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - null null
+2024-03-14 14:52:55.607 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.0114ms
+2024-03-14 14:53:08.260 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - null null
+2024-03-14 14:53:08.270 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-03-14 14:53:08.321 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 14:53:08.334 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 14:53:08.337 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 1.2183ms
+2024-03-14 14:53:08.338 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 14:53:08.338 +07:00 [ERR] HTTP GET /UserApi responded 500 in 72.5428 ms
+System.InvalidOperationException: Unable to resolve service for type 'BA_GPS.Infrastructure.Services.UserServices' while attempting to activate 'BA_GPS.API.Apis.UserApi'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-03-14 14:53:08.345 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'BA_GPS.Infrastructure.Services.UserServices' while attempting to activate 'BA_GPS.API.Apis.UserApi'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-03-14 14:53:08.348 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - 500 null text/plain; charset=utf-8 87.8085ms
+2024-03-14 14:57:44.730 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-14 14:57:44.893 +07:00 [INF] Now listening on: http://localhost:5086
+2024-03-14 14:57:44.894 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-14 14:57:44.894 +07:00 [INF] Hosting environment: Development
+2024-03-14 14:57:44.894 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Host
+2024-03-14 14:57:45.996 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/index.html - null null
+2024-03-14 14:57:46.055 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/index.html - 200 null text/html;charset=utf-8 59.191ms
+2024-03-14 14:57:46.115 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - null null
+2024-03-14 14:57:46.172 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.4401ms
+2024-03-14 14:57:49.314 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi - null null
+2024-03-14 14:57:49.323 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-03-14 14:57:49.375 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 14:57:49.389 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 14:57:50.046 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 14:57:50.101 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE 0 = 1
+2024-03-14 14:57:50.105 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 14:57:50.117 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 724.912ms
+2024-03-14 14:57:50.117 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 14:57:50.119 +07:00 [INF] HTTP GET /UserApi responded 200 in 799.0312 ms
+2024-03-14 14:57:50.123 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi - 200 null application/json; charset=utf-8 808.7037ms
+2024-03-14 15:02:35.278 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-03-14 15:02:35.464 +07:00 [INF] Now listening on: http://localhost:5086
+2024-03-14 15:02:35.465 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-14 15:02:35.465 +07:00 [INF] Hosting environment: Development
+2024-03-14 15:02:35.466 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Host
+2024-03-14 15:02:36.567 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/index.html - null null
+2024-03-14 15:02:36.625 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/index.html - 200 null text/html;charset=utf-8 58.9645ms
+2024-03-14 15:02:36.691 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - null null
+2024-03-14 15:02:36.748 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.9205ms
+2024-03-14 15:02:43.729 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - null null
+2024-03-14 15:02:43.734 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-03-14 15:02:43.771 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:02:43.784 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:02:44.458 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 15:02:44.549 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2024-03-14 15:02:44.591 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 15:02:44.608 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 822.2975ms
+2024-03-14 15:02:44.608 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:02:44.609 +07:00 [INF] HTTP GET /UserApi responded 200 in 876.8066 ms
+2024-03-14 15:02:44.613 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 884.1621ms
+2024-03-14 15:03:00.876 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=2&pageSize=5 - null null
+2024-03-14 15:03:00.878 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:03:00.879 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:03:00.925 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 15:03:00.942 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-03-14 15:03:00.943 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 15:03:00.944 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 64.6894ms
+2024-03-14 15:03:00.944 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:03:00.944 +07:00 [INF] HTTP GET /UserApi responded 200 in 67.0106 ms
+2024-03-14 15:03:00.944 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=2&pageSize=5 - 200 null application/json; charset=utf-8 68.2663ms
+2024-03-14 15:03:27.277 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=0&pageSize=0 - null null
+2024-03-14 15:03:27.283 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:03:27.284 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:03:27.341 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 15:03:27.448 +07:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE 0 = 1
+2024-03-14 15:03:27.449 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 15:03:27.449 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 165.3535ms
+2024-03-14 15:03:27.449 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:03:27.449 +07:00 [INF] HTTP GET /UserApi responded 200 in 171.3174 ms
+2024-03-14 15:03:27.449 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=0&pageSize=0 - 200 null application/json; charset=utf-8 172.8692ms
+2024-03-14 15:09:25.590 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - null null
+2024-03-14 15:09:25.593 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:09:25.594 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:09:25.863 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 15:09:25.876 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2024-03-14 15:09:25.879 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 15:09:25.880 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 285.4407ms
+2024-03-14 15:09:25.880 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:09:25.880 +07:00 [INF] HTTP GET /UserApi responded 200 in 287.9883 ms
+2024-03-14 15:09:25.881 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 290.476ms
+2024-03-14 15:09:46.246 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi/6131ccf4-60e5-481f-83c7-08dc27800679 - null null
+2024-03-14 15:09:46.252 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetUserById (BA_GPS.Host)'
+2024-03-14 15:09:46.265 +07:00 [INF] Route matched with {action = "GetUserById", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.Guid) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:09:46.300 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__id_0
+2024-03-14 15:09:46.302 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-03-14 15:09:46.302 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetUserById (BA_GPS.Host) in 37.4605ms
+2024-03-14 15:09:46.303 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetUserById (BA_GPS.Host)'
+2024-03-14 15:09:46.303 +07:00 [INF] HTTP GET /UserApi/6131ccf4-60e5-481f-83c7-08dc27800679 responded 200 in 51.9221 ms
+2024-03-14 15:09:46.303 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi/6131ccf4-60e5-481f-83c7-08dc27800679 - 200 null application/json; charset=utf-8 57.1674ms
+2024-03-14 15:17:12.903 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5086/UserApi - application/json 573
+2024-03-14 15:17:12.934 +07:00 [INF] CORS policy execution successful.
+2024-03-14 15:17:12.937 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.CreateUser (BA_GPS.Host)'
+2024-03-14 15:17:12.945 +07:00 [INF] Route matched with {action = "CreateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(BA_GPS.Domain.Entity.User) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:17:13.108 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (DbType = DateTime2), @p7='?' (Size = 4000), @p8='?' (Size = 200), @p9='?' (DbType = Boolean), @p10='?' (Size = 1) (DbType = Byte), @p11='?' (DbType = DateTime2), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 50), @p16='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([UserId], [Address], [CompanyId], [CreateDate], [CreatorUserId], [DateOfBirth], [DeletedDate], [Email], [FullName], [IsDeleted], [IsMale], [LastModifyDate], [LastModifyUserId], [PassWordHash], [PhoneNumber], [UserName], [UserType])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2024-03-14 15:17:13.115 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-03-14 15:17:13.116 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.CreateUser (BA_GPS.Host) in 170.4455ms
+2024-03-14 15:17:13.116 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.CreateUser (BA_GPS.Host)'
+2024-03-14 15:17:13.116 +07:00 [INF] HTTP POST /UserApi responded 200 in 185.1616 ms
+2024-03-14 15:17:13.116 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5086/UserApi - 200 null application/json; charset=utf-8 212.544ms
+2024-03-14 15:19:01.854 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1 - null null
+2024-03-14 15:19:01.855 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:19:01.855 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:19:01.928 +07:00 [INF] Executed DbCommand (67ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 15:19:01.932 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE 0 = 1
+2024-03-14 15:19:01.933 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 15:19:01.933 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 78.1381ms
+2024-03-14 15:19:01.933 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:19:01.933 +07:00 [INF] HTTP GET /UserApi responded 200 in 78.6618 ms
+2024-03-14 15:19:01.934 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1 - 200 null application/json; charset=utf-8 79.3852ms
+2024-03-14 15:19:09.748 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=20 - null null
+2024-03-14 15:19:09.752 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:19:09.754 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:19:09.775 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-03-14 15:19:09.781 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2024-03-14 15:19:09.784 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-14 15:19:09.784 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host) in 28.7885ms
+2024-03-14 15:19:09.784 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetAllUsers (BA_GPS.Host)'
+2024-03-14 15:19:09.784 +07:00 [INF] HTTP GET /UserApi responded 200 in 34.8870 ms
+2024-03-14 15:19:09.785 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi?pageIndex=1&pageSize=20 - 200 null application/json; charset=utf-8 36.7832ms
+2024-03-14 15:20:21.028 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5086/UserApi/8da2f17c-5567-490d-bc34-b8871de9d30a - null null
+2024-03-14 15:20:21.031 +07:00 [INF] Executing endpoint 'BA_GPS.API.Apis.UserApi.GetUserById (BA_GPS.Host)'
+2024-03-14 15:20:21.031 +07:00 [INF] Route matched with {action = "GetUserById", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.Guid) on controller BA_GPS.API.Apis.UserApi (BA_GPS.Host).
+2024-03-14 15:20:21.105 +07:00 [INF] Executed DbCommand (67ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__id_0
+2024-03-14 15:20:21.106 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-03-14 15:20:21.107 +07:00 [INF] Executed action BA_GPS.API.Apis.UserApi.GetUserById (BA_GPS.Host) in 75.3826ms
+2024-03-14 15:20:21.107 +07:00 [INF] Executed endpoint 'BA_GPS.API.Apis.UserApi.GetUserById (BA_GPS.Host)'
+2024-03-14 15:20:21.107 +07:00 [INF] HTTP GET /UserApi/8da2f17c-5567-490d-bc34-b8871de9d30a responded 200 in 76.0931 ms
+2024-03-14 15:20:21.107 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5086/UserApi/8da2f17c-5567-490d-bc34-b8871de9d30a - 200 null application/json; charset=utf-8 78.5321ms

@@ -10,6 +10,7 @@ namespace BA_GPS.Common
     /// </Modified>
     public class BaseEntity
 	{
+        public BaseEntity() { }
         public BaseEntity(string? creatorUserId, string? lastModifyUserId, DateTime createDate, DateTime lastModifyDate, bool isDeleted, DateTime? deletedDate)
         {
             CreatorUserId = creatorUserId;

@@ -8,19 +8,13 @@
 
   <ItemGroup>
     <None Remove="Core\" />
-    <None Remove="Model\" />
     <None Remove="Core\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
-    <Folder Include="Model\" />
     <Folder Include="Core\Interface\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BA_GPS.Domain\BA_GPS.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.14" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.2.0" />
   </ItemGroup>
 </Project>

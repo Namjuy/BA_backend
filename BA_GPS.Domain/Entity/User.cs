@@ -17,8 +17,14 @@ namespace BA_GPS.Domain.Entity
     [Table("Users")]
     public class User : BaseEntity
     {
+        public User():base()
+        {
+        }
+
         public User(string? creatorUserId, string? lastModifyUserId, DateTime createDate, DateTime lastModifyDate, bool isDeleted, DateTime? deletedDate)
-           : base(creatorUserId, lastModifyUserId, createDate, lastModifyDate, isDeleted, deletedDate) { }
+           : base(creatorUserId, lastModifyUserId, createDate, lastModifyDate, isDeleted, deletedDate) {
+
+        }
        
 
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -55,7 +61,7 @@ namespace BA_GPS.Domain.Entity
 
         public int CompanyId { get; set; }
 
-
+        
     }
 
 }

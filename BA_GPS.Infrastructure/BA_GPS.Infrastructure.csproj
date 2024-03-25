@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.16" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.16">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -16,13 +16,12 @@
   <ItemGroup>
     <ProjectReference Include="..\BA_GPS.Domain\BA_GPS.Domain.csproj" />
     <ProjectReference Include="..\BA_GPS.Application\BA_GPS.Application.csproj" />
+    <ProjectReference Include="..\BA_GPS.Common\BA_GPS.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Authentication\" />
     <None Remove="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Authentication\" />
     <Folder Include="Services\" />
   </ItemGroup>
 </Project>

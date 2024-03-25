@@ -14,12 +14,13 @@ namespace BA_GPS.Infrastructure
     /// </Modified>
     public class UserDbContext : DbContext
     {
+       
 
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
         {
         }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> UserInfor { get; set; }
   
     }
 }

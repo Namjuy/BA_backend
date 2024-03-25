@@ -1,6 +1,8 @@
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/bin/Debug/net7.0/BA_GPS.Common.deps.json
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/bin/Debug/net7.0/BA_GPS.Common.runtimeconfig.json
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/bin/Debug/net7.0/BA_GPS.Common.dll
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/bin/Debug/net7.0/BA_GPS.Common.pdb
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.csproj.AssemblyReference.cache
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.GeneratedMSBuildEditorConfig.editorconfig
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.AssemblyInfoInputs.cache
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.AssemblyInfo.cs
@@ -8,5 +10,5 @@
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.dll
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/refint/BA_GPS.Common.dll
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.pdb
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.genruntimeconfig.cache
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/ref/BA_GPS.Common.dll
-/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/Debug/net7.0/BA_GPS.Common.csproj.AssemblyReference.cache

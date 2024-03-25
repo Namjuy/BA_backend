@@ -1,111 +1,297 @@
-﻿
-using BA_GPS.Application.Core.Interface;
-using BA_GPS.Application.Interface;
+﻿using BA_GPS.Application.Interfaces;
 using BA_GPS.Domain.Entity;
-
-namespace BA_GPS.Infrastructure.Core.Services
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using BA_GPS.Common.Authentication;
+namespace BA_GPS.Infrastructure.Services
 {
+
     /// <summary>
     /// 
     /// </summary>
     /// <Modified>
-    /// Name    Date        Comments
-    /// Duypn   14/01/2024  Created
+    /// Name    Date    Comments
+    /// Duypn   11/03/2024 Created
     /// </Modified>
-    public class UserService : IUserService
+    public class UserServices : IGenericService<User>
     {
-        private readonly IUserRepository _userRepository;
-        private readonly IPasswordHasher _passwordHasher;
+        //private readonly PaginationRequest _paginationRequest;
+        private readonly UserDbContext _dbContext;
+        private readonly ILogger<UserServices> _logger;
+        private readonly PasswordHasher _passwordHasher;
 
-        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher)
+        public UserServices(UserDbContext dbContext, ILogger<UserServices> logger, PasswordHasher passwordHasher)
         {
-            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
-            _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
+            _dbContext = dbContext;
+            _passwordHasher = passwordHasher;
+            _logger = logger;
         }
 
         /// <summary>
-        /// Tạo người dùng
+        /// Tạo người dùng mới
         /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        public async Task<User> CreateUserAsync(User user)
+        /// <param name="newUser">Thông tin người dùng mới</param>
+        /// <returns>Người dùng mới</returns>
+        /// <exception cref="ArgumentException"></exception>
+        public async Task<User> Create(User newUser)
         {
-            // Hash password
-            user.PassWordHash = _passwordHasher.Hash(user.PassWordHash);
+            //Mã hoá mật khẩu
+            var hashedPassword = _passwordHasher.HashPassword(newUser.PassWordHash);
 
-            // Create user in the repository asynchronously
-            return await _userRepository.CreateUserAsync(user);
+            //Kiểm tra người dùng tồn tại
+            if (newUser == null)
+            {
+                throw new ArgumentException(nameof(newUser), "User is null");
+            }
+
+            //Tạo thông tin người dùng
+            newUser.UserId = Guid.NewGuid();
+            newUser.PassWordHash = hashedPassword;
+            newUser.CreateDate = DateTime.UtcNow;
+            newUser.LastModifyDate = DateTime.UtcNow;
+            newUser.DeletedDate = null;
+            newUser.IsDeleted = false;
+            try
+            {
+
+                _dbContext.UserInfor.Add(newUser);
+                await _dbContext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error creating user");
+            }
+
+            return newUser;
         }
 
         /// <summary>
-        /// Lấy danh sách người dùng
+        /// Cập nhật trạng thái isDeleted cho người dùng
         /// </summary>
-        /// <returns></returns>
-        public async Task<List<User>> GetAllUsersAsync()
+        /// <param name="id">Mã người dùng</param>
+        /// <returns>Giá trị true/false</returns>
+        public async Task<bool> Delete(Guid id)
         {
-            return await _userRepository.GetAllUsersAsync();
+            
+            try
+            {
+                var user = await _dbContext.UserInfor.FirstOrDefaultAsync(item => item.UserId == id);
+
+                if (user == null)
+                    return false;
+
+                user.IsDeleted = true;
+                await _dbContext.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi xoá người dùng");
+              
+            }
+            return true;
         }
 
         /// <summary>
-        /// 
+        /// Lấy danh sách thông tin người dùng theo phân trang
         /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        public async Task UpdateUserAsync(User user)
+        /// <param name="pageIndex">vị trí trang</param>
+        /// <param name="pageSize">kích thước trang</param>
+        /// <returns>Danh sách người dùng đã được phân trang</returns>
+        public async Task<DataListResponse<User>> GetAll(int pageIndex, int pageSize)
         {
-            await _userRepository.UpdateUserAsync(user);
+            //itemsOnPage is a list of user
+            var userDataResponse = new DataListResponse<User>();
+            try
+            {
+                userDataResponse.TotalPage = (int)Math.Ceiling((double)await _dbContext.UserInfor.Where(u => !u.IsDeleted).CountAsync() / pageSize);
+                userDataResponse.DataList = await _dbContext.UserInfor.Where(u => !u.IsDeleted).OrderByDescending(u=>u.LastModifyDate).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi lấy danh sách người dùng");
+
+            }
+            return userDataResponse;
         }
 
         /// <summary>
         /// Lấy người dùng theo Id
         /// </summary>
-        /// <param name="userId"></param>
+        /// <param name="id">Mã của người dùng</param>
         /// <returns></returns>
-        public async Task<User> GetUserByIdAsync(Guid userId)
+        public async Task<User> GetById(Guid id)
         {
-            return await _userRepository.GetUserByIdAsync(userId);
-        }
+            var user = new User();
 
-        /// <summary>
-        /// Tìm kiếm người dùng
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="type"></param>
-        /// <param name="startDate"></param>
-        /// <param name="endDate"></param>
-        /// <param name="gender"></param>
-        /// <returns></returns>
-        public async Task<List<User>> SearchUserAsync(string input, string type, DateTime startDate, DateTime endDate, byte? gender)
-        {
-            return await _userRepository.SearchUserAsync(input, type, startDate, endDate, gender);
-        }
-
-        /// <summary>
-        /// Xoá người dùng
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <returns></returns>
-        public async Task DeleteUserAsync(Guid userId)
-        {
-            await _userRepository.DeleteUserAsync(userId);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="oldPassword"></param>
-        /// <param name="newPassword"></param>
-        /// <param name="confirmPassword"></param>
-        /// <returns></returns>
-        public async Task ChangePassword(Guid id, string oldPassword ,string newPassword, string confirmPassword)
-        {
-            
-            if(newPassword == confirmPassword)
+            try
             {
-                await _userRepository.ChangePassword(id, oldPassword,_passwordHasher.Hash(newPassword));
+                 user = await _dbContext.UserInfor.FirstOrDefaultAsync(item => item.UserId == id) ?? throw new Exception("User not found");
+               
             }
-        
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lấy thông tin người dùng lỗi");
+
+            }
+            return user;
         }
+
+        /// <summary>
+        /// Lấy ra người dùng theo thông tin đăng nhập
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public async Task<User> GetUserByLoginInput(string username)
+        {
+            var user = new User();
+
+            try
+            {
+                user = await _dbContext.UserInfor.FirstOrDefaultAsync(item => item.UserName == username) ?? throw new Exception("User not found");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lấy thông tin người dùng lỗi");
+
+            }
+            return user;
+        }
+
+        /// <summary>
+        /// Cập nhật người dùng
+        /// </summary>
+        /// <param name="userToUpdate"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public async Task<User> Update(User userToUpdate)
+        {
+            var user = new User();
+            try
+            {
+                //Cập nhật thông tin người dùng
+                 user = await _dbContext.UserInfor.FirstOrDefaultAsync(item => item.UserId == userToUpdate.UserId) ?? throw new ArgumentException("User not found");
+                user.FullName = userToUpdate.FullName;
+                user.IsMale = userToUpdate.IsMale;
+                user.DateOfBirth = userToUpdate.DateOfBirth;
+                user.Email = userToUpdate.Email;
+                user.Address = userToUpdate.Address;
+                user.LastModifyDate = DateTime.UtcNow;
+                user.CompanyId = userToUpdate.CompanyId;
+                user.PhoneNumber = user.PhoneNumber;
+               
+                await _dbContext.SaveChangesAsync();
+
+                return user; 
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Cập nhật thông tin người dùng lỗi");
+              
+            }
+
+            return user;
+        }
+
+        /// <summary>
+        /// Tìm kiếm theo thông tin nhập vào và phân trang
+        /// </summary>
+        /// <param name="searchRequest"></param>
+        /// <returns></returns>
+        public async Task<DataListResponse<User>> Search(SearchRequest searchRequest)
+        {
+            var userDataResponse = new DataListResponse<User>();
+           
+            try
+            {
+                IQueryable<User> query = _dbContext.UserInfor.Where(u => !u.IsDeleted);
+
+                //Lọc dữ liệu theo giá trị nhập vào
+
+                if (!string.IsNullOrEmpty(searchRequest.Type) && !string.IsNullOrEmpty(searchRequest.InputValue))
+                {
+                    switch (searchRequest.Type.ToLower())
+                    {
+                        case "username":
+                            query = query.Where(u => u.UserName.Contains(searchRequest.InputValue));
+                            break;
+
+                        case "fullname":
+                            query = query.Where(u => u.FullName.Contains(searchRequest.InputValue));
+                            break;
+
+                        case "phonenumber":
+                            query = query.Where(u => u.PhoneNumber.Contains(searchRequest.InputValue));
+                            break;
+
+                        case "email":
+                            query = query.Where(u => u.Email.Contains(searchRequest.InputValue));
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+                if(searchRequest.StartDate != null || searchRequest.EndDate != null)
+                {
+                    query = query.Where(u =>
+                        (searchRequest.StartDate == u.LastModifyDate || u.LastModifyDate >= searchRequest.StartDate) &&
+                        (searchRequest.EndDate == u.LastModifyDate || u.LastModifyDate <= searchRequest.EndDate)
+                    );
+                }
+
+                if (searchRequest.Gender.HasValue)
+                {
+                    query = query.Where(u => u.IsMale == searchRequest.Gender.Value);
+                }
+
+
+                //Tính tổng số trang
+                userDataResponse.TotalPage = (int)Math.Ceiling((double)await query.CountAsync() / searchRequest.PageSize);
+
+                //Lấy ra danh sách tìm kiếm đã được phân trang
+                userDataResponse.DataList = await query.OrderByDescending(u => u.LastModifyDate)
+                    .Skip(searchRequest.PageSize * (searchRequest.PageIndex - 1))
+                    .Take(searchRequest.PageSize)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting user list");
+            }
+            return userDataResponse;
+        }
+
+
+        /// <summary>
+        /// Kiểm tra đối tượng tồn tại hay không dựa trên thông tin nhập vào
+        /// </summary>
+        /// <param name="value">Thông tin cần kiểm tra </param>
+        /// <returns>kết quả true/false</returns>
+        public async Task<bool> CheckExist(string value)
+        {
+            var check = true;
+            var user = new User();
+            try
+            {
+                user = await _dbContext.UserInfor.Where(u => !u.IsDeleted).FirstOrDefaultAsync(item => item.UserName == value);
+                if (user is null)
+                {
+
+                    return check = false;
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi kiểm tra tồn tại");
+            }
+            return check;
+        }
+
+      
     }
 }
