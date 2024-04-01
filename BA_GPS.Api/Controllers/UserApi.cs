@@ -29,7 +29,6 @@ namespace BA_GPS.Api.Controllers
             _logger = logger;
 
         }
-
         /// <summary>
         /// Lấy danh sách người dùng
         /// </summary>
