@@ -1,41 +1,20 @@
-﻿<Properties StartupConfiguration="{D4B8AC01-80ED-4E5E-BDA0-037420EB248A}|http" GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Host/Program.cs">
-    <Files>
-      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" />
-      <File FileName="BA_GPS.Host/Program.cs" Line="43" Column="14" />
-      <File FileName="BA_GPS.Host/Controllers/UserApi.cs" />
-      <File FileName="BA_GPS.Common/Authentication/PasswordHasher.cs" />
-      <File FileName="BA_GPS.Host/Controllers/AuthenticationController.cs" />
-      <File FileName="BA_GPS.Domain/Entity/User.cs" />
-    </Files>
+﻿<Properties StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|https" GitUserInfo="UsingMD">
+  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BA_GPS.V3" expanded="True">
-            <Node name="BA_GPS.Common" expanded="True">
-              <Node name="Authentication" expanded="True" />
-              <Node name="Modal" expanded="True" />
-              <Node name="Service" expanded="True" />
-            </Node>
-            <Node name="BA_GPS.Domain" expanded="True">
-              <Node name="Entity" expanded="True" />
-            </Node>
-            <Node name="BA_GPS.Host">
-              <Node name="Program.cs" selected="True" />
-            </Node>
-            <Node name="BA_GPS.Infrastructure" expanded="True">
-              <Node name="Services" expanded="True" />
-            </Node>
+          <Node name="BA_GPS.V3" expanded="True" selected="True">
+            <Node name="BA_GPS.Application" expanded="True" />
+            <Node name="BA_GPS.Infrastructure" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.BA__GPS.Test PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MonoDevelop.Ide.ItemProperties.BA__GPS.Host PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BA__GPS.Api FirstBuild="True" PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

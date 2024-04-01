@@ -81,6 +81,7 @@ namespace BA_GPS.Infrastructure.Services
                     return false;
 
                 user.IsDeleted = true;
+                user.DeletedDate = DateTime.UtcNow;
                 await _dbContext.SaveChangesAsync();
 
                 return true;
@@ -238,7 +239,7 @@ namespace BA_GPS.Infrastructure.Services
                 if(searchRequest.StartDate != null || searchRequest.EndDate != null)
                 {
                     query = query.Where(u =>
-                        (searchRequest.StartDate == u.LastModifyDate || u.LastModifyDate >= searchRequest.StartDate) &&
+                        (searchRequest.StartDate == u.LastModifyDate || u.LastModifyDate >= searchRequest.StartDate) ||
                         (searchRequest.EndDate == u.LastModifyDate || u.LastModifyDate <= searchRequest.EndDate)
                     );
                 }

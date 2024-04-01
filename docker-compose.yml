@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  ba_gps.host:
-    image: ${DOCKER_REGISTRY-}bagps
-    build:
-      context: .
-      dockerfile: BA_GPS.Host/Dockerfile

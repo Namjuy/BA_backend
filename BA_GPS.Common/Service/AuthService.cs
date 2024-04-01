@@ -41,7 +41,7 @@ namespace BA_GPS.Common.Service
                 issuer: _configuration["Auth0:Issuer"],
                 audience: _configuration["Auth0:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddHours(1),
+                expires: DateTime.UtcNow.AddHours(24),
                 signingCredentials: creds
             );  
 

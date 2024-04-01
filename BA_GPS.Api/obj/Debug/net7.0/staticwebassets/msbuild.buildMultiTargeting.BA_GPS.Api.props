@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/BA_GPS.Api.props" />
+</Project>

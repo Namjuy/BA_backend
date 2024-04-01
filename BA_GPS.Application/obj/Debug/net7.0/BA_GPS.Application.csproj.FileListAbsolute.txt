@@ -15,3 +15,4 @@
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/refint/BA_GPS.Application.dll
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.pdb
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/ref/BA_GPS.Application.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Application/obj/Debug/net7.0/BA_GPS.Application.sourcelink.json
