@@ -1,72 +1,54 @@
 ﻿
 using BA_GPS.Common.Modal;
-using BA_GPS.Common.Service;
-using BA_GPS.Domain.Entity;
 using BA_GPS.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+/// <summary>
+/// 
+/// </summary>
+/// <Modified>
+/// Name    Date    Comments
+/// Duypn   11/03/2024 Created
+/// </Modified>
 namespace BA_GPS.Api.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <Modified>
-    /// Name    Date    Comments
-    /// Duypn   11/03/2024 Created
-    /// </Modified>
-
     [AllowAnonymous]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class AuthenApi : ControllerBase
     {
-        private readonly AuthService _authService;
+
+        private readonly AuthenService _authenService;
         private readonly ILogger<AuthenApi> _logger;
-        private readonly UserServices _service;
-        public AuthenApi(AuthService authService, ILogger<AuthenApi> logger, UserServices services)
+
+        public AuthenApi(AuthenService authenService, ILogger<AuthenApi> logger)
         {
-            _authService = authService;
+            _authenService = authenService;
             _logger = logger;
-            _service = services;
+
         }
 
         /// <summary>
-        /// Đăng nhập thông tin tài khoản và mật khẩu
+        /// Đăng nhập 
         /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
-        /// <returns></returns>
+        /// <param name="username">Tên tài khoản</param>
+        /// <param name="password">Mật khẩu</param>
+        /// <returns>Token</returns>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
-
             var token = "";
-
-            if (string.IsNullOrWhiteSpace(loginRequest.Username) || string.IsNullOrWhiteSpace(loginRequest.Password))
-            {
-                return BadRequest("Username and password are required.");
-            }
 
             try
             {
-                User user = await _service.GetUserByLoginInput(loginRequest.Username);
-
-                if (user is null)
+                if (!_authenService.CheckLoginRequestValid(loginRequest))
                 {
-                    return BadRequest("User is not exist");
+                    return BadRequest("Tên đăng nhập hoặc mật khẩu không hợp lệ.");
                 }
-
-
-                token = _authService.GenerateToken(loginRequest, user.PassWordHash, user.UserType);
-
-                if (string.IsNullOrWhiteSpace(token))
-                {
-                    return BadRequest("Invalid username or password.");
-                }
-
+                token = await _authenService.Login(loginRequest);
 
             }
             catch (Exception ex)

@@ -1,0 +1,196 @@
+2024-04-10 09:52:29.104 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-10 09:52:29.172 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-10 09:52:29.173 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-10 09:52:29.173 +07:00 [INF] Hosting environment: Development
+2024-04-10 09:52:29.173 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-10 09:52:30.344 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-10 09:52:30.392 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 49.267ms
+2024-04-10 09:52:30.403 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - null null
+2024-04-10 09:52:30.566 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-04-10 09:52:30.566 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 163.6473ms
+2024-04-10 09:52:30.642 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-10 09:52:30.694 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.6285ms
+2024-04-10 09:52:39.143 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-10 09:52:39.150 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-10 09:52:39.201 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (0)
+2024-04-10 09:52:39.203 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-10 09:52:39.205 +07:00 [INF] HTTP GET /UserApi responded 401 in 57.1607 ms
+2024-04-10 09:52:39.205 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 401 0 null 62.2721ms
+2024-04-10 09:52:57.902 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 48
+2024-04-10 09:52:57.910 +07:00 [INF] CORS policy execution successful.
+2024-04-10 09:52:57.913 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-10 09:52:57.936 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-10 09:52:58.209 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-10 09:52:58.569 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-10 09:52:58.628 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-10 09:52:58.631 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 692.7669ms
+2024-04-10 09:52:58.632 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-10 09:52:58.632 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 727.6685 ms
+2024-04-10 09:52:58.635 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 732.961ms
+2024-04-10 09:53:13.314 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-10 09:53:13.349 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (0)
+2024-04-10 09:53:13.349 +07:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-04-10 09:53:13.349 +07:00 [INF] HTTP GET /UserApi responded 403 in 35.1283 ms
+2024-04-10 09:53:13.350 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 403 0 null 35.9442ms
+2024-04-10 09:53:29.754 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 48
+2024-04-10 09:53:29.755 +07:00 [INF] CORS policy execution successful.
+2024-04-10 09:53:29.756 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-10 09:53:29.757 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-10 09:53:29.785 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-10 09:53:29.788 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-10 09:53:29.789 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 31.5808ms
+2024-04-10 09:53:29.789 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-10 09:53:29.789 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 34.2812 ms
+2024-04-10 09:53:29.789 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 34.9445ms
+2024-04-10 09:53:44.271 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-10 09:53:44.277 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-10 09:53:44.283 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-10 09:53:44.345 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-10 09:53:44.349 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-10 09:53:44.349 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-10 09:53:44.359 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-10 09:53:44.360 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-10 09:53:44.366 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 83.6067ms
+2024-04-10 09:53:44.367 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-10 09:53:44.367 +07:00 [ERR] HTTP GET /UserApi responded 500 in 95.4989 ms
+System.InvalidOperationException: The converter specified on 'BA_GPS.Domain.Entity.User.PermissionId' is not compatible with the type 'System.Byte'.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializationConverterOnAttributeNotCompatible(Type classTypeAttributeIsOn, MemberInfo memberInfo, Type typeToConvert)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetConverterFromAttribute(JsonConverterAttribute converterAttribute, Type typeToConvert, MemberInfo memberInfo, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.Configure()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.<EnsureConfigured>g__ConfigureSynchronized|172_0()
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo.Configure()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.ConfigureProperties()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.Configure()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.<EnsureConfigured>g__ConfigureSynchronized|172_0()
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-04-10 09:53:44.371 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The converter specified on 'BA_GPS.Domain.Entity.User.PermissionId' is not compatible with the type 'System.Byte'.
+   at System.Text.Json.ThrowHelper.ThrowInvalidOperationException_SerializationConverterOnAttributeNotCompatible(Type classTypeAttributeIsOn, MemberInfo memberInfo, Type typeToConvert)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetConverterFromAttribute(JsonConverterAttribute converterAttribute, Type typeToConvert, MemberInfo memberInfo, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreatePropertyInfo(JsonTypeInfo typeInfo, Type typeToConvert, MemberInfo memberInfo, JsonSerializerOptions options, Boolean shouldCheckForRequiredKeyword, Boolean hasJsonIncludeAttribute)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.AddMembersDeclaredBySuperType(JsonTypeInfo typeInfo, Type currentType, Boolean constructorHasSetsRequiredMembersAttribute, PropertyHierarchyResolutionState& state)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.PopulateProperties(JsonTypeInfo typeInfo)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.CreateTypeInfoCore(Type type, JsonConverter converter, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.Metadata.DefaultJsonTypeInfoResolver.GetTypeInfo(Type type, JsonSerializerOptions options)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoNoCaching(Type type)
+   at System.Text.Json.JsonSerializerOptions.CachingContext.CreateCacheEntry(Type type, CachingContext context)
+--- End of stack trace from previous location ---
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.Configure()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.<EnsureConfigured>g__ConfigureSynchronized|172_0()
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo.Configure()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.ConfigureProperties()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.Configure()
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo.<EnsureConfigured>g__ConfigureSynchronized|172_0()
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfoInternal(Type type, Boolean ensureConfigured, Nullable`1 ensureNotNull, Boolean resolveIfMutable, Boolean fallBackToNearestAncestorType)
+   at System.Text.Json.JsonSerializerOptions.GetTypeInfo(Type type)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter.WriteResponseBodyAsync(OutputFormatterWriteContext context, Encoding selectedEncoding)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-04-10 09:53:44.374 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 500 null text/plain; charset=utf-8 102.7005ms
+2024-04-10 09:54:16.739 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-10 09:54:16.805 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-10 09:54:16.806 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-10 09:54:16.806 +07:00 [INF] Hosting environment: Development
+2024-04-10 09:54:16.806 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-10 09:54:17.896 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-10 09:54:17.944 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 47.7746ms
+2024-04-10 09:54:18.052 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-10 09:54:18.099 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 47.0534ms
+2024-04-10 09:54:32.759 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 48
+2024-04-10 09:54:32.767 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-10 09:54:32.816 +07:00 [INF] CORS policy execution successful.
+2024-04-10 09:54:32.817 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-10 09:54:32.831 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-10 09:54:33.088 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-10 09:54:33.404 +07:00 [INF] Executed DbCommand (25ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-10 09:54:33.461 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-10 09:54:33.463 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 631.0008ms
+2024-04-10 09:54:33.464 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-10 09:54:33.465 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 700.1009 ms
+2024-04-10 09:54:33.468 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 709.2327ms
+2024-04-10 09:54:51.487 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-10 09:54:51.532 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-10 09:54:51.536 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-10 09:54:51.600 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-10 09:54:51.657 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-10 09:54:51.658 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-10 09:54:51.670 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-10 09:54:51.672 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-10 09:54:51.684 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 148.0276ms
+2024-04-10 09:54:51.684 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-10 09:54:51.684 +07:00 [INF] HTTP GET /UserApi responded 200 in 194.6998 ms
+2024-04-10 09:54:51.684 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 196.7128ms

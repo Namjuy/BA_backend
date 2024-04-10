@@ -5,37 +5,34 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 using BA_GPS.Common;
 
+/// <summary>
+/// 
+/// </summary>
+/// <Modified>
+/// Name    Date    Comments
+/// Duypn   11/01/2024 Created
+/// </Modified>
 namespace BA_GPS.Domain.Entity
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <Modified>
-    /// Name    Date    Comments
-    /// Duypn   11/01/2024 Created
-    /// </Modified>
-    [Table("Users")]
+    
+    [Table("User")]
     public class User : BaseEntity
     {
-        public User():base()
+        public User() : base()
         {
         }
 
-        public User(string? creatorUserId, string? lastModifyUserId, DateTime createDate, DateTime lastModifyDate, bool isDeleted, DateTime? deletedDate)
-           : base(creatorUserId, lastModifyUserId, createDate, lastModifyDate, isDeleted, deletedDate) {
-
+        public User(Guid id, DateTime createDate, DateTime lastModifyDate, bool isDeleted, DateTime? deletedDate)
+           : base(id, createDate, lastModifyDate, isDeleted, deletedDate)
+        {
         }
-       
-
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [NotNull]
-        public Guid UserId { get; set; }
 
         [NotNull]
         [MaxLength(50, ErrorMessage = "Tên đăng nhập tối đa 50 ký tự")]
         [RegularExpression(@"^[a-zA-Z0-9]+$", ErrorMessage = "Chỉ được phép viết liền không dấu")]
         public string UserName { get; set; }
 
+        [NotNull]
         public string PassWordHash { get; set; }
 
         [NotNull]
@@ -52,16 +49,16 @@ namespace BA_GPS.Domain.Entity
         [RegularExpression(@"^0\d{9}$", ErrorMessage = "Số điện thoại không chính xác")]
         public string PhoneNumber { get; set; }
 
+        //[JsonConverter(typeof(JsonStringEnumConverter))]
+        public byte PermissionId { get; set; }
+
         [RegularExpression(@"^[a-zA-Z0-9._%+-]+@gmail\.com$", ErrorMessage = "Email phải đúng định dạng.")]
         public string Email { get; set; }
 
         public string Address { get; set; }
 
-        public byte? UserType { get; set; }
-
         public int CompanyId { get; set; }
 
-        
     }
 
 }

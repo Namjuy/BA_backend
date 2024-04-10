@@ -1,4 +1,5 @@
 ﻿using System;
+using BA_GPS.Domain.DTO;
 using BA_GPS.Domain.Entity;
 
 namespace BA_GPS.Application.Interfaces
@@ -16,7 +17,7 @@ namespace BA_GPS.Application.Interfaces
         /// Lấy dang sách thông tin đối tượng chung theo phân trang
         /// </summary>
         /// <returns>1 tập hợp các đối tượng</returns>
-        Task<DataListResponse<TEntity>> GetAll(int pageIndex, int pageSize);
+        Task<DataListResponse<TEntity>> Get(int pageIndex, int pageSize);
 
         /// <summary>
         /// Lấy ra thông tin đối tượng theo id
@@ -30,14 +31,14 @@ namespace BA_GPS.Application.Interfaces
         /// </summary>
         /// <param name="entity">The entity to create.</param>
         /// <returns>Tạo đối tượng.</returns>
-        Task<TEntity> Create(TEntity entity);
+        Task<bool> Create(TEntity entity);
 
         /// <summary>
         /// Cập nhật đối tượng
         /// </summary>
         /// <param name="entity">The entity to update.</param>
         /// <returns>Thông tin đối tượng được cập nhật.</returns>
-        Task<TEntity> Update(TEntity entity);
+        Task<bool> Update(TEntity entity);
 
         /// <summary>
         /// Cập nhật trạng thái xoá cho đối tượng
@@ -47,12 +48,11 @@ namespace BA_GPS.Application.Interfaces
         Task<bool> Delete(Guid id);
 
         /// <summary>
-        /// Kiểm tra sự tồn tại của đối tượng
+        /// Cập nhật trạng thái xoá cho đối tượng
         /// </summary>
-        /// <param name="value">Giá trị kiểm tra</param>
-        /// <returns>Kết quả đúng hoặc sai</returns>
-        Task<bool> CheckExist(string value);
-
+        /// <param name="id">Id của đối tượng cần xoá.</param>
+        /// <returns>True nếu xoá thành công , false nếu xoá thất bại</returns>
+        Task<DataListResponse<TEntity>> Search(SearchRequest searchRequest);
 
 
     }

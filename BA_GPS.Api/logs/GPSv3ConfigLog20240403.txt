@@ -1,0 +1,165 @@
+2024-04-03 08:07:57.754 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-03 08:07:57.768 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:07:57.768 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.3958 ms
+2024-04-03 08:07:57.769 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 15.3835ms
+2024-04-03 08:07:57.771 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-03 08:07:57.771 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:07:57.772 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:07:57.772 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:07:57.906 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-03 08:07:57.914 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-03 08:07:57.915 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-03 08:07:57.915 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api) in 143.1196ms
+2024-04-03 08:07:57.915 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:07:57.915 +07:00 [INF] HTTP GET /UserApi responded 200 in 144.2203 ms
+2024-04-03 08:07:57.915 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 144.5783ms
+2024-04-03 08:09:01.382 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/786fb2da-d05a-4401-b506-105be429e798 - null null
+2024-04-03 08:09:01.384 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:09:01.384 +07:00 [INF] HTTP OPTIONS /UserApi/786fb2da-d05a-4401-b506-105be429e798 responded 204 in 2.2490 ms
+2024-04-03 08:09:01.384 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/786fb2da-d05a-4401-b506-105be429e798 - 204 null null 2.6707ms
+2024-04-03 08:09:01.387 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/786fb2da-d05a-4401-b506-105be429e798 - application/json 273
+2024-04-03 08:09:01.387 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:09:01.387 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-03 08:09:01.387 +07:00 [INF] Route matched with {action = "UpdateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:09:01.451 +07:00 [INF] Executed DbCommand (59ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__id_0
+2024-04-03 08:09:01.490 +07:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userToUpdate_UserId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__userToUpdate_UserId_0
+2024-04-03 08:09:01.520 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[@p1='?' (DbType = Guid), @p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastModifyDate] = @p0
+OUTPUT 1
+WHERE [UserId] = @p1;
+2024-04-03 08:09:01.521 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-03 08:09:01.521 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api) in 133.9673ms
+2024-04-03 08:09:01.521 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-03 08:09:01.522 +07:00 [INF] HTTP PUT /UserApi/786fb2da-d05a-4401-b506-105be429e798 responded 200 in 134.6737 ms
+2024-04-03 08:09:01.522 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/786fb2da-d05a-4401-b506-105be429e798 - 200 null application/json; charset=utf-8 135.0235ms
+2024-04-03 08:09:01.538 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-03 08:09:01.539 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:09:01.539 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.1483 ms
+2024-04-03 08:09:01.539 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 0.6501ms
+2024-04-03 08:09:01.540 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-03 08:09:01.541 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:09:01.541 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:09:01.541 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:09:01.569 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-03 08:09:01.573 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-03 08:09:01.574 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-03 08:09:01.574 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api) in 33.3671ms
+2024-04-03 08:09:01.574 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:09:01.574 +07:00 [INF] HTTP GET /UserApi responded 200 in 33.8410 ms
+2024-04-03 08:09:01.574 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 34.0279ms
+2024-04-03 08:09:03.766 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-03 08:09:03.767 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:09:03.767 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 0.3160 ms
+2024-04-03 08:09:03.767 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 1.0098ms
+2024-04-03 08:09:03.770 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-03 08:09:03.770 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:09:03.771 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-03 08:09:03.771 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:09:03.788 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@__searchRequest_Gender_Value_0='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[IsMale] = @__searchRequest_Gender_Value_0
+2024-04-03 08:09:03.795 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__searchRequest_Gender_Value_0='?' (Size = 1) (DbType = Byte), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[IsMale] = @__searchRequest_Gender_Value_0
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2024-04-03 08:09:03.796 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-03 08:09:03.796 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 24.9415ms
+2024-04-03 08:09:03.796 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-03 08:09:03.796 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 25.9382 ms
+2024-04-03 08:09:03.796 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 26.3744ms
+2024-04-03 08:10:33.694 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-03 08:10:33.696 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:10:33.697 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.1923 ms
+2024-04-03 08:10:33.697 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 3.1221ms
+2024-04-03 08:10:33.733 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-03 08:10:33.734 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:10:33.734 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:10:33.734 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:10:33.741 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-03 08:10:33.746 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-03 08:10:33.746 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-03 08:10:33.746 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api) in 12.3846ms
+2024-04-03 08:10:33.746 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:10:33.746 +07:00 [INF] HTTP GET /UserApi responded 200 in 12.9034 ms
+2024-04-03 08:10:33.746 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 13.1706ms
+2024-04-03 08:11:43.335 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-03 08:11:43.340 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:11:43.340 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.4001 ms
+2024-04-03 08:11:43.340 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 5.5843ms
+2024-04-03 08:11:43.354 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-03 08:11:43.357 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:11:43.357 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:11:43.357 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:11:43.365 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-03 08:11:43.374 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-03 08:11:43.375 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-03 08:11:43.375 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api) in 18.1327ms
+2024-04-03 08:11:43.375 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:11:43.375 +07:00 [INF] HTTP GET /UserApi responded 200 in 18.8738 ms
+2024-04-03 08:11:43.375 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 20.948ms
+2024-04-03 08:11:57.371 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-03 08:11:57.373 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:11:57.374 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.8964 ms
+2024-04-03 08:11:57.374 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 2.5902ms
+2024-04-03 08:11:57.377 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-03 08:11:57.378 +07:00 [INF] CORS policy execution successful.
+2024-04-03 08:11:57.378 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:11:57.379 +07:00 [INF] Route matched with {action = "GetAllUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-03 08:11:57.441 +07:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-03 08:11:57.449 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[UserId], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[CreatorUserId], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[LastModifyUserId], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName], [u].[UserType]
+FROM [Users] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2024-04-03 08:11:57.463 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-03 08:11:57.464 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api) in 85.2344ms
+2024-04-03 08:11:57.464 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetAllUsers (BA_GPS.Api)'
+2024-04-03 08:11:57.464 +07:00 [INF] HTTP GET /UserApi responded 200 in 87.0653 ms
+2024-04-03 08:11:57.464 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 87.537ms

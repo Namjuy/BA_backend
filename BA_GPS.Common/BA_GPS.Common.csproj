@@ -7,12 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Service\" />
     <None Remove="Authentication\" />
     <None Remove="Modal\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Service\" />
     <Folder Include="Authentication\" />
     <Folder Include="Modal\" />
   </ItemGroup>

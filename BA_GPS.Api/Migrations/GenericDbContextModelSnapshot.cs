@@ -4,19 +4,16 @@ using BA_GPS.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace BA_GPS.Api.Migrations
 {
-    [DbContext(typeof(UserDbContext))]
-    [Migration("20240401045818_Bagps.v2")]
-    partial class Bagpsv2
+    [DbContext(typeof(GenericDbContext))]
+    partial class GenericDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +22,26 @@ namespace BA_GPS.Api.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("BA_GPS.Domain.Entity.Permission", b =>
+                {
+                    b.Property<byte>("PermissionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<byte>("PermissionId"));
+
+                    b.Property<byte>("PermissionName")
+                        .HasMaxLength(20)
+                        .HasColumnType("tinyint");
+
+                    b.HasKey("PermissionId");
+
+                    b.ToTable("Permission");
+                });
+
             modelBuilder.Entity("BA_GPS.Domain.Entity.User", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -40,9 +54,6 @@ namespace BA_GPS.Api.Migrations
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("CreatorUserId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("datetime2");
@@ -68,12 +79,12 @@ namespace BA_GPS.Api.Migrations
                     b.Property<DateTime>("LastModifyDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("LastModifyUserId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PassWordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("PermissionId")
+                        .HasColumnType("tinyint");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -84,12 +95,43 @@ namespace BA_GPS.Api.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<byte?>("UserType")
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("BA_GPS.Domain.Entity.UserPermission", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte>("PermissionId")
                         .HasColumnType("tinyint");
 
-                    b.HasKey("UserId");
+                    b.HasKey("UserId", "PermissionId");
 
-                    b.ToTable("Users");
+                    b.HasIndex("PermissionId");
+
+                    b.ToTable("UserPermissions");
+                });
+
+            modelBuilder.Entity("BA_GPS.Domain.Entity.UserPermission", b =>
+                {
+                    b.HasOne("BA_GPS.Domain.Entity.Permission", "Permission")
+                        .WithMany()
+                        .HasForeignKey("PermissionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("BA_GPS.Domain.Entity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Permission");
+
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

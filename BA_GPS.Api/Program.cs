@@ -1,7 +1,9 @@
 ﻿using System.Text;
+using System.Text.Json.Serialization;
 using BA_GPS.Common.Authentication;
-using BA_GPS.Common.Service;
+using BA_GPS.Domain.Entity;
 using BA_GPS.Infrastructure;
+using BA_GPS.Infrastructure.Repositories;
 using BA_GPS.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +20,14 @@ builder.Host.UseSerilog();
 
 // Register configuration
 ConfigurationManager configuration = builder.Configuration;
+
+//builder.Services.AddControllers().AddJsonOptions(x =>
+//{
+
+//    x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+//    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+//    x.JsonSerializerOptions.AllowTrailingCommas = true;
+//});
 
 // Add authorization
 builder.Services.AddAuthorization();
@@ -68,20 +78,22 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "localhost:7033",
-        ValidAudience = "localhost:7033",
+        ValidIssuer = "localhost:5159, localhost:4200",
+        ValidAudience = "localhost:5159, localhost:4200",
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("gUiGDL2oyCn2zR1fVOmJNEUDChihatgi"))
     };
 });
 
-
-
 // Add database service
-builder.Services.AddDbContext<UserDbContext>(otp => otp.UseSqlServer(configuration.GetConnectionString("BAconnection"), b => b.MigrationsAssembly("BA_GPS.Api")));
-builder.Services.AddScoped<UserServices>();
-
+builder.Services.AddDbContext<GenericDbContext>(otp => otp.UseSqlServer(configuration.GetConnectionString("BAconnection"), b => b.MigrationsAssembly("BA_GPS.Api")));
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<GenericRepository<User>>();
 builder.Services.AddScoped<PasswordHasher>();
-builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<JwtUltis>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<AuthenService>();
+
+builder.Services.AddMemoryCache();
 
 // Add Cors
 builder.Services.AddCors(options =>
@@ -95,7 +107,6 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())

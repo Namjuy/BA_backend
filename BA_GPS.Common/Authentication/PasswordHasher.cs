@@ -1,5 +1,10 @@
 ﻿using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Microsoft.Extensions.Configuration;
 
 namespace BA_GPS.Common.Authentication
 {
@@ -12,6 +17,7 @@ namespace BA_GPS.Common.Authentication
     /// </Modified>
     public class PasswordHasher
     {
+       
         private const int SaltSize = 128 / 8;
         private const int KeySize = 256 / 8;
         private const int Iteration = 10000;
@@ -21,7 +27,7 @@ namespace BA_GPS.Common.Authentication
         /// <summary>
         /// Mã hoá mật khẩu 1 chiều
         /// </summary>
-        /// <param name="password"></param>
+        /// <param name="password">Mật khẩu</param>
         /// <returns>Chuỗi ký tự đã được mã hoá</returns>
         public string HashPassword(string password)
         {
@@ -38,9 +44,9 @@ namespace BA_GPS.Common.Authentication
         /// <summary>
         /// Xác nhận token của mật khẩu đã được mã hoá so với mật khẩu mình đã nhập có đúng hay không
         /// </summary>
-        /// <param name="passwordHash"></param>
-        /// <param name="inputPassword"></param>
-        /// <returns> Kết quả xác nhận password đúng hay không </returns>
+        /// <param name="passwordHash">Mật khẩu đã được mã hoá</param>
+        /// <param name="inputPassword">Mật khẩu cần kiểm tra</param>
+        /// <returns> Kết quả xác nhận password đúng hay không (True/False)</returns>
         public bool Verify(string passwordHash, string inputPassword)
         {
             var elements = passwordHash.Split(Delimiter);
@@ -53,6 +59,8 @@ namespace BA_GPS.Common.Authentication
             var hashInput = Rfc2898DeriveBytes.Pbkdf2(inputPassword, salt, Iteration, _hashAlgorithmName, KeySize);
             return CryptographicOperations.FixedTimeEquals(hash, hashInput);
         }
+
+        
     }
 }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "udUUAAEQmJeAII5j816DMObsAV3ROZSamuJnMt25yZc0gN1cJS+2WPmbtdfQjNN7lUckf7hB2bNNCVWMI8sPMQ==",
+  "dgSpecHash": "1tp7a/qzcnuCLxjZSQ2SFy7Vf6LndXx+ibFFD+cB1FM3hWMe1ce7/uhiFC1XmwOT699ouQeF+U4N5qMDQxDRRw==",
   "success": true,
   "projectFilePath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/BA_GPS.Api.csproj",
   "expectedPackageFiles": [
@@ -45,6 +45,7 @@
     "/Users/user/.nuget/packages/microsoft.identitymodel.tokens/7.5.0/microsoft.identitymodel.tokens.7.5.0.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.20.0/microsoft.visualstudio.azure.containers.tools.targets.1.20.0.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
     "/Users/user/.nuget/packages/serilog/3.1.1/serilog.3.1.1.nupkg.sha512",

@@ -1,4 +1,8 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
+
 namespace BA_GPS.Common
 {
     /// <summary>
@@ -11,19 +15,19 @@ namespace BA_GPS.Common
     public class BaseEntity
 	{
         public BaseEntity() { }
-        public BaseEntity(string? creatorUserId, string? lastModifyUserId, DateTime createDate, DateTime lastModifyDate, bool isDeleted, DateTime? deletedDate)
+
+        public BaseEntity(Guid id, DateTime createDate, DateTime lastModifyDate, bool isDeleted, DateTime? deletedDate)
         {
-            CreatorUserId = creatorUserId;
-            LastModifyUserId = lastModifyUserId;
+            Id = id;
             CreateDate = createDate;
             LastModifyDate = lastModifyDate;
             IsDeleted = isDeleted;
             DeletedDate = deletedDate;
         }
 
-        public string? CreatorUserId { get; set; }
-
-		public string? LastModifyUserId { get; set; }
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [NotNull]
+        public Guid Id { get; set; }
 
 		public DateTime CreateDate { get; set; }
 

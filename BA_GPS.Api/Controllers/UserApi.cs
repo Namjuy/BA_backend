@@ -1,29 +1,29 @@
-﻿
+﻿using System;
+using BA_GPS.Domain.DTO;
 using BA_GPS.Domain.Entity;
 using BA_GPS.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
+/// <summary>
+/// 
+/// </summary>
+/// <Modified>
+/// Name    Date        Comments
+/// Duypn   11/03/2024  Created
+/// </Modified>
 namespace BA_GPS.Api.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <Modified>
-    /// Name    Date        Comments
-    /// Duypn   11/03/2024  Created
-    /// </Modified>
-    [Authorize(Roles = "1")]
+    
     [ApiController]
     [Route("[controller]")]
     public class UserApi : ControllerBase
     {
-        private readonly UserServices _service;
+        private readonly UserService _service;
         private readonly ILogger<UserApi> _logger;
 
-        public UserApi(UserServices service, ILogger<UserApi> logger)
+        public UserApi(UserService service, ILogger<UserApi> logger)
         {
             _service = service;
             _logger = logger;
@@ -33,22 +33,19 @@ namespace BA_GPS.Api.Controllers
         /// Lấy danh sách người dùng
         /// </summary>
         /// <returns></returns>
-        //[Authorize(Roles ="1")]
+        [Authorize(Roles = "0")]
         [HttpGet(Name = "GetUser")]
-
-        public async Task<IActionResult> GetAllUsers(int pageIndex, int pageSize)
+        public async Task<IActionResult> GetUser(int pageIndex, int pageSize)
         {
             var userDataResponse = new DataListResponse<User>();
             try
             {
-                userDataResponse = await _service.GetAll(pageIndex, pageSize);
-
+                userDataResponse = await _service.Get(pageIndex, pageSize);
             }
             catch (Exception ex)
             {
-
-                _logger.LogInformation(ex.Message, "An error occurred while retrieving users.");
-                userDataResponse = await _service.GetAll(1, 5);
+                _logger.LogInformation(ex.Message, "Lỗi khi lấy danh sách người dùng");
+                userDataResponse = await _service.Get(1, 5);
                 return new StatusCodeResult(500);
             }
             return new OkObjectResult(userDataResponse);
@@ -59,111 +56,84 @@ namespace BA_GPS.Api.Controllers
         /// </summary>
         /// <param name="id">Mã người dùng</param>
         /// <returns>trạng thái yêu cầu</returns>
+        [Authorize(Roles = "0" )]
         [HttpGet("{id}", Name = "GetUserById")]
-        //[Authorize(Policy = "RequireAdminRole")]
         public async Task<IActionResult> GetUserById(Guid id)
         {
-            // Create a default user with predefined values
-            var user = new User();
+
             if (id == Guid.Empty)
             {
-                return BadRequest("User id is not valid");
+                return BadRequest("Id người dùng không hợp lệ");
             }
             try
             {
-                user = await _service.GetById(id);
-                if (user == null)
-                    return BadRequest("User not found");
+                if (await _service.GetById(id) == null)
 
+                    return NotFound("Không tìm thấy người dùng");
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex.Message, "An error occurred while retrieving user by ID.");
+                _logger.LogInformation(ex.Message, "Lỗi lấy thông tin người dùng theo Id");
 
                 return new StatusCodeResult(500);
             }
-            return new OkObjectResult(user);
+            return new OkObjectResult(id);
         }
-
 
         /// <summary>
         /// Cập nhật người dùng
         /// </summary>
-        /// <param name="id">Mã người dùng</param>
-        /// <param name="userToUpdate">Thông tin cần cập nhật</param>
-        /// <returns>trạng thái yêu cầu </returns>
+        /// <param name="userToUpdate">Thông tin người dùng</param>
+        /// <returns>Trạng thái yêu cầu</returns>
+        [Authorize(Roles = "0")]
         [HttpPut("{id}", Name = "PutUser")]
-
-        public async Task<IActionResult> UpdateUser(Guid id, User userToUpdate)
+        public async Task<IActionResult> UpdateUser(User userToUpdate)
         {
-            // Create a default user with predefined values
-            var user = new User();
-            if (id == Guid.Empty || userToUpdate is null)
+            if (userToUpdate.Id == Guid.Empty || !_service.CheckUserValid(userToUpdate))
             {
-                return BadRequest("Id or userToUpdate is not valid");
+                return BadRequest("Thông tin cập nhật không chính xác");
             }
+
             try
             {
-                user = await _service.GetById(id);
-
-                if (userToUpdate is null)
+                if(await _service.GetById(userToUpdate.Id) == null)
                 {
-                    return BadRequest("User not found");
+                    return NotFound("Không tìm thấy người dùng phù hợp");
                 }
 
-                if (userToUpdate.DateOfBirth == null || userToUpdate.DateOfBirth > DateTime.Now.AddYears(-18))
-                {
-                    return BadRequest("The age must be at least 18");
-                }
-
-
-                // Update user properties with the values from updatedUser
-                user.FullName = userToUpdate.FullName;
-                user.PhoneNumber = userToUpdate.PhoneNumber;
-                user.Email = userToUpdate.Email;
-                user.IsMale = userToUpdate.IsMale;
-                user.DateOfBirth = userToUpdate.DateOfBirth;
-                user.LastModifyDate = DateTime.UtcNow;
-
-                await _service.Update(user);
+                await _service.Update(userToUpdate);
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex.Message, "An error occurred while update user.");
+                _logger.LogInformation(ex.Message, "Lỗi cập nhật người dùng");
                 return new StatusCodeResult(500);
             }
 
-            return Ok(user);
+            return Ok(userToUpdate);
         }
 
         /// <summary>
-        /// Tạo người dùng
+        /// Tạo người dùng mới
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns>trạng thái yêu cầu</returns>
-
+        /// <param name="newUser">Thông tin người dùng tạo mới</param>
+        /// <returns>Trạng thái yêu cầu</returns>
         [HttpPost(Name = "CreateUser")]
         public async Task<IActionResult> CreateUser([FromBody] User newUser)
         {
-
-            // Create a default user with predefined values
-            var user = new User();
-
-            if (newUser is null)
+            if (!_service.CheckUserValid(newUser))
             {
-                BadRequest("User is not valid");
+                return BadRequest("Thông tin người dùng không hợp lệ");
             }
             try
             {
-                user = await _service.Create(newUser);
-
+                await _service.Create(newUser);
             }
             catch (Exception ex)
             {
                 _logger.LogInformation(ex, "An error occurred while create user.");
                 return new StatusCodeResult(500);
             }
-            return Ok(user);
+            return Ok(newUser);
         }
 
         /// <summary>
@@ -174,56 +144,45 @@ namespace BA_GPS.Api.Controllers
         [HttpPut("ban/{id}", Name = "Delete User")]
         public async Task<IActionResult> RemoveUser(Guid id)
         {
-
-            var user = new User();
-
             if (id == Guid.Empty)
             {
-                return BadRequest("Identity is not valid");
+                return BadRequest("Id không hợp lệ");
             }
 
             try
             {
-                user = await _service.GetById(id);
+                var user = await _service.GetById(id);
 
                 if (user == null)
                 {
-                    return BadRequest("User not found");
+                    return NotFound("Không tìm thấy người dùng");
                 }
 
                 user.IsDeleted = true;
-                user.LastModifyDate = DateTime.Now;
+                user.LastModifyDate = DateTime.UtcNow;
 
                 await _service.Delete(id);
-
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex, "An error occurred while create user.");
+                _logger.LogInformation(ex, "Lỗi khi xoá người dùng.");
                 return new StatusCodeResult(500);
             }
 
-            return Ok(user);
+            return Ok(id);
         }
 
         /// <summary>
-        /// 
+        /// Tìm kiếm
         /// </summary>
-        /// <param name="input">Dữ liệu nhập vào</param>
-        /// <param name="type">Kiểu dữ liệu muốn tìm kiếm</param>
-        /// <param name="startDate">ngày bắt đầu</param>
-        /// <param name="endDate">ngày cuối </param>
-        /// <param name="gender">Giới tính</param>
-        /// <returns>trạng thái yêu cầu</returns>
+        /// <param name="searchRequest">Thông tin tìm kiếm</param>
+        /// <returns></returns>
         [HttpPost("search", Name = "SearchUsers")]
         public async Task<IActionResult> SearchUsers([FromBody] SearchRequest? searchRequest)
         {
-
-            var userDataResponse = new DataListResponse<User>();
             try
             {
-                userDataResponse = await _service.Search(searchRequest);
-
+                 await _service.Search(searchRequest);
             }
             catch (Exception ex)
             {
@@ -231,9 +190,8 @@ namespace BA_GPS.Api.Controllers
                 return new StatusCodeResult(500);
             }
 
-            return Ok(userDataResponse);
+            return Ok(searchRequest);
         }
-
 
         /// <summary>
         /// Kiểm tra người dùng tồn tại hay không
@@ -252,7 +210,7 @@ namespace BA_GPS.Api.Controllers
                 }
                 else
                 {
-                    check = await _service.CheckExist(value);
+                    check = await _service.CheckUserNameExist(value);
                 }
 
             }
@@ -263,9 +221,6 @@ namespace BA_GPS.Api.Controllers
             }
             return new OkObjectResult(check);
         }
-
-
-
 
     }
 }

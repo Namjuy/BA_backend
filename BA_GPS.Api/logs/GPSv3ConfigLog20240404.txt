@@ -1,0 +1,900 @@
+2024-04-04 09:01:09.645 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 09:01:09.745 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 09:02:09.273 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 09:02:10.027 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 09:02:10.046 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 09:02:10.050 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 09:02:10.053 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 09:02:10.064 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 09:02:10.072 +07:00 [INF] Applying migration '20240404020109_bagps.v3'.
+2024-04-04 09:02:10.128 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 09:02:10.133 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreatorUserId] nvarchar(max) NULL,
+    [LastModifyUserId] nvarchar(max) NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 09:02:10.136 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId]),
+    CONSTRAINT [FK_UserPermission_Permission_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permission] ([PermissionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserPermission_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2024-04-04 09:02:10.137 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserPermission_PermissionId] ON [UserPermission] ([PermissionId]);
+2024-04-04 09:02:10.139 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404020109_bagps.v3', N'7.0.16');
+2024-04-04 09:12:11.290 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 09:12:11.390 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 09:12:46.206 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 09:12:46.486 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 09:12:46.502 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 09:12:46.505 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 09:12:46.508 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 09:12:46.518 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 09:12:46.526 +07:00 [INF] Applying migration '20240404021211_bagps.v3'.
+2024-04-04 09:12:46.563 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 09:12:46.571 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 09:12:46.579 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId]),
+    CONSTRAINT [FK_UserPermission_Permission_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permission] ([PermissionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserPermission_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2024-04-04 09:12:46.582 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserPermission_PermissionId] ON [UserPermission] ([PermissionId]);
+2024-04-04 09:12:46.584 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404021211_bagps.v3', N'7.0.16');
+2024-04-04 13:24:35.448 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 13:24:35.532 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 13:24:35.533 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 13:24:35.534 +07:00 [INF] Hosting environment: Development
+2024-04-04 13:24:35.534 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 13:24:36.679 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 13:24:36.740 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 61.3417ms
+2024-04-04 13:24:36.752 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui.css - null null
+2024-04-04 13:24:36.753 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - null null
+2024-04-04 13:24:36.754 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-standalone-preset.js - null null
+2024-04-04 13:24:37.009 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-04-04 13:24:37.009 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-04-04 13:24:37.013 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 257.951ms
+2024-04-04 13:24:37.015 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui.css - 200 144929 text/css 262.9989ms
+2024-04-04 13:24:37.017 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-04-04 13:24:37.017 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 263.9785ms
+2024-04-04 13:24:37.111 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 13:24:37.188 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 77.404ms
+2024-04-04 13:24:43.281 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-04 13:24:43.290 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-04 13:24:43.352 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (1)
+2024-04-04 13:24:43.354 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-04 13:24:43.355 +07:00 [INF] HTTP GET /UserApi responded 401 in 67.8361 ms
+2024-04-04 13:24:43.355 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 401 0 null 75.08ms
+2024-04-04 13:24:59.975 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 13:24:59.982 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 6.5733ms
+2024-04-04 13:25:00.051 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 13:25:00.059 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.3506ms
+2024-04-04 13:25:07.000 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-04 13:25:07.008 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (1)
+2024-04-04 13:25:07.008 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-04 13:25:07.009 +07:00 [INF] HTTP GET /UserApi responded 401 in 7.8808 ms
+2024-04-04 13:25:07.009 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 401 0 null 9.1481ms
+2024-04-04 13:25:13.941 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 13:25:14.022 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 13:25:14.024 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 13:25:14.024 +07:00 [INF] Hosting environment: Development
+2024-04-04 13:25:14.024 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 13:25:15.086 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 13:25:15.142 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 57.0758ms
+2024-04-04 13:25:15.202 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 13:25:15.258 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.9455ms
+2024-04-04 13:25:20.134 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-04 13:25:20.143 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-04 13:25:20.196 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 13:25:20.211 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 13:25:20.568 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 13:25:21.029 +07:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-04 13:25:21.052 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-04 13:25:21.052 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-04 13:25:21.096 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-04 13:25:21.101 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-04 13:25:21.114 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 901.6279ms
+2024-04-04 13:25:21.114 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 13:25:21.116 +07:00 [INF] HTTP GET /UserApi responded 200 in 975.3561 ms
+2024-04-04 13:25:21.120 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 986.477ms
+2024-04-04 13:26:33.616 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi - application/json 439
+2024-04-04 13:26:33.625 +07:00 [INF] CORS policy execution successful.
+2024-04-04 13:26:33.626 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.CreateUser (BA_GPS.Api)'
+2024-04-04 13:26:33.629 +07:00 [INF] Route matched with {action = "CreateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 13:26:33.649 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-04-04 13:26:33.658 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.CreateUser (BA_GPS.Api) in 28.5553ms
+2024-04-04 13:26:33.658 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.CreateUser (BA_GPS.Api)'
+2024-04-04 13:26:33.658 +07:00 [INF] HTTP POST /UserApi responded 400 in 40.1486 ms
+2024-04-04 13:26:33.658 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi - 400 null application/problem+json; charset=utf-8 41.7164ms
+2024-04-04 15:14:12.740 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 15:14:12.831 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 15:14:12.833 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 15:14:12.833 +07:00 [INF] Hosting environment: Development
+2024-04-04 15:14:12.833 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 15:14:13.958 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 15:14:14.016 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 59.0872ms
+2024-04-04 15:14:14.080 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 15:14:14.148 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 67.6384ms
+2024-04-04 15:27:16.625 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:27:16.730 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:29:38.290 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:29:38.595 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:29:38.612 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:29:38.615 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:29:38.617 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:29:38.627 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 15:29:38.635 +07:00 [INF] Applying migration '20240404082716_bagps.v3'.
+2024-04-04 15:29:38.675 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 15:29:38.687 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 15:29:38.697 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    [Id] uniqueidentifier NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId]),
+    CONSTRAINT [FK_UserPermission_Permission_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permission] ([PermissionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserPermission_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2024-04-04 15:29:38.700 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserPermission_PermissionId] ON [UserPermission] ([PermissionId]);
+2024-04-04 15:29:38.701 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404082716_bagps.v3', N'7.0.16');
+2024-04-04 15:33:04.544 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:33:04.646 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:33:13.216 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:33:13.495 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:33:13.516 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:33:13.521 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:33:13.524 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:33:13.536 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 15:33:13.543 +07:00 [INF] No migrations were applied. The database is already up to date.
+2024-04-04 15:34:01.575 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:34:01.679 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:34:15.512 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:34:15.796 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:34:15.813 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:34:15.817 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:34:15.820 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:34:15.829 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 15:34:15.838 +07:00 [INF] Applying migration '20240404083401_bagps.v3'.
+2024-04-04 15:34:15.879 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 15:34:15.887 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 15:34:15.890 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    [Id] uniqueidentifier NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId])
+);
+2024-04-04 15:34:15.892 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404083401_bagps.v3', N'7.0.16');
+2024-04-04 15:54:10.166 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:54:10.274 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:54:21.934 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:54:22.230 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:54:22.246 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:54:22.250 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:54:22.255 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:54:22.267 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 15:54:22.276 +07:00 [INF] Applying migration '20240404085410_bagps.v3'.
+2024-04-04 15:54:22.320 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 15:54:22.327 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 15:54:22.336 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    [Id] uniqueidentifier NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId]),
+    CONSTRAINT [FK_UserPermission_Permission_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permission] ([PermissionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserPermission_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2024-04-04 15:54:22.340 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserPermission_PermissionId] ON [UserPermission] ([PermissionId]);
+2024-04-04 15:54:22.342 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404085410_bagps.v3', N'7.0.16');
+2024-04-04 15:56:10.574 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:56:10.669 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:56:27.237 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:56:27.338 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:56:34.077 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 15:56:34.363 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:56:34.381 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:56:34.384 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 15:56:34.386 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 15:56:34.397 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 15:56:34.404 +07:00 [INF] Applying migration '20240404085627_bagps.v3'.
+2024-04-04 15:56:34.442 +07:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 15:56:34.452 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 15:56:34.456 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    [Id] uniqueidentifier NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId])
+);
+2024-04-04 15:56:34.459 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404085627_bagps.v3', N'7.0.16');
+2024-04-04 16:00:23.314 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 16:00:23.414 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 16:00:28.564 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 16:00:28.873 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 16:00:28.893 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 16:00:28.897 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 16:00:28.899 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 16:00:28.912 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 16:00:28.920 +07:00 [INF] Applying migration '20240404090023_bagps.v3'.
+2024-04-04 16:00:28.964 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 16:00:28.969 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 16:00:28.972 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId])
+);
+2024-04-04 16:00:28.974 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404090023_bagps.v3', N'7.0.16');
+2024-04-04 16:01:45.365 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 16:01:45.466 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 16:01:52.250 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 16:01:52.524 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 16:01:52.541 +07:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 16:01:52.546 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 16:01:52.548 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 16:01:52.562 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 16:01:52.569 +07:00 [INF] Applying migration '20240404090145_bagps.v3'.
+2024-04-04 16:01:52.613 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 16:01:52.619 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 16:01:52.628 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId]),
+    CONSTRAINT [FK_UserPermission_Permission_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permission] ([PermissionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserPermission_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2024-04-04 16:01:52.634 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserPermission_PermissionId] ON [UserPermission] ([PermissionId]);
+2024-04-04 16:01:52.636 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404090145_bagps.v3', N'7.0.16');
+2024-04-04 16:11:03.805 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:11:03.897 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:11:03.898 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:11:03.899 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:11:03.899 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:11:05.079 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:11:05.138 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 59.4993ms
+2024-04-04 16:11:05.220 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:11:05.286 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.9882ms
+2024-04-04 16:13:42.619 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:13:42.707 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:13:42.708 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:13:42.708 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:13:42.708 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:13:43.865 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:13:43.927 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 62.9457ms
+2024-04-04 16:13:43.992 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:13:44.050 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.8685ms
+2024-04-04 16:14:17.040 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:14:17.129 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:14:17.130 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:14:17.130 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:14:17.130 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:14:18.270 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:14:18.327 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 57.9122ms
+2024-04-04 16:14:18.386 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:14:18.443 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.8543ms
+2024-04-04 16:15:27.988 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:15:28.077 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:15:28.078 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:15:28.078 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:15:28.078 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:15:29.196 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:15:29.254 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 57.2562ms
+2024-04-04 16:15:29.315 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:15:29.373 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.9027ms
+2024-04-04 16:21:45.065 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:21:45.145 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:21:45.146 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:21:45.147 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:21:45.147 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:21:46.302 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:21:46.360 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 58.8319ms
+2024-04-04 16:21:46.421 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:21:46.478 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.0254ms
+2024-04-04 16:22:08.638 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:22:08.719 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:22:08.720 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:22:08.720 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:22:08.720 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:22:09.849 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:22:09.906 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 57.514ms
+2024-04-04 16:22:09.965 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:22:10.022 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.0152ms
+2024-04-04 16:23:07.742 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:23:07.825 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:23:07.826 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:23:07.826 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:23:07.826 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:23:08.925 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:23:08.984 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 59.7033ms
+2024-04-04 16:23:09.048 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:23:09.104 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.4149ms
+2024-04-04 16:26:30.016 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:26:30.105 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:26:30.106 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:26:30.106 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:26:30.106 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:26:31.261 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:26:31.320 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 58.9883ms
+2024-04-04 16:26:31.387 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:26:31.445 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.3563ms
+2024-04-04 16:26:53.394 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 16:26:53.480 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 16:26:53.481 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 16:26:53.482 +07:00 [INF] Hosting environment: Development
+2024-04-04 16:26:53.482 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 16:26:54.589 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 16:26:54.645 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 56.8835ms
+2024-04-04 16:26:54.704 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 16:26:54.762 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.8969ms
+2024-04-04 17:17:02.616 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 17:17:02.721 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 17:17:08.785 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 17:17:09.066 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 17:17:09.084 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 17:17:09.087 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-04-04 17:17:09.090 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-04-04 17:17:09.100 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-04-04 17:17:09.107 +07:00 [INF] Applying migration '20240404101702_bagps.v3'.
+2024-04-04 17:17:09.148 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL IDENTITY,
+    [PermissionName] tinyint NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-04-04 17:17:09.160 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-04-04 17:17:09.168 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermission] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    CONSTRAINT [PK_UserPermission] PRIMARY KEY ([UserId], [PermissionId]),
+    CONSTRAINT [FK_UserPermission_Permission_PermissionId] FOREIGN KEY ([PermissionId]) REFERENCES [Permission] ([PermissionId]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserPermission_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User] ([Id]) ON DELETE CASCADE
+);
+2024-04-04 17:17:09.170 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_UserPermission_PermissionId] ON [UserPermission] ([PermissionId]);
+2024-04-04 17:17:09.173 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240404101702_bagps.v3', N'7.0.16');
+2024-04-04 17:19:29.729 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-04 17:19:29.816 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-04 17:19:29.817 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-04 17:19:29.817 +07:00 [INF] Hosting environment: Development
+2024-04-04 17:19:29.818 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-04 17:19:30.972 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-04 17:19:31.033 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 61.41ms
+2024-04-04 17:19:31.100 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-04 17:19:31.159 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 59.8975ms
+2024-04-04 17:25:36.067 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi - application/json 451
+2024-04-04 17:25:36.076 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-04 17:25:36.126 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:25:36.127 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.CreateUser (BA_GPS.Api)'
+2024-04-04 17:25:36.141 +07:00 [INF] Route matched with {action = "CreateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateUser(BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:25:36.483 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-04 17:25:36.871 +07:00 [INF] Executed DbCommand (48ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (DbType = DateTime2), @p6='?' (Size = 4000), @p7='?' (Size = 200), @p8='?' (DbType = Boolean), @p9='?' (Size = 1) (DbType = Byte), @p10='?' (DbType = DateTime2), @p11='?' (Size = 4000), @p12='?' (Size = 1) (DbType = Byte), @p13='?' (Size = 4000), @p14='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [User] ([Id], [Address], [CompanyId], [CreateDate], [DateOfBirth], [DeletedDate], [Email], [FullName], [IsDeleted], [IsMale], [LastModifyDate], [PassWordHash], [PermissionId], [PhoneNumber], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14);
+2024-04-04 17:25:36.886 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-04 17:25:36.892 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.CreateUser (BA_GPS.Api) in 749.9496ms
+2024-04-04 17:25:36.892 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.CreateUser (BA_GPS.Api)'
+2024-04-04 17:25:36.894 +07:00 [INF] HTTP POST /UserApi responded 200 in 820.1160 ms
+2024-04-04 17:25:36.897 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi - 200 null application/json; charset=utf-8 829.9462ms
+2024-04-04 17:26:19.291 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-04 17:26:19.294 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 17:26:19.302 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:26:19.515 +07:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-04 17:26:19.529 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-04 17:26:19.529 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-04 17:26:19.558 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-04 17:26:19.562 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-04 17:26:19.564 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 261.1375ms
+2024-04-04 17:26:19.564 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 17:26:19.564 +07:00 [INF] HTTP GET /UserApi responded 200 in 271.8133 ms
+2024-04-04 17:26:19.564 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 273.1993ms
+2024-04-04 17:34:16.104 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - application/json 484
+2024-04-04 17:34:16.112 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:34:16.112 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-04 17:34:16.120 +07:00 [INF] Route matched with {action = "UpdateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:34:16.291 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:34:16.297 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-04 17:34:16.297 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api) in 177.4102ms
+2024-04-04 17:34:16.298 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-04 17:34:16.298 +07:00 [INF] HTTP PUT /UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a responded 400 in 188.3702 ms
+2024-04-04 17:34:16.298 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - 400 null text/plain; charset=utf-8 193.7633ms
+2024-04-04 17:34:29.901 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - application/json 484
+2024-04-04 17:34:29.903 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:34:29.903 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-04 17:34:29.903 +07:00 [INF] Route matched with {action = "UpdateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:34:29.915 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:34:29.919 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:34:29.976 +07:00 [INF] Executed DbCommand (27ms) [Parameters=[@p14='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 200), @p7='?' (DbType = Boolean), @p8='?' (Size = 1) (DbType = Byte), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (Size = 4000), @p13='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [User] SET [Address] = @p0, [CompanyId] = @p1, [CreateDate] = @p2, [DateOfBirth] = @p3, [DeletedDate] = @p4, [Email] = @p5, [FullName] = @p6, [IsDeleted] = @p7, [IsMale] = @p8, [LastModifyDate] = @p9, [PassWordHash] = @p10, [PermissionId] = @p11, [PhoneNumber] = @p12, [UserName] = @p13
+OUTPUT 1
+WHERE [Id] = @p14;
+2024-04-04 17:34:29.981 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-04 17:34:29.982 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api) in 78.4227ms
+2024-04-04 17:34:29.982 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-04 17:34:29.982 +07:00 [INF] HTTP PUT /UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a responded 200 in 79.8102 ms
+2024-04-04 17:34:29.982 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - 200 null application/json; charset=utf-8 82.8659ms
+2024-04-04 17:35:03.499 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - null null
+2024-04-04 17:35:03.500 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUserById (BA_GPS.Api)'
+2024-04-04 17:35:03.507 +07:00 [INF] Route matched with {action = "GetUserById", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(System.Guid) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:35:03.543 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:35:03.544 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-04 17:35:03.544 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUserById (BA_GPS.Api) in 36.5474ms
+2024-04-04 17:35:03.544 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUserById (BA_GPS.Api)'
+2024-04-04 17:35:03.544 +07:00 [INF] HTTP GET /UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a responded 200 in 44.9115 ms
+2024-04-04 17:35:03.545 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - 200 null application/json; charset=utf-8 46.0647ms
+2024-04-04 17:35:33.903 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-04 17:35:33.906 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 17:35:33.906 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:35:33.956 +07:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-04 17:35:34.035 +07:00 [INF] Executed DbCommand (49ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-04 17:35:34.036 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-04 17:35:34.036 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 129.0069ms
+2024-04-04 17:35:34.036 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 17:35:34.036 +07:00 [INF] HTTP GET /UserApi responded 200 in 130.8343 ms
+2024-04-04 17:35:34.037 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 133.5308ms
+2024-04-04 17:36:09.334 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - application/json 481
+2024-04-04 17:36:09.335 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:36:09.336 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-04 17:36:09.338 +07:00 [INF] Route matched with {action = "UpdateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(System.Guid, BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:36:09.426 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:36:09.436 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:36:09.488 +07:00 [INF] Executed DbCommand (19ms) [Parameters=[@p14='?' (DbType = Guid), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (DbType = DateTime2), @p5='?' (Size = 4000), @p6='?' (Size = 200), @p7='?' (DbType = Boolean), @p8='?' (Size = 1) (DbType = Byte), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 1) (DbType = Byte), @p12='?' (Size = 4000), @p13='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [User] SET [Address] = @p0, [CompanyId] = @p1, [CreateDate] = @p2, [DateOfBirth] = @p3, [DeletedDate] = @p4, [Email] = @p5, [FullName] = @p6, [IsDeleted] = @p7, [IsMale] = @p8, [LastModifyDate] = @p9, [PassWordHash] = @p10, [PermissionId] = @p11, [PhoneNumber] = @p12, [UserName] = @p13
+OUTPUT 1
+WHERE [Id] = @p14;
+2024-04-04 17:36:09.489 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-04 17:36:09.489 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api) in 151.1438ms
+2024-04-04 17:36:09.489 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-04 17:36:09.489 +07:00 [INF] HTTP PUT /UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a responded 200 in 154.2814 ms
+2024-04-04 17:36:09.490 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/ccc5c624-f300-4f7f-b9c7-840f74560d5a - 200 null application/json; charset=utf-8 156.267ms
+2024-04-04 17:36:36.716 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-04 17:36:36.719 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 17:36:36.719 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:36:36.731 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-04 17:36:36.738 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-04 17:36:36.738 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-04 17:36:36.738 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 19.4362ms
+2024-04-04 17:36:36.738 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-04 17:36:36.739 +07:00 [INF] HTTP GET /UserApi responded 200 in 20.3714 ms
+2024-04-04 17:36:36.739 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 22.4747ms
+2024-04-04 17:37:53.463 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 179
+2024-04-04 17:37:53.467 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:37:53.467 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-04 17:37:53.471 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:37:53.533 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 200), @__searchRequest_StartDate_1='?' (DbType = DateTime2), @__searchRequest_EndDate_2='?' (DbType = DateTime2), @__searchRequest_Gender_Value_3='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[FullName]) > 0) AND [u].[LastModifyDate] >= @__searchRequest_StartDate_1 AND [u].[LastModifyDate] <= @__searchRequest_EndDate_2 AND [u].[IsMale] = @__searchRequest_Gender_Value_3
+2024-04-04 17:37:53.543 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 200), @__searchRequest_StartDate_1='?' (DbType = DateTime2), @__searchRequest_EndDate_2='?' (DbType = DateTime2), @__searchRequest_Gender_Value_3='?' (Size = 1) (DbType = Byte), @__p_4='?' (DbType = Int32), @__p_5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[FullName]) > 0) AND [u].[LastModifyDate] >= @__searchRequest_StartDate_1 AND [u].[LastModifyDate] <= @__searchRequest_EndDate_2 AND [u].[IsMale] = @__searchRequest_Gender_Value_3
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_4 ROWS FETCH NEXT @__p_5 ROWS ONLY
+2024-04-04 17:37:53.544 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-04 17:37:53.544 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 72.9555ms
+2024-04-04 17:37:53.544 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-04 17:37:53.544 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 77.3289 ms
+2024-04-04 17:37:53.544 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 81.5989ms
+2024-04-04 17:37:59.354 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 180
+2024-04-04 17:37:59.354 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:37:59.354 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-04 17:37:59.354 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:37:59.371 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 200), @__searchRequest_StartDate_1='?' (DbType = DateTime2), @__searchRequest_EndDate_2='?' (DbType = DateTime2), @__searchRequest_Gender_Value_3='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[FullName]) > 0) AND [u].[LastModifyDate] >= @__searchRequest_StartDate_1 AND [u].[LastModifyDate] <= @__searchRequest_EndDate_2 AND [u].[IsMale] = @__searchRequest_Gender_Value_3
+2024-04-04 17:37:59.376 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 200), @__searchRequest_StartDate_1='?' (DbType = DateTime2), @__searchRequest_EndDate_2='?' (DbType = DateTime2), @__searchRequest_Gender_Value_3='?' (Size = 1) (DbType = Byte), @__p_4='?' (DbType = Int32), @__p_5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[FullName]) > 0) AND [u].[LastModifyDate] >= @__searchRequest_StartDate_1 AND [u].[LastModifyDate] <= @__searchRequest_EndDate_2 AND [u].[IsMale] = @__searchRequest_Gender_Value_3
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_4 ROWS FETCH NEXT @__p_5 ROWS ONLY
+2024-04-04 17:37:59.376 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-04 17:37:59.376 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 21.7087ms
+2024-04-04 17:37:59.376 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-04 17:37:59.376 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 22.2620 ms
+2024-04-04 17:37:59.377 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 22.8149ms
+2024-04-04 17:38:31.752 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/ban/ccc5c624-f300-4f7f-b9c7-840f74560d5a - null 0
+2024-04-04 17:38:31.755 +07:00 [INF] CORS policy execution successful.
+2024-04-04 17:38:31.756 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.RemoveUser (BA_GPS.Api)'
+2024-04-04 17:38:31.762 +07:00 [INF] Route matched with {action = "RemoveUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RemoveUser(System.Guid) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-04 17:38:31.768 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:38:31.824 +07:00 [INF] Executed DbCommand (50ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-04 17:38:31.904 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [User] SET [DeletedDate] = @p0, [IsDeleted] = @p1, [LastModifyDate] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2024-04-04 17:38:31.908 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-04 17:38:31.909 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.RemoveUser (BA_GPS.Api) in 147.6802ms
+2024-04-04 17:38:31.910 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.RemoveUser (BA_GPS.Api)'
+2024-04-04 17:38:31.910 +07:00 [INF] HTTP PUT /UserApi/ban/ccc5c624-f300-4f7f-b9c7-840f74560d5a responded 200 in 154.4554 ms
+2024-04-04 17:38:31.910 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/ban/ccc5c624-f300-4f7f-b9c7-840f74560d5a - 200 null application/json; charset=utf-8 158.1288ms

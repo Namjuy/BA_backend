@@ -15,4 +15,3 @@
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/obj/Debug/net7.0/BA_GPS.Domain.pdb
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/obj/Debug/net7.0/BA_GPS.Domain.genruntimeconfig.cache
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/obj/Debug/net7.0/ref/BA_GPS.Domain.dll
-/Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/obj/Debug/net7.0/BA_GPS.Domain.sourcelink.json
