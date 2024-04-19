@@ -69,8 +69,19 @@ namespace BA_GPS.Infrastructure.Repositories
         /// <returns>Kết quả True/ false</returns>
         public async Task<bool> Update(TEntity entity)
         {
-           _dbContext.Update(entity);
-            return await _dbContext.SaveChangesAsync() > 0;
+            var existingEntity = await _dbContext.Set<TEntity>().FindAsync(entity.Id);
+
+            if (existingEntity != null)
+            {
+                // Update the properties of the existing entity with the values of the incoming entity
+                _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
+                await _dbContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace BA_GPS.Api.Migrations
                 {
                     PermissionId = table.Column<byte>(type: "tinyint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PermissionName = table.Column<byte>(type: "tinyint", maxLength: 20, nullable: false)
+                    PermissionName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {

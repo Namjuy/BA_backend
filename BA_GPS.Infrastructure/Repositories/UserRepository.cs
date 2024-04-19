@@ -13,14 +13,14 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 /// </Modified>
 namespace BA_GPS.Infrastructure.Repositories
 {
-	public class UserRepository
-	{
+    public class UserRepository
+    {
         private readonly GenericDbContext _dbContext;
 
         public UserRepository(GenericDbContext dbContext)
-		{
-			_dbContext = dbContext;
-		}
+        {
+            _dbContext = dbContext;
+        }
 
         /// <summary>
         /// Tìm kiếm người dùng trên database
@@ -52,10 +52,22 @@ namespace BA_GPS.Infrastructure.Repositories
 
                 default:
                     break;
-            }       
+            }
+
+            if (searchRequest.StartDate != null)
+            {
                 query = query.Where(u => u.LastModifyDate >= searchRequest.StartDate);
+            }
+
+            if (searchRequest.EndDate != null)
+            {
                 query = query.Where(u => u.LastModifyDate <= searchRequest.EndDate);
-                query = query.Where(u => u.IsMale == searchRequest.Gender.Value);
+            }
+
+            if(searchRequest.Gender != null)
+            {
+                query = query.Where(u => u.IsMale == searchRequest.Gender);
+            }
 
             dataResponse.TotalPage = await query.CountAsync();
 
@@ -75,6 +87,11 @@ namespace BA_GPS.Infrastructure.Repositories
         public async Task<bool> CheckUserNameExist(string userName)
         {
             return await _dbContext.Users.Where(u => !u.IsDeleted).FirstOrDefaultAsync(item => item.UserName == userName) is null;
+        }
+
+        public async Task<bool> CheckPhoneExist(string phone)
+        {
+            return await _dbContext.Users.Where(u => !u.IsDeleted).FirstOrDefaultAsync(item => item.PhoneNumber == phone) is null;
         }
 
         /// <summary>

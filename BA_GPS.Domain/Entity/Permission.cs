@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
-using System.Text.Json.Serialization;
+
 
 /// <summary>
 /// 
@@ -13,13 +13,7 @@ using System.Text.Json.Serialization;
 /// </Modified>
 namespace BA_GPS.Domain.Entity
 {
-    public enum PermissionId : byte
-    {
-        ADMIN = 1,
-        USER = 2,
-        GUEST = 3
-    }
-
+  
     [Table("Permission")]
     public class Permission
     {
@@ -33,7 +27,7 @@ namespace BA_GPS.Domain.Entity
 
         [NotNull]
         [MaxLength(20, ErrorMessage = "Tối đa 20 ký tự")]
-        public PermissionId PermissionName { get; set; }
+        public string PermissionName { get; set; }
 
  
 

@@ -53,7 +53,7 @@ namespace BA_GPS.Api.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while processing login request.");
+                _logger.LogError(ex, "Lỗi đăng nhập");
                 return new StatusCodeResult(500);
             }
             return Ok(token);

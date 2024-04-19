@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1tp7a/qzcnuCLxjZSQ2SFy7Vf6LndXx+ibFFD+cB1FM3hWMe1ce7/uhiFC1XmwOT699ouQeF+U4N5qMDQxDRRw==",
+  "dgSpecHash": "bnXfurFN/mgu9g9pGJZ+NATrT3jzovoeAdbGA8k8uYs4CCoF1ALgD4pEUqASUKKQfYEY2zJ3W35nMBSpBkWHaw==",
   "success": true,
   "projectFilePath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/BA_GPS.Api.csproj",
   "expectedPackageFiles": [
+    "/Users/user/.nuget/packages/aspnetcoreratelimit/5.0.0/aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/automapper/13.0.1/automapper.13.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
@@ -48,6 +49,7 @@
     "/Users/user/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.20.0/microsoft.visualstudio.azure.containers.tools.targets.1.20.0.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/Users/user/.nuget/packages/newtonsoft.json/13.0.2/newtonsoft.json.13.0.2.nupkg.sha512",
     "/Users/user/.nuget/packages/serilog/3.1.1/serilog.3.1.1.nupkg.sha512",
     "/Users/user/.nuget/packages/serilog.aspnetcore/8.0.1/serilog.aspnetcore.8.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/serilog.extensions.hosting/8.0.0/serilog.extensions.hosting.8.0.0.nupkg.sha512",

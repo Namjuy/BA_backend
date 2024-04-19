@@ -28,6 +28,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/BA_GPS.Common.csproj": {
+                "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/BA_GPS.Common.csproj"
+              },
               "/Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/BA_GPS.Domain.csproj": {
                 "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/BA_GPS.Domain.csproj"
               },
@@ -47,6 +50,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AspNetCoreRateLimit": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"

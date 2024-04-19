@@ -1,11 +1,14 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
+using System.Threading.RateLimiting;
+using BA_GPS.Common;
 using BA_GPS.Common.Authentication;
 using BA_GPS.Domain.Entity;
 using BA_GPS.Infrastructure;
 using BA_GPS.Infrastructure.Repositories;
 using BA_GPS.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -21,14 +24,6 @@ builder.Host.UseSerilog();
 // Register configuration
 ConfigurationManager configuration = builder.Configuration;
 
-//builder.Services.AddControllers().AddJsonOptions(x =>
-//{
-
-//    x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-//    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-//    x.JsonSerializerOptions.AllowTrailingCommas = true;
-//});
-
 // Add authorization
 builder.Services.AddAuthorization();
 
@@ -36,6 +31,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -61,6 +57,35 @@ builder.Services.AddSwaggerGen(option =>
             },
             new string[]{}
         }
+    });
+});
+
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+
+});
+
+builder.Services.AddRateLimiter(rateLimiterOptions =>
+{
+    rateLimiterOptions.AddFixedWindowLimiter("fixed", options =>
+    {
+        options.PermitLimit = 10;
+        options.Window = TimeSpan.FromSeconds(10);
+        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        options.QueueLimit = 5;
+    });
+});
+
+builder.Services.AddRateLimiter(rateLimiterOptions =>
+{
+    rateLimiterOptions.AddSlidingWindowLimiter("sliding", options =>
+    {
+        options.PermitLimit = 10;
+        options.Window = TimeSpan.FromSeconds(10);
+        options.SegmentsPerWindow = 2;
+        options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+        options.QueueLimit = 5;
     });
 });
 
@@ -92,7 +117,7 @@ builder.Services.AddScoped<PasswordHasher>();
 builder.Services.AddScoped<JwtUltis>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<AuthenService>();
-
+builder.Services.AddScoped<CommonService>();
 builder.Services.AddMemoryCache();
 
 // Add Cors
@@ -127,6 +152,8 @@ app.UseAuthorization();
 
 // Add this line to enable CORS
 app.UseCors("CorsPolicy");
+
+app.UseRateLimiter();
 
 app.MapControllers();
 

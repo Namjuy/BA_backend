@@ -1,0 +1,630 @@
+2024-04-19 08:49:28.730 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 08:49:28.822 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 08:49:28.823 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 08:49:28.823 +07:00 [INF] Hosting environment: Development
+2024-04-19 08:49:28.824 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 08:49:30.066 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 08:49:30.128 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 61.988ms
+2024-04-19 08:49:30.138 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - null null
+2024-04-19 08:49:30.360 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-04-19 08:49:30.361 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 222.1765ms
+2024-04-19 08:49:30.444 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 08:49:30.515 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.473ms
+2024-04-19 08:49:36.585 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 08:49:36.594 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 08:49:36.644 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (0|1)
+2024-04-19 08:49:36.646 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-19 08:49:36.648 +07:00 [INF] HTTP GET /UserApi responded 401 in 56.9425 ms
+2024-04-19 08:49:36.648 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 401 0 null 62.8597ms
+2024-04-19 08:49:55.832 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 50
+2024-04-19 08:49:55.843 +07:00 [INF] CORS policy execution successful.
+2024-04-19 08:49:55.848 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 08:49:55.871 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-19 08:49:56.215 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-19 08:50:11.175 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-19 08:50:11.182 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+System.Net.Sockets.SocketException (22): Invalid argument
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketOptionErrorAndThrowException(SocketError error, String callerName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Receive(SNIPacket& packet, Int32 timeoutInMilliseconds)
+   at Microsoft.Data.SqlClient.SNI.TdsParserStateObjectManaged.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst, String serverCert)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.Net.Sockets.SocketException (22): Invalid argument
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketOptionErrorAndThrowException(SocketError error, String callerName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Receive(SNIPacket& packet, Int32 timeoutInMilliseconds)
+   at Microsoft.Data.SqlClient.SNI.TdsParserStateObjectManaged.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst, String serverCert)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2024-04-19 08:50:11.258 +07:00 [ERR] Error generating token for user: acc1
+System.Net.Sockets.SocketException (22): Invalid argument
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketOptionErrorAndThrowException(SocketError error, String callerName)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Receive(SNIPacket& packet, Int32 timeoutInMilliseconds)
+   at Microsoft.Data.SqlClient.SNI.TdsParserStateObjectManaged.ReadSyncOverAsync(Int32 timeoutRemaining, UInt32& error)
+   at Microsoft.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   at Microsoft.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   at Microsoft.Data.SqlClient.TdsParser.ConsumePreLoginHandshake(SqlConnectionEncryptOption encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean& marsCapable, Boolean& fedAuthRequired, Boolean tlsFirst, String serverCert)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.UserRepository.GetByUserName(String username) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/UserRepository.cs:line 104
+   at BA_GPS.Infrastructure.Services.AuthenService.Login(LoginRequest loginRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/AuthenService.cs:line 40
+2024-04-19 08:50:11.265 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-19 08:50:11.268 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 15394.6445ms
+2024-04-19 08:50:11.268 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 08:50:11.268 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 15433.1737 ms
+2024-04-19 08:50:11.275 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 0 text/plain; charset=utf-8 15442.8081ms
+2024-04-19 08:50:54.672 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 50
+2024-04-19 08:50:54.675 +07:00 [INF] CORS policy execution successful.
+2024-04-19 08:50:54.675 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 08:50:54.676 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-19 08:50:55.071 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-19 08:50:55.136 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-19 08:50:55.136 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 460.0769ms
+2024-04-19 08:50:55.136 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 08:50:55.136 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 463.5373 ms
+2024-04-19 08:50:55.136 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 464.6182ms
+2024-04-19 08:51:20.879 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1 - null null
+2024-04-19 08:51:20.928 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 08:51:20.932 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 08:51:21.093 +07:00 [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-19 08:51:21.101 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 08:51:21.101 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 08:51:21.123 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE 0 = 1
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-19 08:51:21.123 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-19 08:51:21.134 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 201.743ms
+2024-04-19 08:51:21.134 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 08:51:21.134 +07:00 [INF] HTTP GET /UserApi responded 200 in 252.4159 ms
+2024-04-19 08:51:21.134 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1 - 200 null application/json; charset=utf-8 255.3224ms
+2024-04-19 09:12:21.941 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:12:22.031 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:12:22.032 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:12:22.032 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:12:22.032 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:12:23.142 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:12:23.202 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 60.113ms
+2024-04-19 09:12:23.323 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:12:23.381 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.6906ms
+2024-04-19 09:12:38.319 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 50
+2024-04-19 09:12:38.328 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:12:38.378 +07:00 [INF] CORS policy execution successful.
+2024-04-19 09:12:38.380 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 09:12:38.394 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-19 09:12:38.743 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-19 09:12:39.150 +07:00 [INF] Executed DbCommand (31ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-19 09:12:39.221 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-19 09:12:39.223 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 827.5137ms
+2024-04-19 09:12:39.223 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 09:12:39.225 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 899.4377 ms
+2024-04-19 09:12:39.229 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 910.3845ms
+2024-04-19 09:12:59.116 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:12:59.162 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:12:59.166 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:12:59.169 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 2.9942ms
+2024-04-19 09:12:59.170 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:12:59.170 +07:00 [ERR] HTTP GET /UserApi responded 500 in 50.7050 ms
+System.InvalidOperationException: Unable to resolve service for type 'BA_GPS.Common.CommonService' while attempting to activate 'BA_GPS.Api.Controllers.UserApi'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method107(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-04-19 09:12:59.176 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'BA_GPS.Common.CommonService' while attempting to activate 'BA_GPS.Api.Controllers.UserApi'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method107(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.RateLimiting.RateLimitingMiddleware.InvokeInternal(HttpContext context, EnableRateLimitingAttribute enableRateLimitingAttribute)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-04-19 09:12:59.179 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 500 null text/plain; charset=utf-8 62.8966ms
+2024-04-19 09:13:50.464 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:13:50.548 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:13:50.550 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:13:50.550 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:13:50.550 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:13:51.665 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:13:51.722 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 58.1613ms
+2024-04-19 09:13:51.789 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:13:51.847 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.8887ms
+2024-04-19 09:14:11.839 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:14:11.851 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:14:11.941 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:11.953 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:12.022 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:12.025 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 69.3077ms
+2024-04-19 09:14:12.025 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:12.026 +07:00 [INF] HTTP GET /UserApi responded 400 in 180.4845 ms
+2024-04-19 09:14:12.027 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 400 null text/plain; charset=utf-8 187.9574ms
+2024-04-19 09:14:21.701 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:21.708 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:21.708 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:21.718 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:21.718 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 9.6642ms
+2024-04-19 09:14:21.718 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:21.718 +07:00 [INF] HTTP GET /UserApi responded 400 in 16.9228 ms
+2024-04-19 09:14:21.718 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 17.6489ms
+2024-04-19 09:14:24.235 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:24.242 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.242 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:24.253 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:24.253 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 10.5019ms
+2024-04-19 09:14:24.253 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.253 +07:00 [INF] HTTP GET /UserApi responded 400 in 17.4192 ms
+2024-04-19 09:14:24.253 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 17.9445ms
+2024-04-19 09:14:24.430 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:24.431 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.431 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:24.433 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:24.433 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 2.0029ms
+2024-04-19 09:14:24.433 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.434 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.0620 ms
+2024-04-19 09:14:24.434 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 3.5896ms
+2024-04-19 09:14:24.620 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:24.620 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.620 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:24.621 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:24.621 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.3647ms
+2024-04-19 09:14:24.621 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.621 +07:00 [INF] HTTP GET /UserApi responded 400 in 0.8692 ms
+2024-04-19 09:14:24.621 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 1.3195ms
+2024-04-19 09:14:24.795 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:24.799 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.799 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:24.800 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:24.800 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.7289ms
+2024-04-19 09:14:24.800 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.800 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.5840 ms
+2024-04-19 09:14:24.800 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 5.6177ms
+2024-04-19 09:14:24.972 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:24.973 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.973 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:24.973 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:24.974 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.44ms
+2024-04-19 09:14:24.974 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:24.974 +07:00 [INF] HTTP GET /UserApi responded 400 in 1.0035 ms
+2024-04-19 09:14:24.974 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 1.3489ms
+2024-04-19 09:14:25.552 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:25.552 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:25.553 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:25.555 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:25.555 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 2.1644ms
+2024-04-19 09:14:25.555 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:25.555 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.4293 ms
+2024-04-19 09:14:25.556 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 3.9197ms
+2024-04-19 09:14:26.046 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:26.048 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:26.049 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:26.050 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:26.051 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 1.7371ms
+2024-04-19 09:14:26.051 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:26.051 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.5555 ms
+2024-04-19 09:14:26.051 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 4.7531ms
+2024-04-19 09:14:26.445 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:26.446 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:26.446 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:26.447 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:26.447 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.6494ms
+2024-04-19 09:14:26.447 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:26.447 +07:00 [INF] HTTP GET /UserApi responded 400 in 1.6813 ms
+2024-04-19 09:14:26.447 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 2.0162ms
+2024-04-19 09:14:26.658 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:26.659 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:26.659 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:26.660 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:26.661 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 1.9103ms
+2024-04-19 09:14:26.661 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:26.661 +07:00 [INF] HTTP GET /UserApi responded 400 in 2.7805 ms
+2024-04-19 09:14:26.661 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 3.1111ms
+2024-04-19 09:14:26.840 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:27.122 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:27.124 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:27.128 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:27.129 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 3.9132ms
+2024-04-19 09:14:27.129 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:27.137 +07:00 [INF] HTTP GET /UserApi responded 400 in 295.9325 ms
+2024-04-19 09:14:27.139 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 298.9366ms
+2024-04-19 09:14:27.681 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:32.219 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:32.221 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:32.224 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:32.225 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 3.8999ms
+2024-04-19 09:14:32.225 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:32.225 +07:00 [INF] HTTP GET /UserApi responded 400 in 4544.4938 ms
+2024-04-19 09:14:32.226 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 4545.1542ms
+2024-04-19 09:14:33.051 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:33.052 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:33.052 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:33.054 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:33.054 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 1.8302ms
+2024-04-19 09:14:33.054 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:33.054 +07:00 [INF] HTTP GET /UserApi responded 400 in 2.9482 ms
+2024-04-19 09:14:33.054 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 3.4546ms
+2024-04-19 09:14:33.910 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:33.913 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:33.913 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:33.914 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:33.915 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 1.3604ms
+2024-04-19 09:14:33.915 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:33.915 +07:00 [INF] HTTP GET /UserApi responded 400 in 4.4515 ms
+2024-04-19 09:14:33.915 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 5.3998ms
+2024-04-19 09:14:34.626 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:34.627 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:34.627 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:34.629 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:34.630 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 1.9881ms
+2024-04-19 09:14:34.630 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:34.630 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.3633 ms
+2024-04-19 09:14:34.630 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 4.1095ms
+2024-04-19 09:14:34.992 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:34.993 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:34.993 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:34.996 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:34.996 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 2.3975ms
+2024-04-19 09:14:34.996 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:34.996 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.6176 ms
+2024-04-19 09:14:34.996 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 3.9806ms
+2024-04-19 09:14:35.379 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:35.379 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:35.380 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:35.380 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:35.380 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.5909ms
+2024-04-19 09:14:35.380 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:35.380 +07:00 [INF] HTTP GET /UserApi responded 400 in 1.3693 ms
+2024-04-19 09:14:35.380 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 1.7457ms
+2024-04-19 09:14:35.709 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:35.709 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:35.709 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:35.710 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:35.710 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.492ms
+2024-04-19 09:14:35.710 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:35.710 +07:00 [INF] HTTP GET /UserApi responded 400 in 1.2505 ms
+2024-04-19 09:14:35.710 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 1.5467ms
+2024-04-19 09:14:36.042 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:36.043 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:36.043 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:36.045 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:36.046 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 2.8417ms
+2024-04-19 09:14:36.046 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:36.046 +07:00 [INF] HTTP GET /UserApi responded 400 in 3.7530 ms
+2024-04-19 09:14:36.046 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 4.1507ms
+2024-04-19 09:14:36.256 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:36.257 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:36.257 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:36.258 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:36.258 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 0.6383ms
+2024-04-19 09:14:36.258 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:36.258 +07:00 [INF] HTTP GET /UserApi responded 400 in 1.3340 ms
+2024-04-19 09:14:36.258 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 1.6883ms
+2024-04-19 09:14:36.426 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:14:37.319 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:37.319 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:14:37.321 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:14:37.322 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 2.3572ms
+2024-04-19 09:14:37.322 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:14:37.322 +07:00 [INF] HTTP GET /UserApi responded 400 in 895.8661 ms
+2024-04-19 09:14:37.323 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 400 null text/plain; charset=utf-8 896.4412ms
+2024-04-19 09:16:10.798 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:16:10.804 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 6.6222ms
+2024-04-19 09:16:10.904 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:16:10.916 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 12.0928ms
+2024-04-19 09:16:19.764 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:16:19.851 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:16:19.852 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:16:19.852 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:16:19.852 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:16:20.950 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:16:21.009 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 59.2834ms
+2024-04-19 09:16:21.138 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:16:21.195 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.251ms
+2024-04-19 09:18:28.823 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:18:28.840 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:18:28.934 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:18:28.947 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:18:29.283 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-19 09:18:29.697 +07:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-19 09:18:29.718 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:18:29.718 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:18:29.744 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE 0 = 1
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-19 09:18:29.748 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-19 09:18:29.763 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 813.3443ms
+2024-04-19 09:18:29.763 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:18:29.765 +07:00 [INF] HTTP GET /UserApi responded 200 in 928.5105 ms
+2024-04-19 09:18:29.769 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 200 null application/json; charset=utf-8 946.8678ms
+2024-04-19 09:24:38.418 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:24:38.504 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:24:38.506 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:24:38.506 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:24:38.506 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:24:39.634 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:24:39.696 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 60.9833ms
+2024-04-19 09:24:39.764 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:24:39.821 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.3184ms
+2024-04-19 09:24:56.143 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 50
+2024-04-19 09:24:56.152 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:24:56.197 +07:00 [INF] CORS policy execution successful.
+2024-04-19 09:24:56.199 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 09:24:56.212 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-19 09:24:56.535 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-19 09:24:56.959 +07:00 [INF] Executed DbCommand (38ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-19 09:24:57.032 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-19 09:24:57.035 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 821.2448ms
+2024-04-19 09:24:57.035 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-19 09:24:57.037 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 887.3854 ms
+2024-04-19 09:24:57.040 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 897.0165ms
+2024-04-19 09:26:36.765 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:26:36.813 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:26:36.817 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:26:36.903 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-19 09:26:36.908 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:26:36.908 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:26:36.920 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE 0 = 1
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-19 09:26:36.921 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-19 09:26:36.930 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 113.2428ms
+2024-04-19 09:26:36.930 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:26:36.931 +07:00 [INF] HTTP GET /UserApi responded 200 in 163.8795 ms
+2024-04-19 09:26:36.931 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 200 null application/json; charset=utf-8 166.1682ms
+2024-04-19 09:26:42.481 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:26:42.490 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:26:42.490 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:26:42.552 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-19 09:26:42.553 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:26:42.553 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:26:42.580 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-19 09:26:42.581 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-19 09:26:42.586 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 95.3913ms
+2024-04-19 09:26:42.586 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:26:42.586 +07:00 [INF] HTTP GET /UserApi responded 200 in 104.2088 ms
+2024-04-19 09:26:42.586 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 104.9322ms
+2024-04-19 09:26:56.471 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:26:56.567 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:26:56.569 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:26:56.570 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:26:56.570 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:26:57.671 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:26:57.728 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 57.8839ms
+2024-04-19 09:26:57.793 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:26:57.850 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.8662ms
+2024-04-19 09:27:12.176 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:27:12.183 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:27:12.278 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:27:12.290 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:27:12.359 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:27:12.361 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 69.8512ms
+2024-04-19 09:27:12.361 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:27:12.362 +07:00 [INF] HTTP GET /UserApi responded 400 in 181.6375 ms
+2024-04-19 09:27:12.363 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 400 null text/plain; charset=utf-8 187.1599ms
+2024-04-19 09:29:23.490 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:29:23.576 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:29:23.577 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:29:23.577 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:29:23.577 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:29:24.677 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:29:24.736 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 59.4645ms
+2024-04-19 09:29:24.806 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:29:24.861 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.5468ms
+2024-04-19 09:29:37.099 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:29:37.108 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:29:37.197 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:29:37.209 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:29:37.276 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:29:37.278 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 67.9083ms
+2024-04-19 09:29:37.278 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:29:37.279 +07:00 [INF] HTTP GET /UserApi responded 400 in 175.0157 ms
+2024-04-19 09:29:37.280 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 400 null text/plain; charset=utf-8 180.8248ms
+2024-04-19 09:30:13.967 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:30:14.053 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:30:14.055 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:30:14.055 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:30:14.055 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:30:15.161 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:30:15.221 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 60.3102ms
+2024-04-19 09:30:15.286 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:30:15.343 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.5179ms
+2024-04-19 09:30:31.748 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:30:31.757 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:30:31.845 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:30:31.857 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:30:32.176 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-19 09:30:32.572 +07:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-19 09:30:32.593 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:30:32.593 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:30:32.617 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE 0 = 1
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-19 09:30:32.620 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-19 09:30:32.632 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 773.8698ms
+2024-04-19 09:30:32.633 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:30:32.634 +07:00 [INF] HTTP GET /UserApi responded 200 in 880.2728 ms
+2024-04-19 09:30:32.638 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 200 null application/json; charset=utf-8 889.4611ms
+2024-04-19 09:30:54.248 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-19 09:30:54.335 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-19 09:30:54.336 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-19 09:30:54.337 +07:00 [INF] Hosting environment: Development
+2024-04-19 09:30:54.337 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-19 09:30:55.482 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-19 09:30:55.545 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 63.1238ms
+2024-04-19 09:30:55.612 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-19 09:30:55.671 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.0459ms
+2024-04-19 09:31:06.408 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi - null null
+2024-04-19 09:31:06.417 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-19 09:31:06.508 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:31:06.519 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:31:06.586 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:31:06.588 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 67.0582ms
+2024-04-19 09:31:06.588 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:31:06.589 +07:00 [INF] HTTP GET /UserApi responded 400 in 175.0596 ms
+2024-04-19 09:31:06.590 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi - 400 null text/plain; charset=utf-8 182.0487ms
+2024-04-19 09:31:12.632 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1 - null null
+2024-04-19 09:31:12.639 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:31:12.641 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:31:12.656 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-04-19 09:31:12.656 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 14.9263ms
+2024-04-19 09:31:12.656 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:31:12.656 +07:00 [INF] HTTP GET /UserApi responded 400 in 23.4291 ms
+2024-04-19 09:31:12.657 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1 - 400 null text/plain; charset=utf-8 24.2968ms
+2024-04-19 09:31:16.272 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-04-19 09:31:16.279 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:31:16.279 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-19 09:31:16.557 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-19 09:31:16.934 +07:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-19 09:31:16.957 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:31:16.958 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-19 09:31:16.997 +07:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-19 09:31:17.038 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-19 09:31:17.053 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 773.2153ms
+2024-04-19 09:31:17.053 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-19 09:31:17.054 +07:00 [INF] HTTP GET /UserApi responded 200 in 781.5019 ms
+2024-04-19 09:31:17.057 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 785.3547ms

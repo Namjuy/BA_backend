@@ -49,8 +49,8 @@ namespace BA_GPS.Domain.Entity
         [RegularExpression(@"^0\d{9}$", ErrorMessage = "Số điện thoại không chính xác")]
         public string PhoneNumber { get; set; }
 
-        //[JsonConverter(typeof(JsonStringEnumConverter))]
-        public byte PermissionId { get; set; }
+        [NotNull]
+        public byte PermissionId { get;set; }
 
         [RegularExpression(@"^[a-zA-Z0-9._%+-]+@gmail\.com$", ErrorMessage = "Email phải đúng định dạng.")]
         public string Email { get; set; }
@@ -58,6 +58,7 @@ namespace BA_GPS.Domain.Entity
         public string Address { get; set; }
 
         public int CompanyId { get; set; }
+
 
     }
 

@@ -1,9 +1,11 @@
 ﻿using System;
+using BA_GPS.Common;
 using BA_GPS.Domain.DTO;
 using BA_GPS.Domain.Entity;
 using BA_GPS.Infrastructure.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 
 /// <summary>
@@ -15,29 +17,36 @@ using Microsoft.AspNetCore.Mvc;
 /// </Modified>
 namespace BA_GPS.Api.Controllers
 {
-    
+
     [ApiController]
     [Route("[controller]")]
+    [EnableRateLimiting("fixed")]
     public class UserApi : ControllerBase
     {
         private readonly UserService _service;
         private readonly ILogger<UserApi> _logger;
+        private readonly CommonService _common;
 
-        public UserApi(UserService service, ILogger<UserApi> logger)
+        public UserApi(UserService service, ILogger<UserApi> logger, CommonService common)
         {
             _service = service;
             _logger = logger;
-
+            _common = common;
         }
         /// <summary>
         /// Lấy danh sách người dùng
         /// </summary>
         /// <returns></returns>
-        [Authorize(Roles = "0")]
+        [Authorize(Roles = "0,1")]
         [HttpGet(Name = "GetUser")]
+        [EnableRateLimiting("sliding")]
         public async Task<IActionResult> GetUser(int pageIndex, int pageSize)
         {
             var userDataResponse = new DataListResponse<User>();
+            if (!_common.CheckPaginatedItemValid(pageIndex, pageSize))
+            {
+                return BadRequest("Dữ liệu phân trang không hợp lệ");
+            }
             try
             {
                 userDataResponse = await _service.Get(pageIndex, pageSize);
@@ -180,17 +189,22 @@ namespace BA_GPS.Api.Controllers
         [HttpPost("search", Name = "SearchUsers")]
         public async Task<IActionResult> SearchUsers([FromBody] SearchRequest? searchRequest)
         {
+            var dataListResponse = new DataListResponse<User>();
+            if (!_service.CheckSearchValid(searchRequest))
+            {
+                return BadRequest("Thông tin tìm kiếm không hợp lệ");
+            }
             try
             {
-                 await _service.Search(searchRequest);
+                dataListResponse = await _service.Search(searchRequest);
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex, "An error occurred while create user.");
+                _logger.LogInformation(ex, "Lỗi tìm kiếm người dùng.");
                 return new StatusCodeResult(500);
             }
 
-            return Ok(searchRequest);
+            return Ok(dataListResponse);
         }
 
         /// <summary>
@@ -216,12 +230,41 @@ namespace BA_GPS.Api.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogInformation(ex.Message, "An error occurred while checking user.");
+                _logger.LogInformation(ex.Message, "Lỗi kiểm tra người dùng tồn tại");
                 return new StatusCodeResult(500);
             }
             return new OkObjectResult(check);
         }
 
+        /// <summary>
+        /// Kiểm tra số điện thoại có tồn tại hay không
+        /// </summary>
+        /// <param name="phone">Số điện thoại kiểm tra</param>
+        /// <returns>Trạng thái yêu cầu</returns>
+        [HttpGet("checkPhoneExist",Name ="CheckPhoneExist")]
+        public async Task<IActionResult> CheckPhoneExist(string phone)
+        {
+            var check = true;
+            try
+            {
+                if (!_service.CheckPhoneValid(phone))
+                {
+                    check = false;
+                }
+                else
+                {
+                    check = await _service.CheckPhoneExist(phone);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogInformation(ex.Message, "Lỗi kiểm tra người dùng tồn tại");
+                return new StatusCodeResult(500);
+            }
+            return new OkObjectResult(check);
+        }
+        
     }
 }
 

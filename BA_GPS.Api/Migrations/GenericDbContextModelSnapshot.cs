@@ -30,9 +30,10 @@ namespace BA_GPS.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<byte>("PermissionId"));
 
-                    b.Property<byte>("PermissionName")
+                    b.Property<string>("PermissionName")
+                        .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("tinyint");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("PermissionId");
 

@@ -25,7 +25,7 @@ namespace BA_GPS.Infrastructure.Services
         private readonly GenericRepository<User> _repository;
         private readonly UserRepository _userRepository;
         private readonly IMemoryCache _cache;
-        private readonly string cacheKey = "productsCacheKey";
+        //private readonly string _cacheKey = "productsCacheKey";
     
         public UserService(ILogger<UserService> logger, PasswordHasher passwordHasher, GenericRepository<User> repository, UserRepository userRepository, IMemoryCache cache)
         {
@@ -166,7 +166,7 @@ namespace BA_GPS.Infrastructure.Services
                 userDataResponse = await _userRepository.Search(searchRequest);
                 userDataResponse.TotalPage = (int)Math.Ceiling((double)userDataResponse.TotalPage / searchRequest.PageSize);
 
-                _cache.Set(cacheKey, userDataResponse, TimeSpan.FromHours(24));
+                _cache.Set(cacheKey, userDataResponse, TimeSpan.FromMinutes(10));
 
             }
             catch (Exception ex)
@@ -195,6 +195,24 @@ namespace BA_GPS.Infrastructure.Services
         }
 
         /// <summary>
+        /// Kiểm tra số điện thoại của người dùng tồn tại
+        /// </summary>
+        /// <param name="phone">Số điện thoại người dùng</param>
+        /// <returns></returns>
+        public async Task<bool> CheckPhoneExist(string phone)
+        {
+            try
+            {
+                return await _userRepository.CheckPhoneExist(phone);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "Lỗi kiểm tra thông tin người dùng");
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Kiểm tra dữ liệu người dùng hợp lệ hay không
         /// </summary>
         /// <param name="user">Thông tin người dùng</param>
@@ -208,6 +226,22 @@ namespace BA_GPS.Infrastructure.Services
                      user.DateOfBirth == null ||
                      user.DateOfBirth > DateTime.UtcNow.AddYears(-18));
         }
+
+        public bool CheckSearchValid(SearchRequest searchRequest)
+        {
+            if (string.IsNullOrEmpty(searchRequest.Type)|| searchRequest.PageIndex ==null||searchRequest.PageSize ==null)
+            {
+                return false;
+            }
+
+            return true;   
+        }
+
+        public bool CheckPhoneValid(string phone)
+        {
+            return !(string.IsNullOrEmpty(phone) || phone.Length != 10);
+        }
+
 
     }
 }
