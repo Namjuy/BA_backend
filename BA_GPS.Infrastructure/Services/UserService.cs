@@ -26,7 +26,7 @@ namespace BA_GPS.Infrastructure.Services
         private readonly UserRepository _userRepository;
         private readonly IMemoryCache _cache;
         //private readonly string _cacheKey = "productsCacheKey";
-    
+
         public UserService(ILogger<UserService> logger, PasswordHasher passwordHasher, GenericRepository<User> repository, UserRepository userRepository, IMemoryCache cache)
         {
             _passwordHasher = passwordHasher;
@@ -153,10 +153,20 @@ namespace BA_GPS.Infrastructure.Services
         {
             var cacheKey = $"UserSearch_{searchRequest.PageIndex}_{searchRequest.PageSize}";
 
-            if (_cache.TryGetValue(cacheKey, out DataListResponse<User> cachedResult))
+            _cache.Set(cacheKey, searchRequest, TimeSpan.FromMinutes(10));
+
+        
+            if (_cache.TryGetValue(cacheKey, out SearchRequest cachedSearchRequest))
             {
-                _logger.LogInformation("Dữ liệu được lấy từ cache.");
-                return cachedResult;
+                if (CheckSearchRequestChanged(searchRequest, cachedSearchRequest))
+                {
+                   
+                    if (_cache.TryGetValue(cacheKey, out DataListResponse<User> cachedResult))
+                    {
+                        _logger.LogInformation("Dữ liệu được lấy từ cache.");
+                        return cachedResult;
+                    }
+                }
             }
 
             var userDataResponse = new DataListResponse<User>();
@@ -205,7 +215,7 @@ namespace BA_GPS.Infrastructure.Services
             {
                 return await _userRepository.CheckPhoneExist(phone);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi kiểm tra thông tin người dùng");
                 return false;
@@ -229,17 +239,28 @@ namespace BA_GPS.Infrastructure.Services
 
         public bool CheckSearchValid(SearchRequest searchRequest)
         {
-            if (string.IsNullOrEmpty(searchRequest.Type)|| searchRequest.PageIndex ==null||searchRequest.PageSize ==null)
+            if (string.IsNullOrEmpty(searchRequest.Type) || searchRequest.PageIndex == null || searchRequest.PageSize == null)
             {
                 return false;
             }
 
-            return true;   
+            return true;
         }
 
         public bool CheckPhoneValid(string phone)
         {
             return !(string.IsNullOrEmpty(phone) || phone.Length != 10);
+        }
+
+        private bool CheckSearchRequestChanged(SearchRequest searchRequest, SearchRequest cachedSearchRequest)
+        {
+            return searchRequest.InputValue == cachedSearchRequest.InputValue &&
+                   searchRequest.Type == cachedSearchRequest.Type &&
+                   searchRequest.StartDate == cachedSearchRequest.StartDate &&
+                   searchRequest.EndDate == cachedSearchRequest.EndDate &&
+                   searchRequest.Gender == cachedSearchRequest.Gender &&
+                   searchRequest.PageIndex == cachedSearchRequest.PageIndex &&
+                   searchRequest.PageSize == cachedSearchRequest.PageSize;
         }
 
 
