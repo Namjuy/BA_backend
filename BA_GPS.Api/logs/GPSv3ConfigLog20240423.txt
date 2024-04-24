@@ -1,0 +1,1315 @@
+2024-04-23 08:10:01.972 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 08:10:02.067 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 08:10:02.068 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 08:10:02.068 +07:00 [INF] Hosting environment: Development
+2024-04-23 08:10:02.068 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 08:10:03.204 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 08:10:03.264 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 61.195ms
+2024-04-23 08:10:03.273 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - null null
+2024-04-23 08:10:03.518 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-04-23 08:10:03.519 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 245.9365ms
+2024-04-23 08:10:03.602 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 08:10:03.655 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 53.0225ms
+2024-04-23 08:10:39.679 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:10:39.697 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 08:10:39.739 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:10:39.741 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 46.8247 ms
+2024-04-23 08:10:39.741 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 62.088ms
+2024-04-23 08:10:39.743 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:10:39.784 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:10:39.805 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:10:39.819 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:10:40.174 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-23 08:10:43.484 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:10:43.489 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:10:43.490 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:10:43.490 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:10:50.734 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:10:50.735 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:10:50.735 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.7511 ms
+2024-04-23 08:10:50.736 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 2.2942ms
+2024-04-23 08:10:50.740 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:10:50.741 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:10:50.741 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:10:50.741 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:10:55.125 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:10:55.125 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:10:55.125 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:10:55.143 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:10:55.143 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:10:55.143 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:10:55.267 +07:00 [ERR] Lỗi lấy danh sách người dùng
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.GenericRepository`1.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/GenericRepository.cs:line 36
+   at BA_GPS.Infrastructure.Services.UserService.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 50
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:10:55.267 +07:00 [ERR] Lỗi lấy danh sách người dùng
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.GenericRepository`1.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/GenericRepository.cs:line 36
+   at BA_GPS.Infrastructure.Services.UserService.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 50
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:10:55.348 +07:00 [ERR] Lỗi lấy danh sách người dùng
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.GenericRepository`1.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/GenericRepository.cs:line 36
+   at BA_GPS.Infrastructure.Services.UserService.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 50
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:10:55.354 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:10:55.354 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:10:55.354 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:10:55.367 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 4624.3477ms
+2024-04-23 08:10:55.368 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:10:55.368 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 11877.2347ms
+2024-04-23 08:10:55.368 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 15548.6417ms
+2024-04-23 08:10:55.368 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:10:55.368 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:10:55.368 +07:00 [INF] HTTP GET /UserApi responded 200 in 4628.0263 ms
+2024-04-23 08:10:55.368 +07:00 [INF] HTTP GET /UserApi responded 200 in 15625.4120 ms
+2024-04-23 08:10:55.368 +07:00 [INF] HTTP GET /UserApi responded 200 in 11883.7087 ms
+2024-04-23 08:10:55.373 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 499 null application/json; charset=utf-8 11888.47ms
+2024-04-23 08:10:55.373 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 499 null application/json; charset=utf-8 15630.0388ms
+2024-04-23 08:10:55.373 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 4632.7327ms
+2024-04-23 08:11:08.881 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:11:08.884 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:08.884 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.4782 ms
+2024-04-23 08:11:08.884 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 3.2681ms
+2024-04-23 08:11:08.891 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:11:08.893 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:08.894 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:11:08.894 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:11:23.499 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:11:23.507 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:11:23.569 +07:00 [ERR] Lỗi lấy danh sách người dùng
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.GenericRepository`1.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/GenericRepository.cs:line 36
+   at BA_GPS.Infrastructure.Services.UserService.Get(Int32 pageIndex, Int32 pageSize) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 50
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:11:23.571 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:11:23.571 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 14676.6367ms
+2024-04-23 08:11:23.571 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:11:23.571 +07:00 [INF] HTTP GET /UserApi responded 200 in 14679.0091 ms
+2024-04-23 08:11:23.571 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 14680.1188ms
+2024-04-23 08:11:34.529 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/AuthenApi/login - null null
+2024-04-23 08:11:34.532 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:34.532 +07:00 [INF] HTTP OPTIONS /AuthenApi/login responded 204 in 0.7743 ms
+2024-04-23 08:11:34.533 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/AuthenApi/login - 204 null null 3.8042ms
+2024-04-23 08:11:34.539 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 40
+2024-04-23 08:11:34.540 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:34.540 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:11:34.548 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-23 08:11:35.792 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 40
+2024-04-23 08:11:35.793 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:35.793 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:11:35.793 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-23 08:11:49.249 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:11:49.251 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:11:49.259 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:11:49.258 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:11:49.346 +07:00 [ERR] Error generating token for user: admin
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.UserRepository.GetByUserName(String username) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/UserRepository.cs:line 104
+   at BA_GPS.Infrastructure.Services.AuthenService.Login(LoginRequest loginRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/AuthenService.cs:line 40
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:11:49.346 +07:00 [ERR] Error generating token for user: admin
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.UserRepository.GetByUserName(String username) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/UserRepository.cs:line 104
+   at BA_GPS.Infrastructure.Services.AuthenService.Login(LoginRequest loginRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/AuthenService.cs:line 40
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:11:49.348 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-23 08:11:49.348 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-23 08:11:49.348 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 13555.2249ms
+2024-04-23 08:11:49.348 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:11:49.348 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 14800.0515ms
+2024-04-23 08:11:49.348 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 13555.9595 ms
+2024-04-23 08:11:49.348 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:11:49.349 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 14809.2386 ms
+2024-04-23 08:11:49.349 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 0 text/plain; charset=utf-8 14809.9655ms
+2024-04-23 08:11:49.349 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 0 text/plain; charset=utf-8 13556.6615ms
+2024-04-23 08:11:53.083 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 08:11:53.185 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 08:11:53.186 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 08:11:53.186 +07:00 [INF] Hosting environment: Development
+2024-04-23 08:11:53.187 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 08:11:54.266 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 08:11:54.330 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 63.9505ms
+2024-04-23 08:11:54.453 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 08:11:54.512 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 58.5883ms
+2024-04-23 08:11:58.270 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/AuthenApi/login - null null
+2024-04-23 08:11:58.281 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 08:11:58.324 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:58.326 +07:00 [INF] HTTP OPTIONS /AuthenApi/login responded 204 in 47.0723 ms
+2024-04-23 08:11:58.326 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/AuthenApi/login - 204 null null 56.4364ms
+2024-04-23 08:11:58.328 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 40
+2024-04-23 08:11:58.331 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:11:58.333 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:11:58.346 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-23 08:11:58.672 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-23 08:12:13.583 +07:00 [ERR] An error occurred using the connection to database 'BaGPSproject' on server 'localhost,1433'.
+2024-04-23 08:12:13.589 +07:00 [ERR] An exception occurred while iterating over the results of a query for context type 'BA_GPS.Infrastructure.GenericDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:12:13.663 +07:00 [ERR] Error generating token for user: admin
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at BA_GPS.Infrastructure.Repositories.UserRepository.GetByUserName(String username) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Repositories/UserRepository.cs:line 104
+   at BA_GPS.Infrastructure.Services.AuthenService.Login(LoginRequest loginRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/AuthenService.cs:line 40
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2024-04-23 08:12:13.669 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-23 08:12:13.671 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 15323.0645ms
+2024-04-23 08:12:13.671 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:12:13.672 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 15342.8493 ms
+2024-04-23 08:12:13.676 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 499 null text/plain; charset=utf-8 15347.9978ms
+2024-04-23 08:13:12.581 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/AuthenApi/login - null null
+2024-04-23 08:13:12.597 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:12.599 +07:00 [INF] HTTP OPTIONS /AuthenApi/login responded 204 in 16.2104 ms
+2024-04-23 08:13:12.600 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/AuthenApi/login - 204 null null 21.5672ms
+2024-04-23 08:13:12.605 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/AuthenApi/login - application/json 40
+2024-04-23 08:13:12.606 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:12.606 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:13:12.607 +07:00 [INF] Route matched with {action = "Login", controller = "AuthenApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BA_GPS.Common.Modal.LoginRequest) on controller BA_GPS.Api.Controllers.AuthenApi (BA_GPS.Api).
+2024-04-23 08:13:12.957 +07:00 [INF] Executed DbCommand (37ms) [Parameters=[@__username_0='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND [u].[UserName] = @__username_0
+2024-04-23 08:13:13.022 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-04-23 08:13:13.022 +07:00 [INF] Executed action BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api) in 415.3941ms
+2024-04-23 08:13:13.022 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.AuthenApi.Login (BA_GPS.Api)'
+2024-04-23 08:13:13.022 +07:00 [INF] HTTP POST /AuthenApi/login responded 200 in 416.7738 ms
+2024-04-23 08:13:13.023 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/AuthenApi/login - 200 null text/plain; charset=utf-8 417.4588ms
+2024-04-23 08:13:13.044 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:13:13.044 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:13.045 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.1892 ms
+2024-04-23 08:13:13.045 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 0.4904ms
+2024-04-23 08:13:13.046 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:13:13.049 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:13:13.049 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:13.052 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:13:13.055 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:13:13.118 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 08:13:13.122 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-23 08:13:13.122 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-23 08:13:13.140 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 08:13:13.141 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:13:13.154 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 98.302ms
+2024-04-23 08:13:13.154 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:13:13.154 +07:00 [INF] HTTP GET /UserApi responded 200 in 107.5938 ms
+2024-04-23 08:13:13.154 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 107.8605ms
+2024-04-23 08:13:31.629 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - null null
+2024-04-23 08:13:31.630 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:31.630 +07:00 [INF] HTTP OPTIONS /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 204 in 0.3515 ms
+2024-04-23 08:13:31.630 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 204 null null 1.7652ms
+2024-04-23 08:13:31.633 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - application/json 295
+2024-04-23 08:13:31.636 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:13:31.645 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (0)
+2024-04-23 08:13:31.654 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-23 08:13:31.654 +07:00 [INF] HTTP PUT /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 401 in 18.2065 ms
+2024-04-23 08:13:31.654 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 401 0 null 21.2063ms
+2024-04-23 08:13:31.659 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:13:31.660 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:31.660 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.2038 ms
+2024-04-23 08:13:31.660 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 0.5858ms
+2024-04-23 08:13:31.662 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:13:31.662 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:13:31.662 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:31.662 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:13:31.662 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:13:31.668 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 08:13:31.681 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 08:13:31.682 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:13:31.683 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 20.5409ms
+2024-04-23 08:13:31.683 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:13:31.683 +07:00 [INF] HTTP GET /UserApi responded 200 in 21.2766 ms
+2024-04-23 08:13:31.683 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 21.6132ms
+2024-04-23 08:13:38.126 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - null null
+2024-04-23 08:13:38.127 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:38.127 +07:00 [INF] HTTP OPTIONS /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 204 in 0.4565 ms
+2024-04-23 08:13:38.127 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 204 null null 1.1891ms
+2024-04-23 08:13:38.129 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - application/json 295
+2024-04-23 08:13:38.129 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:13:38.131 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (0)
+2024-04-23 08:13:38.131 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-23 08:13:38.131 +07:00 [INF] HTTP PUT /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 401 in 2.2760 ms
+2024-04-23 08:13:38.132 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 401 0 null 2.66ms
+2024-04-23 08:13:38.136 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:13:38.137 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:38.137 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.2481 ms
+2024-04-23 08:13:38.137 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 0.7564ms
+2024-04-23 08:13:38.139 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:13:38.139 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:13:38.139 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:13:38.139 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:13:38.139 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:13:38.154 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 08:13:38.159 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 08:13:38.160 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:13:38.160 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 20.7529ms
+2024-04-23 08:13:38.160 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:13:38.160 +07:00 [INF] HTTP GET /UserApi responded 200 in 21.6043 ms
+2024-04-23 08:13:38.160 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 21.9528ms
+2024-04-23 08:14:10.082 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - null null
+2024-04-23 08:14:10.087 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:10.087 +07:00 [INF] HTTP OPTIONS /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 204 in 0.9031 ms
+2024-04-23 08:14:10.089 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 204 null null 6.04ms
+2024-04-23 08:14:10.094 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - application/json 296
+2024-04-23 08:14:10.095 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:14:10.098 +07:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (0)
+2024-04-23 08:14:10.098 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-04-23 08:14:10.098 +07:00 [INF] HTTP PUT /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 401 in 2.9509 ms
+2024-04-23 08:14:10.098 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 401 0 null 3.834ms
+2024-04-23 08:14:10.104 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:14:10.106 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:10.106 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.2151 ms
+2024-04-23 08:14:10.106 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 1.8589ms
+2024-04-23 08:14:10.108 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:14:10.108 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2024-04-23 08:14:10.108 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:10.108 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:14:10.108 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:14:10.189 +07:00 [INF] Executed DbCommand (80ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 08:14:10.198 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 08:14:10.199 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:14:10.200 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 91.8548ms
+2024-04-23 08:14:10.200 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:14:10.200 +07:00 [INF] HTTP GET /UserApi responded 200 in 92.2702 ms
+2024-04-23 08:14:10.200 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 92.6523ms
+2024-04-23 08:14:11.577 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:14:11.609 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:11.609 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:14:11.609 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:14:11.614 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 08:14:11.621 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 08:14:11.622 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:14:11.622 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 12.4629ms
+2024-04-23 08:14:11.622 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:14:11.622 +07:00 [INF] HTTP GET /UserApi responded 200 in 43.8964 ms
+2024-04-23 08:14:11.622 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 44.7075ms
+2024-04-23 08:14:15.231 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - null null
+2024-04-23 08:14:15.232 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:15.232 +07:00 [INF] HTTP OPTIONS /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 204 in 0.5708 ms
+2024-04-23 08:14:15.232 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 204 null null 1.1298ms
+2024-04-23 08:14:15.233 +07:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - application/json 296
+2024-04-23 08:14:15.234 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:15.235 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-23 08:14:15.237 +07:00 [INF] Route matched with {action = "UpdateUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(BA_GPS.Domain.Entity.User) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:14:15.260 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2024-04-23 08:14:15.342 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[@p4='?' (DbType = Guid), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = DateTime2), @p3='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [User] SET [CompanyId] = @p0, [CreateDate] = @p1, [LastModifyDate] = @p2, [PermissionId] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+2024-04-23 08:14:15.349 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.Entity.User'.
+2024-04-23 08:14:15.350 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api) in 112.239ms
+2024-04-23 08:14:15.350 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.UpdateUser (BA_GPS.Api)'
+2024-04-23 08:14:15.350 +07:00 [INF] HTTP PUT /UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 responded 200 in 116.2727 ms
+2024-04-23 08:14:15.350 +07:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5159/UserApi/3084ac1c-b0c9-4ca7-a2c8-036386279651 - 200 null application/json; charset=utf-8 116.4665ms
+2024-04-23 08:14:15.355 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 08:14:15.355 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:15.355 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 0.1124 ms
+2024-04-23 08:14:15.355 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 0.2914ms
+2024-04-23 08:14:15.357 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 08:14:15.357 +07:00 [INF] CORS policy execution successful.
+2024-04-23 08:14:15.357 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:14:15.357 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 08:14:15.361 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 08:14:15.364 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 08:14:15.364 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 08:14:15.364 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 6.8088ms
+2024-04-23 08:14:15.364 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 08:14:15.364 +07:00 [INF] HTTP GET /UserApi responded 200 in 7.2385 ms
+2024-04-23 08:14:15.364 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 7.4418ms
+2024-04-23 11:35:47.814 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 11:35:47.911 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 11:35:47.912 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 11:35:47.912 +07:00 [INF] Hosting environment: Development
+2024-04-23 11:35:47.912 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 11:35:49.068 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 11:35:49.151 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 84.1ms
+2024-04-23 11:35:49.230 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 11:35:49.287 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.7453ms
+2024-04-23 11:36:05.627 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 11:36:05.633 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 11:36:05.703 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:05.705 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 73.0357 ms
+2024-04-23 11:36:05.705 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 77.9353ms
+2024-04-23 11:36:05.707 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 11:36:05.757 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:05.762 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 11:36:05.776 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:06.129 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-23 11:36:06.560 +07:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 11:36:06.582 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-23 11:36:06.583 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-23 11:36:06.625 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 11:36:06.670 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 11:36:06.688 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 910.0837ms
+2024-04-23 11:36:06.688 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 11:36:06.689 +07:00 [INF] HTTP GET /UserApi responded 200 in 981.2708 ms
+2024-04-23 11:36:06.692 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 985.5879ms
+2024-04-23 11:36:12.732 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-23 11:36:12.744 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:12.745 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 6.7725 ms
+2024-04-23 11:36:12.746 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 14.0345ms
+2024-04-23 11:36:12.754 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:36:12.758 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:12.759 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:12.764 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:12.906 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:36:12.919 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:36:12.925 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 161.1424ms
+2024-04-23 11:36:12.925 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:12.925 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 168.9523 ms
+2024-04-23 11:36:12.926 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 171.8089ms
+2024-04-23 11:36:14.113 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:36:14.114 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:14.115 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:14.115 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:14.159 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:36:14.160 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:36:14.160 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 45.4154ms
+2024-04-23 11:36:14.160 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:14.160 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 46.6954 ms
+2024-04-23 11:36:14.160 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 47.3382ms
+2024-04-23 11:36:14.297 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:36:14.298 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:14.299 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:14.299 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:14.357 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:36:14.358 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:36:14.358 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 58.7304ms
+2024-04-23 11:36:14.358 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:14.358 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 60.7874 ms
+2024-04-23 11:36:14.358 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 61.494ms
+2024-04-23 11:36:14.464 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:36:14.464 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:14.464 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:14.465 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:14.494 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:36:14.495 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:36:14.495 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 30.2642ms
+2024-04-23 11:36:14.495 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:14.495 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 30.7490 ms
+2024-04-23 11:36:14.495 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 31.1906ms
+2024-04-23 11:36:15.415 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:36:15.416 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:15.416 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:15.416 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:15.463 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:36:15.464 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:36:15.464 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 47.6564ms
+2024-04-23 11:36:15.464 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:15.464 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 48.4445 ms
+2024-04-23 11:36:15.464 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 48.7906ms
+2024-04-23 11:36:15.597 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:36:15.598 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:36:15.598 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:15.598 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:36:15.629 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:36:15.630 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:36:15.630 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 31.9227ms
+2024-04-23 11:36:15.630 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:36:15.630 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 32.4097 ms
+2024-04-23 11:36:15.630 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 32.6395ms
+2024-04-23 11:37:53.016 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-23 11:37:53.020 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:37:53.022 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 2.7309 ms
+2024-04-23 11:37:53.023 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 6.8125ms
+2024-04-23 11:37:53.035 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:37:53.038 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:37:53.039 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:37:53.040 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:37:53.089 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:37:53.090 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:37:53.090 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 50.2502ms
+2024-04-23 11:37:53.090 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:37:53.090 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 54.0225 ms
+2024-04-23 11:37:53.090 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 54.9737ms
+2024-04-23 11:38:17.094 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-23 11:38:17.095 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:38:17.095 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 0.3654 ms
+2024-04-23 11:38:17.095 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 1.1041ms
+2024-04-23 11:38:17.100 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 11:38:17.101 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:38:17.101 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:38:17.102 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:38:17.171 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:38:17.172 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:38:17.172 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 70.6042ms
+2024-04-23 11:38:17.172 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:38:17.172 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 71.5451 ms
+2024-04-23 11:38:17.172 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 71.978ms
+2024-04-23 11:40:12.130 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 118
+2024-04-23 11:40:12.132 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:40:12.132 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:40:12.132 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:40:12.144 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-04-23 11:40:12.147 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 14.8281ms
+2024-04-23 11:40:12.147 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:40:12.147 +07:00 [INF] HTTP POST /UserApi/search responded 400 in 15.8063 ms
+2024-04-23 11:40:12.147 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 400 null application/problem+json; charset=utf-8 17.3536ms
+2024-04-23 11:40:56.400 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 11:40:56.402 +07:00 [INF] CORS policy execution successful.
+2024-04-23 11:40:56.402 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:40:56.402 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 11:40:56.450 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 158
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 11:40:56.451 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 11:40:56.451 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 48.4609ms
+2024-04-23 11:40:56.451 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 11:40:56.451 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 49.4187 ms
+2024-04-23 11:40:56.451 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 50.7295ms
+2024-04-23 13:30:55.130 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 13:30:55.237 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 13:30:55.238 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 13:30:55.238 +07:00 [INF] Hosting environment: Development
+2024-04-23 13:30:55.238 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 13:30:56.386 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 13:30:56.446 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 61.7962ms
+2024-04-23 13:30:56.526 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 13:30:56.582 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.1055ms
+2024-04-23 13:33:39.763 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 13:33:39.772 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 13:33:39.815 +07:00 [INF] CORS policy execution successful.
+2024-04-23 13:33:39.820 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 13:33:39.834 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 13:33:39.997 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 160
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 13:33:40.010 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 13:33:40.019 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 183.3111ms
+2024-04-23 13:33:40.020 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 13:33:40.020 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 252.2661 ms
+2024-04-23 13:33:40.021 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 258.786ms
+2024-04-23 13:46:45.943 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 13:46:46.036 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 13:46:46.037 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 13:46:46.037 +07:00 [INF] Hosting environment: Development
+2024-04-23 13:46:46.037 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 13:46:47.174 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 13:46:47.232 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 58.4733ms
+2024-04-23 13:46:47.303 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 13:46:47.358 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.644ms
+2024-04-23 13:47:45.582 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 13:47:45.662 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 13:47:45.728 +07:00 [INF] CORS policy execution successful.
+2024-04-23 13:47:45.732 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 13:47:45.745 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 13:47:45.925 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 160
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 13:47:45.941 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 13:47:45.951 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 204.3326ms
+2024-04-23 13:47:45.951 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 13:47:45.952 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 304.1191 ms
+2024-04-23 13:47:45.953 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 370.7002ms
+2024-04-23 15:28:26.582 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 15:28:26.598 +07:00 [INF] CORS policy execution successful.
+2024-04-23 15:28:26.599 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 15:28:26.600 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 15:28:26.665 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentNullException: Value cannot be null. (Parameter 'configuration')
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 912
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 160
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 15:28:26.667 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 15:28:26.667 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 66.3955ms
+2024-04-23 15:28:26.667 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 15:28:26.667 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 79.0243 ms
+2024-04-23 15:28:26.667 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 86.2712ms
+2024-04-23 15:57:45.019 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 15:57:45.112 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 15:57:45.113 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 15:57:45.113 +07:00 [INF] Hosting environment: Development
+2024-04-23 15:57:45.113 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 15:57:46.233 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 15:57:46.291 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 58.4076ms
+2024-04-23 15:57:46.361 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 15:57:46.417 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 55.3872ms
+2024-04-23 15:57:58.399 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 15:57:58.412 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 15:57:58.453 +07:00 [INF] CORS policy execution successful.
+2024-04-23 15:57:58.457 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 15:57:58.469 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 15:57:58.643 +07:00 [INF] Lỗi tìm kiếm người dùng.
+System.ArgumentException: Keyword 'Server' is not supported. (Parameter 'Server')
+   at StackExchange.Redis.ConfigurationOptions.OptionKeys.Unknown(String key) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 81
+   at StackExchange.Redis.ConfigurationOptions.DoParse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 1058
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration, Boolean ignoreUnknown) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 718
+   at StackExchange.Redis.ConfigurationOptions.Parse(String configuration) in /_/src/StackExchange.Redis/ConfigurationOptions.cs:line 708
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectAsync(String configuration, TextWriter log) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 575
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.ConnectAsync(CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at BA_GPS.Infrastructure.Services.UserService.Search(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/Services/UserService.cs:line 163
+   at BA_GPS.Api.Controllers.UserApi.SearchUsers(SearchRequest searchRequest) in /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/Controllers/UserApi.cs:line 199
+2024-04-23 15:57:58.658 +07:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-04-23 15:57:58.667 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 195.9297ms
+2024-04-23 15:57:58.667 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 15:57:58.668 +07:00 [ERR] HTTP POST /UserApi/search responded 500 in 261.2006 ms
+2024-04-23 15:57:58.669 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 500 null application/problem+json; charset=utf-8 270.4318ms
+2024-04-23 16:08:21.095 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-04-23 16:08:21.188 +07:00 [INF] Now listening on: http://localhost:5159
+2024-04-23 16:08:21.189 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-04-23 16:08:21.189 +07:00 [INF] Hosting environment: Development
+2024-04-23 16:08:21.189 +07:00 [INF] Content root path: /Users/user/Projects/BA_GPS.V3/BA_GPS.Api
+2024-04-23 16:08:22.309 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-04-23 16:08:22.370 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 59.7054ms
+2024-04-23 16:08:22.435 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-04-23 16:08:22.492 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.729ms
+2024-04-23 16:08:36.575 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 16:08:36.587 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-04-23 16:08:36.636 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:36.641 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:36.654 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:08:37.002 +07:00 [WRN] The property 'PermissionId' on entity type 'Permission' is of type 'byte', but is set up to use a SQL Server identity column; this requires that values starting at 255 and counting down will be used for temporary key values. A temporary key value is needed for every entity inserted in a single call to 'SaveChanges'. Care must be taken that these values do not collide with real key values.
+2024-04-23 16:08:37.463 +07:00 [INF] Executed DbCommand (56ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:08:37.512 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:08:37.553 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:08:37.564 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 908.2869ms
+2024-04-23 16:08:37.564 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:37.566 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 982.0749 ms
+2024-04-23 16:08:37.570 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 994.9792ms
+2024-04-23 16:08:46.726 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - null null
+2024-04-23 16:08:46.728 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:46.733 +07:00 [INF] HTTP OPTIONS /UserApi responded 204 in 5.7104 ms
+2024-04-23 16:08:46.733 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 204 null null 7.0802ms
+2024-04-23 16:08:46.736 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - application/json null
+2024-04-23 16:08:46.802 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:46.802 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 16:08:46.806 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:08:46.824 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit)
+2024-04-23 16:08:46.825 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-23 16:08:46.825 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-04-23 16:08:46.836 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PermissionId], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-04-23 16:08:46.837 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:08:46.837 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 30.5617ms
+2024-04-23 16:08:46.837 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-04-23 16:08:46.837 +07:00 [INF] HTTP GET /UserApi responded 200 in 100.8187 ms
+2024-04-23 16:08:46.837 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=10 - 200 null application/json; charset=utf-8 101.5442ms
+2024-04-23 16:08:48.587 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-23 16:08:48.589 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:48.589 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 0.4208 ms
+2024-04-23 16:08:48.590 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 3.1172ms
+2024-04-23 16:08:48.598 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 16:08:48.600 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:48.600 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:48.600 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:08:48.660 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:08:48.665 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:08:48.665 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:08:48.665 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 65.0726ms
+2024-04-23 16:08:48.665 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:48.665 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 67.2293 ms
+2024-04-23 16:08:48.665 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 67.7024ms
+2024-04-23 16:08:50.658 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 16:08:50.660 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:50.661 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:50.661 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:08:50.671 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:08:50.674 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:08:50.675 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:08:50.675 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 13.4012ms
+2024-04-23 16:08:50.675 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:50.675 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 15.6750 ms
+2024-04-23 16:08:50.675 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 16.9594ms
+2024-04-23 16:08:59.780 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 16:08:59.781 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:08:59.781 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:59.781 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:08:59.821 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:08:59.831 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:08:59.831 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:08:59.832 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 50.2209ms
+2024-04-23 16:08:59.832 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:08:59.832 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 51.6657 ms
+2024-04-23 16:08:59.832 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 52.3776ms
+2024-04-23 16:09:04.422 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 135
+2024-04-23 16:09:04.422 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:09:04.422 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:09:04.422 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:09:04.458 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:09:04.470 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:09:04.471 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:09:04.471 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 48.3617ms
+2024-04-23 16:09:04.471 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:09:04.471 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 49.0731 ms
+2024-04-23 16:09:04.471 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 49.782ms
+2024-04-23 16:12:19.020 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-23 16:12:19.021 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:12:19.022 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 0.6110 ms
+2024-04-23 16:12:19.022 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 1.9566ms
+2024-04-23 16:12:19.036 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 16:12:19.036 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:12:19.036 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:12:19.037 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:12:19.071 +07:00 [INF] Executed DbCommand (32ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:12:19.139 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:12:19.140 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:12:19.140 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 103.7298ms
+2024-04-23 16:12:19.140 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:12:19.140 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 104.6262 ms
+2024-04-23 16:12:19.141 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 105.0592ms
+2024-04-23 16:12:24.491 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - null null
+2024-04-23 16:12:24.492 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:12:24.492 +07:00 [INF] HTTP OPTIONS /UserApi/search responded 204 in 0.4959 ms
+2024-04-23 16:12:24.492 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5159/UserApi/search - 204 null null 1.399ms
+2024-04-23 16:12:24.504 +07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5159/UserApi/search - application/json 108
+2024-04-23 16:12:24.505 +07:00 [INF] CORS policy execution successful.
+2024-04-23 16:12:24.505 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:12:24.505 +07:00 [INF] Route matched with {action = "SearchUsers", controller = "UserApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchUsers(BA_GPS.Domain.Entity.SearchRequest) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-04-23 16:12:24.511 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+2024-04-23 16:12:24.515 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__searchRequest_InputValue_0='?' (Size = 50), @__searchRequest_Gender_1='?' (Size = 1) (DbType = Byte), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PermissionId], [u].[PhoneNumber], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[IsDeleted] = CAST(0 AS bit) AND ((@__searchRequest_InputValue_0 LIKE N'') OR CHARINDEX(@__searchRequest_InputValue_0, [u].[UserName]) > 0) AND [u].[IsMale] = @__searchRequest_Gender_1
+ORDER BY [u].[LastModifyDate] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY
+2024-04-23 16:12:24.515 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-04-23 16:12:24.515 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api) in 10.2677ms
+2024-04-23 16:12:24.515 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.SearchUsers (BA_GPS.Api)'
+2024-04-23 16:12:24.515 +07:00 [INF] HTTP POST /UserApi/search responded 200 in 11.0645 ms
+2024-04-23 16:12:24.516 +07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5159/UserApi/search - 200 null application/json; charset=utf-8 11.5927ms

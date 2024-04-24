@@ -17,14 +17,14 @@ namespace BA_GPS.Application.Interfaces
         /// Lấy dang sách thông tin đối tượng chung theo phân trang
         /// </summary>
         /// <returns>1 tập hợp các đối tượng</returns>
-        Task<DataListResponse<TEntity>> Get(int pageIndex, int pageSize);
+        DataListResponse<User> GetPage(int pageIndex, int pageSize);
 
         /// <summary>
         /// Lấy ra thông tin đối tượng theo id
         /// </summary>
         /// <param name="id">Mã của đối tượng</param>
         /// <returns>1 Đối tượng.</returns>
-        Task<TEntity> GetById(Guid id);
+        User? GetById(Guid id);
 
         /// <summary>
         /// Tạo đối tượng mới
@@ -38,21 +38,21 @@ namespace BA_GPS.Application.Interfaces
         /// </summary>
         /// <param name="entity">The entity to update.</param>
         /// <returns>Thông tin đối tượng được cập nhật.</returns>
-        Task<bool> Update(TEntity entity);
+        bool Update(TEntity entity);
 
         /// <summary>
         /// Cập nhật trạng thái xoá cho đối tượng
         /// </summary>
         /// <param name="id">Id của đối tượng cần xoá.</param>
         /// <returns>True nếu xoá thành công , false nếu xoá thất bại</returns>
-        Task<bool> Delete(Guid id);
+        bool Delete(Guid id);
 
         /// <summary>
         /// Cập nhật trạng thái xoá cho đối tượng
         /// </summary>
         /// <param name="id">Id của đối tượng cần xoá.</param>
         /// <returns>True nếu xoá thành công , false nếu xoá thất bại</returns>
-        Task<DataListResponse<TEntity>> Search(SearchRequest searchRequest);
+        DataListResponse<User> Search(SearchRequest searchRequest);
 
 
     }

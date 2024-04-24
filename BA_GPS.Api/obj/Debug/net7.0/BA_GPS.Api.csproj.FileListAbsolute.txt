@@ -111,3 +111,6 @@
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/obj/Debug/net7.0/ref/BA_GPS.Api.dll
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/bin/Debug/net7.0/AspNetCoreRateLimit.dll
 /Users/user/Projects/BA_GPS.V3/BA_GPS.Api/bin/Debug/net7.0/Newtonsoft.Json.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/bin/Debug/net7.0/Microsoft.Extensions.Caching.StackExchangeRedis.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/bin/Debug/net7.0/Pipelines.Sockets.Unofficial.dll
+/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/bin/Debug/net7.0/StackExchange.Redis.dll

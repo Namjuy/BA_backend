@@ -1,31 +1,39 @@
-﻿<Properties StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http" GitUserInfo="UsingMD">
-  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Api/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Infrastructure/Services/UserService.cs">
     <Files>
+      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" Line="220" Column="7" />
+      <File FileName="BA_GPS.Infrastructure/Repositories/GenericRepository.cs" />
+      <File FileName="BA_GPS.Application/Core/Interface/IGenericService.cs" />
+      <File FileName="BA_GPS.Api/Program.cs" />
+      <File FileName="BA_GPS.Api/appsettings.json" />
       <File FileName="BA_GPS.Api/Controllers/UserApi.cs" />
-      <File FileName="BA_GPS.Api/Program.cs" Line="134" Column="14" />
-      <File FileName="BA_GPS.Common/CommonService.cs" />
-      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" />
-      <File FileName="BA_GPS.Infrastructure/Repositories/UserRepository.cs" />
+      <File FileName="BA_GPS.Infrastructure/Services/AuthenService.cs" />
+      <File FileName="BA_GPS.Application/Core/Interface/IRepository.cs" />
+      <File FileName="BA_GPS.Domain/DTO/SearchRequest.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BA_GPS.V3" expanded="True">
-            <Node name="BA_GPS.Api" expanded="True">
-              <Node name="Controllers" expanded="True" />
+            <Node name="BA_GPS.Domain" expanded="True">
+              <Node name="DTO" expanded="True" />
             </Node>
-            <Node name="BA_GPS.Common" expanded="True" />
+            <Node name="BA_GPS.Infrastructure" expanded="True">
+              <Node name="Services" expanded="True">
+                <Node name="UserService.cs" selected="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
   <MonoDevelop.Ide.ItemProperties.BA__GPS.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

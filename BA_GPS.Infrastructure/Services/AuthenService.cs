@@ -1,7 +1,9 @@
 ﻿using System;
 using BA_GPS.Common.Authentication;
 using BA_GPS.Common.Modal;
+using BA_GPS.Domain.Entity;
 using BA_GPS.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 /// <summary>
@@ -16,14 +18,14 @@ namespace BA_GPS.Infrastructure.Services
 	public class AuthenService
 	{
         private readonly JwtUltis _jwt;
-        private readonly UserRepository _userRepository;
+        private readonly GenericRepository<User> _repository;
         private readonly PasswordHasher _passwordHasher;
         private readonly ILogger<AuthenService> _logger;
 
-        public AuthenService(JwtUltis jwt, UserRepository userRepository, PasswordHasher passwordHasher, ILogger<AuthenService> logger)
+        public AuthenService(JwtUltis jwt, PasswordHasher passwordHasher, ILogger<AuthenService> logger, GenericRepository<User> repository)
 		{
             _jwt = jwt;
-            _userRepository = userRepository;
+            _repository = repository;
             _passwordHasher = passwordHasher;
             _logger = logger;
 		}
@@ -37,7 +39,7 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
-                var user = await _userRepository.GetByUserName(loginRequest.Username);
+                var user = await _repository.GetAll().Where(u => !u.IsDeleted).FirstOrDefaultAsync(user => user.UserName == loginRequest.Username);
                 if (user == null)
                 {
                     return "";
@@ -69,6 +71,8 @@ namespace BA_GPS.Infrastructure.Services
             }
             return true;
         }
+
+      
     }
 }
 

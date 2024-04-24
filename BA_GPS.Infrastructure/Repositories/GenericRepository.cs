@@ -23,83 +23,56 @@ namespace BA_GPS.Infrastructure.Repositories
         }
 
         /// <summary>
-        /// Lấy danh sách đối tượng trên database
+        /// Lấy tất cả danh sách đối tượng trong database
         /// </summary>
-        /// <param name="pageIndex">Thứ tự trang</param>
-        /// <param name="pageSize">Số lượng người dùng hiển thị trong 1 trang</param>
-        /// <returns>Danh sách dữ liệu người dùng</returns>
-        public async Task<DataListResponse<TEntity>> Get(int pageIndex, int pageSize)
-        {
-            var dataResponse = new DataListResponse<TEntity>();
-            var query = _dbContext.Set<TEntity>()
-                            .Where(u => !u.IsDeleted);
-            dataResponse.TotalPage = await query.CountAsync();
-            dataResponse.DataList = await query.Skip(pageSize * (pageIndex - 1))
-                                              .Take(pageSize)
-                                              .OrderByDescending(u => u.LastModifyDate)
-                                              .ToListAsync();
-            return dataResponse;
-        }
+        /// <returns></returns>
+        public IQueryable<TEntity> GetAll() => _dbContext.Set<TEntity>().AsNoTracking().AsQueryable();
 
         /// <summary>
-        /// Tìm kiếm đối tượng theo Id
+        /// Lấy tất cả danh sách theo điều kiện có sẵn
         /// </summary>
-        /// <param name="id">Id của đối tượng</param>
-        /// <returns>Đối tượng cần tìm kiếm</returns>
-        public async Task<TEntity> GetById(Guid id)
-        {
-            return await _dbContext.Set<TEntity>().FirstOrDefaultAsync(item => item.Id == id);
-        }
+        /// <param name="expression">Điều kiện</param>
+        /// <returns>Kết quả lệnh truy vấn</returns>
+        public IQueryable<TEntity> GetAll(Func<TEntity, bool> expression) => _dbContext.Set<TEntity>().AsNoTracking().Where(expression).AsQueryable();
+
+        /// <summary>
+        /// Tìm kiếm theo Id
+        /// </summary>
+        /// <param name="id">Id đối tượng</param>
+        /// <returns>Đối tượng có id</returns>
+        public IEnumerable<TEntity> GetById(Guid id) => _dbContext.Set<TEntity>().AsNoTracking().AsQueryable().Where(u => u.Id == id).AsEnumerable();
 
         /// <summary>
         /// Tạo đối tượng mới
         /// </summary>
         /// <param name="entity">Đối tượng mới</param>
-        /// <returns>Kết quả True/False</returns>
+        /// <returns>Kết quả true/false</returns>
         public async Task<bool> Create(TEntity entity)
         {
             await _dbContext.Set<TEntity>().AddAsync(entity);
-            return await _dbContext.SaveChangesAsync() > 0;
+           return await _dbContext.SaveChangesAsync()>0;
         }
 
         /// <summary>
-        /// Cập nhật người dùng trên database
+        /// Cập nhật đối tượng
         /// </summary>
-        /// <param name="entity">Đối tượng cập nhật</param>
-        /// <returns>Kết quả True/ false</returns>
-        public async Task<bool> Update(TEntity entity)
+        /// <param name="entity">Thông tin cập nhật</param>
+        public void Update(TEntity entity)
         {
-            var existingEntity = await _dbContext.Set<TEntity>().FindAsync(entity.Id);
-
-            if (existingEntity != null)
-            {
-                // Update the properties of the existing entity with the values of the incoming entity
-                _dbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
-                await _dbContext.SaveChangesAsync();
-                return true;
-            }
-            else
-            {
-                return false; 
-            }
+            _dbContext.Set<TEntity>().Update(entity);
+            _dbContext.SaveChanges();
         }
 
         /// <summary>
-        /// Cập nhật trang thại xoá cho đối tượng
+        /// Gắn 'cờ' xoá đối tượng
         /// </summary>
-        /// <param name="id">Id của đối tượng</param>
-        /// <returnsKết quả True/False</returns>
-        public async Task<bool> Delete(Guid id)
+        /// <param name="entity">Đối tượng cần xoá</param>
+        public void Delete(TEntity entity)
         {
-            var user = await _dbContext.Set<TEntity>().FirstOrDefaultAsync(item => item.Id == id);
-
-            if (user == null)
-                return false;
-
-            user.IsDeleted = true;
-            user.DeletedDate = DateTime.UtcNow;
-            return await _dbContext.SaveChangesAsync() > 0;
+            _dbContext.Set<TEntity>().Remove(entity);
+            _dbContext.SaveChanges();
         }
+
 
 
     }

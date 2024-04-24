@@ -10,6 +10,7 @@ using BA_GPS.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -71,7 +72,7 @@ builder.Services.AddRateLimiter(rateLimiterOptions =>
     rateLimiterOptions.AddFixedWindowLimiter("fixed", options =>
     {
         options.PermitLimit = 10;
-        options.Window = TimeSpan.FromSeconds(10);
+        options.Window = TimeSpan.FromSeconds(10);  
         options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
         options.QueueLimit = 5;
     });
@@ -89,6 +90,11 @@ builder.Services.AddRateLimiter(rateLimiterOptions =>
     });
 });
 
+// Add Redis cache
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = configuration.GetValue<string>("Redis");
+});
 
 
 builder.Services.AddAuthentication(options =>
@@ -97,21 +103,22 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
+    var authConfig = configuration.GetSection("Auth0");
+    var secretKey = authConfig["SecretKey"];
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
         ValidateAudience = true,
         ValidateLifetime = true,
         ValidateIssuerSigningKey = true,
-        ValidIssuer = "localhost:5159, localhost:4200",
-        ValidAudience = "localhost:5159, localhost:4200",
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("gUiGDL2oyCn2zR1fVOmJNEUDChihatgi"))
+        ValidIssuer = authConfig["Issuer"],
+        ValidAudience = authConfig["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
     };
 });
-
+//"gUiGDL2oyCn2zR1fVOmJNEUDChihatgi"
 // Add database service
 builder.Services.AddDbContext<GenericDbContext>(otp => otp.UseSqlServer(configuration.GetConnectionString("BAconnection"), b => b.MigrationsAssembly("BA_GPS.Api")));
-builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<GenericRepository<User>>();
 builder.Services.AddScoped<PasswordHasher>();
 builder.Services.AddScoped<JwtUltis>();

@@ -6,6 +6,8 @@ using BA_GPS.Infrastructure.Repositories;
 using BA_GPS.Domain.DTO;
 using BA_GPS.Common.Modal;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.EntityFrameworkCore;
 
 
 /// <summary>
@@ -23,17 +25,21 @@ namespace BA_GPS.Infrastructure.Services
         private readonly ILogger<UserService> _logger;
         private readonly PasswordHasher _passwordHasher;
         private readonly GenericRepository<User> _repository;
-        private readonly UserRepository _userRepository;
         private readonly IMemoryCache _cache;
+        private readonly IDistributedCache _cache1;
         //private readonly string _cacheKey = "productsCacheKey";
 
-        public UserService(ILogger<UserService> logger, PasswordHasher passwordHasher, GenericRepository<User> repository, UserRepository userRepository, IMemoryCache cache)
+        public UserService(ILogger<UserService> logger
+            , PasswordHasher passwordHasher
+            , GenericRepository<User> repository
+            , IMemoryCache cache
+            , IDistributedCache cache1)
         {
             _passwordHasher = passwordHasher;
             _logger = logger;
             _repository = repository;
-            _userRepository = userRepository;
             _cache = cache;
+            _cache1 = cache1;
         }
 
         /// <summary>
@@ -42,13 +48,18 @@ namespace BA_GPS.Infrastructure.Services
         /// <param name="pageIndex">vị trí trang</param>
         /// <param name="pageSize">kích thước trang</param>
         /// <returns>Danh sách người dùng đã được phân trang</returns>
-        public async Task<DataListResponse<User>> Get(int pageIndex, int pageSize)
+        public DataListResponse<User> GetPage(int pageIndex, int pageSize)
         {
             var userDataResponse = new DataListResponse<User>();
             try
             {
-                userDataResponse = await _repository.Get(pageIndex, pageSize);
-                userDataResponse.TotalPage = (int)Math.Ceiling((double)userDataResponse.TotalPage / pageSize);
+                userDataResponse.DataList = _repository.GetAll()
+                    .Where(u => !u.IsDeleted)
+                    .Skip(pageSize * (pageIndex - 1))
+                    .Take(pageSize)
+                    .OrderByDescending(u => u.LastModifyDate)
+                    .ToList();
+                userDataResponse.TotalPage = (int)Math.Ceiling((double)_repository.GetAll().Count() / pageSize);
             }
             catch (Exception ex)
             {
@@ -62,15 +73,15 @@ namespace BA_GPS.Infrastructure.Services
         /// </summary>
         /// <param name="id">Mã của người dùng</param>
         /// <returns>Thông tin người dùng</returns>
-        public async Task<User> GetById(Guid id)
+        public User? GetById(Guid id)
         {
             try
             {
-                return await _repository.GetById(id);
+                return _repository.GetById(id).FirstOrDefault();
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lấy thông tin người dùng lỗi");
+                _logger.LogError(ex, "Error retrieving user by Id");
                 return null;
             }
         }
@@ -83,10 +94,7 @@ namespace BA_GPS.Infrastructure.Services
         /// <exception cref="ArgumentException"></exception>
         public async Task<bool> Create(User newUser)
         {
-            //Mã hoá mật khẩu
             var hashedPassword = _passwordHasher.HashPassword(newUser.PassWordHash);
-
-            //Tạo thông tin người dùng
             newUser.Id = Guid.NewGuid();
             newUser.PassWordHash = hashedPassword;
             newUser.CreateDate = DateTime.UtcNow;
@@ -95,12 +103,12 @@ namespace BA_GPS.Infrastructure.Services
             newUser.IsDeleted = false;
             try
             {
-                await _repository.Create(newUser);
-                return true;
+               return await _repository.Create(newUser);
+                
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi tạo người dùng");
+                _logger.LogError(ex, "Error creating user");
                 return false;
             }
         }
@@ -110,15 +118,23 @@ namespace BA_GPS.Infrastructure.Services
         /// </summary>
         /// <param name="id">Mã người dùng</param>
         /// <returns>Giá trị true/false</returns>
-        public async Task<bool> Delete(Guid id)
+        public bool Delete(Guid id)
         {
             try
             {
-                return await _repository.Delete(id);
+                var userToDelete = GetById(id);
+                if (userToDelete != null)
+                {
+                    userToDelete.IsDeleted = true;
+                    userToDelete.DeletedDate = DateTime.UtcNow;
+                    _repository.Update(userToDelete);
+                    return true;
+                }
+                return false;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi xoá người dùng");
+                _logger.LogError(ex, "Error deleting user");
                 return false;
             }
         }
@@ -129,17 +145,17 @@ namespace BA_GPS.Infrastructure.Services
         /// <param name="userToUpdate">Thông tin người dùng được cập nhật</param>
         /// <returns>Giá trị True/False</returns>
         /// <exception cref="ArgumentException">Lỗi không tìm thấy người dùng</exception>
-        public async Task<bool> Update(User userToUpdate)
+        public bool Update(User userToUpdate)
         {
             try
             {
                 userToUpdate.LastModifyDate = DateTime.UtcNow;
-                return await _repository.Update(userToUpdate);
-
+                _repository.Update(userToUpdate);
+                return true;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Cập nhật thông tin người dùng lỗi");
+                _logger.LogError(ex, "Error updating user information");
                 return false;
             }
         }
@@ -149,18 +165,15 @@ namespace BA_GPS.Infrastructure.Services
         /// </summary>
         /// <param name="searchRequest">Thông tin tìm kiếm</param>
         /// <returns>Danh sách người dùng tìm kiếm</returns>
-        public async Task<DataListResponse<User>> Search(SearchRequest searchRequest)
+        public DataListResponse<User> Search(SearchRequest searchRequest)
         {
-            var cacheKey = $"UserSearch_{searchRequest.PageIndex}_{searchRequest.PageSize}";
+            var cacheKey = GenerateCacheKey(searchRequest);
 
-            _cache.Set(cacheKey, searchRequest, TimeSpan.FromMinutes(10));
-
-        
             if (_cache.TryGetValue(cacheKey, out SearchRequest cachedSearchRequest))
             {
                 if (CheckSearchRequestChanged(searchRequest, cachedSearchRequest))
                 {
-                   
+
                     if (_cache.TryGetValue(cacheKey, out DataListResponse<User> cachedResult))
                     {
                         _logger.LogInformation("Dữ liệu được lấy từ cache.");
@@ -173,8 +186,10 @@ namespace BA_GPS.Infrastructure.Services
 
             try
             {
-                userDataResponse = await _userRepository.Search(searchRequest);
-                userDataResponse.TotalPage = (int)Math.Ceiling((double)userDataResponse.TotalPage / searchRequest.PageSize);
+                var query = ApplySearchFilters(_repository.GetAll(), searchRequest);
+
+                userDataResponse.DataList = query.ToList();
+                userDataResponse.TotalPage = (int)Math.Ceiling((double)query.Count() / searchRequest.PageSize);
 
                 _cache.Set(cacheKey, userDataResponse, TimeSpan.FromMinutes(10));
 
@@ -187,6 +202,61 @@ namespace BA_GPS.Infrastructure.Services
         }
 
         /// <summary>
+        /// Tạo ra cache key
+        /// </summary>
+        /// <param name="searchRequest"></param>
+        /// <returns></returns>
+        private string GenerateCacheKey(SearchRequest searchRequest)
+        {
+            return $"UserSearch_{searchRequest.InputValue}_{searchRequest.Type}_{searchRequest.StartDate}_{searchRequest.EndDate}_{searchRequest.PageIndex}_{searchRequest.PageSize}";
+        }
+
+        /// <summary>
+        /// Lọc các thông tin theo yêu cầu tìm kiếm
+        /// </summary>
+        /// <param name="query">Câu truy vấn</param>
+        /// <param name="searchRequest">Thông tin tìm kiếm</param>
+        /// <returns>Câu truy vấn</returns>
+        private IQueryable<User> ApplySearchFilters(IQueryable<User> query, SearchRequest searchRequest)
+        {
+            switch (searchRequest.Type.ToLower())
+            {
+                case "username":
+                    query = query.Where(u => u.UserName.Contains(searchRequest.InputValue));
+                    break;
+                case "fullname":
+                    query = query.Where(u => u.FullName.Contains(searchRequest.InputValue));
+                    break;
+                case "phonenumber":
+                    query = query.Where(u => u.PhoneNumber.Contains(searchRequest.InputValue));
+                    break;
+                case "email":
+                    query = query.Where(u => u.Email.Contains(searchRequest.InputValue));
+                    break;
+                default:
+                    break;
+            }
+
+            if (searchRequest.StartDate != null)
+            {
+                query = query.Where(u => u.LastModifyDate >= searchRequest.StartDate);
+            }
+
+            if (searchRequest.EndDate != null)
+            {
+                query = query.Where(u => u.LastModifyDate <= searchRequest.EndDate);
+            }
+
+            if (searchRequest.Gender != null)
+            {
+                query = query.Where(u => u.IsMale == searchRequest.Gender);
+            }
+
+            return query;
+        }
+
+
+        /// <summary>
         /// Kiểm tra tên đăng nhập của người dùng tồn tại
         /// </summary>
         /// <param name="userName">Tên đăng nhập</param>
@@ -195,7 +265,7 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
-                return await _userRepository.CheckUserNameExist(userName);
+                return await _repository.GetAll().FirstOrDefaultAsync(item => item.UserName == userName) is null;
             }
             catch (Exception ex)
             {
@@ -213,7 +283,7 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
-                return await _userRepository.CheckPhoneExist(phone);
+                return await _repository.GetAll().FirstOrDefaultAsync(item => item.PhoneNumber == phone) is null;
             }
             catch (Exception ex)
             {
@@ -237,9 +307,14 @@ namespace BA_GPS.Infrastructure.Services
                      user.DateOfBirth > DateTime.UtcNow.AddYears(-18));
         }
 
+        /// <summary>
+        /// Kiểm tra thông tin tìm kiếm có hợp lệ hay không
+        /// </summary>
+        /// <param name="searchRequest"></param>
+        /// <returns>Kết quả true/false</returns>
         public bool CheckSearchValid(SearchRequest searchRequest)
         {
-            if (string.IsNullOrEmpty(searchRequest.Type) || searchRequest.PageIndex == null || searchRequest.PageSize == null)
+            if (string.IsNullOrEmpty(searchRequest.Type) || searchRequest.PageIndex <= 0 || searchRequest.PageSize <= 0)
             {
                 return false;
             }
@@ -247,11 +322,23 @@ namespace BA_GPS.Infrastructure.Services
             return true;
         }
 
+
+        /// <summary>
+        /// Kiểm tra số điện thoại nhập vào đã được đăng ký hay không
+        /// </summary>
+        /// <param name="phone">số điện thoại</param>
+        /// <returns>Kết quả true/false</returns>
         public bool CheckPhoneValid(string phone)
         {
             return !(string.IsNullOrEmpty(phone) || phone.Length != 10);
         }
 
+        /// <summary>
+        /// Kiểm tra request tìm kiếm mới có trùng lặp với request cũ đã được lưu ở cache hay không
+        /// </summary>
+        /// <param name="searchRequest">Thông tin tìm kiếm mới</param>
+        /// <param name="cachedSearchRequest">Thông tin tìm kiếm đã được lưu trong cache</param>
+        /// <returns>Trả về kết quả true/false</returns>
         private bool CheckSearchRequestChanged(SearchRequest searchRequest, SearchRequest cachedSearchRequest)
         {
             return searchRequest.InputValue == cachedSearchRequest.InputValue &&
@@ -262,6 +349,9 @@ namespace BA_GPS.Infrastructure.Services
                    searchRequest.PageIndex == cachedSearchRequest.PageIndex &&
                    searchRequest.PageSize == cachedSearchRequest.PageSize;
         }
+
+
+     
 
 
     }
