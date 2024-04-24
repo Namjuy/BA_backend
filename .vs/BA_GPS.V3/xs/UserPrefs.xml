@@ -1,35 +1,31 @@
-﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http">
-  <MultiItemStartupConfigurations />
+﻿<Properties StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http" GitUserInfo="UsingMD">
+  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Api/Program.cs">
     <Files>
-      <File FileName="BA_GPS.Api/Controllers/UserApi.cs" Line="199" Column="53" />
+      <File FileName="BA_GPS.Api/Controllers/UserApi.cs" />
       <File FileName="BA_GPS.Api/Program.cs" Line="134" Column="14" />
-      <File FileName="BA_GPS.Common/CommonService.cs" Line="23" Column="17" />
-      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" Line="174" Column="16" />
-      <File FileName="BA_GPS.Infrastructure/Repositories/UserRepository.cs" Line="91" Column="1" />
+      <File FileName="BA_GPS.Common/CommonService.cs" />
+      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" />
+      <File FileName="BA_GPS.Infrastructure/Repositories/UserRepository.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BA_GPS.V3">
-            <Node name="BA_GPS.Api">
+          <Node name="BA_GPS.V3" expanded="True">
+            <Node name="BA_GPS.Api" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Program.cs" selected="True" />
             </Node>
             <Node name="BA_GPS.Common" expanded="True" />
-            <Node name="BA_GPS.Infrastructure">
-              <Node name="Repositories" expanded="True" />
-            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.BA__GPS.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
