@@ -27,13 +27,6 @@ namespace BA_GPS.Application.Interfaces
         User? GetById(Guid id);
 
         /// <summary>
-        /// Tạo đối tượng mới
-        /// </summary>
-        /// <param name="entity">The entity to create.</param>
-        /// <returns>Tạo đối tượng.</returns>
-        Task<bool> Create(TEntity entity, byte permissionId);
-
-        /// <summary>
         /// Cập nhật đối tượng
         /// </summary>
         /// <param name="entity">The entity to update.</param>

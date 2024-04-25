@@ -33,6 +33,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddDistributedMemoryCache();
+
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
@@ -65,22 +67,15 @@ builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
 
-});
-
-builder.Services.AddRateLimiter(rateLimiterOptions =>
-{
-    rateLimiterOptions.AddFixedWindowLimiter("fixed", options =>
+    options.AddFixedWindowLimiter("fixed", options =>
     {
         options.PermitLimit = 10;
-        options.Window = TimeSpan.FromSeconds(10);  
+        options.Window = TimeSpan.FromSeconds(10);
         options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
         options.QueueLimit = 5;
     });
-});
 
-builder.Services.AddRateLimiter(rateLimiterOptions =>
-{
-    rateLimiterOptions.AddSlidingWindowLimiter("sliding", options =>
+    options.AddSlidingWindowLimiter("sliding", options =>
     {
         options.PermitLimit = 10;
         options.Window = TimeSpan.FromSeconds(10);
@@ -90,11 +85,7 @@ builder.Services.AddRateLimiter(rateLimiterOptions =>
     });
 });
 
-// Add Redis cache
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = configuration.GetValue<string>("Redis");
-});
+
 
 
 builder.Services.AddAuthentication(options =>

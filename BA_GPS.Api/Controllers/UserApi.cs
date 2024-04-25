@@ -33,6 +33,7 @@ namespace BA_GPS.Api.Controllers
             _logger = logger;
             _common = common;
         }
+
         /// <summary>
         /// Lấy danh sách người dùng
         /// </summary>

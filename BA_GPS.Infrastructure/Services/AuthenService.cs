@@ -79,10 +79,13 @@ namespace BA_GPS.Infrastructure.Services
             return true;
         }
 
+        /// <summary>
+        /// Lấy thông tin vai trò người dùng dựa theo Id của người dùng
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Id của vai trò</returns>
+        private byte GetPermissionId(Guid id) => _repositoryPermission.GetAll().Where(u => u.UserId == id).FirstOrDefault().PermissionId;
 
-        private byte GetPermissionId(Guid id) => _repositoryPermission.GetAll()
-            .Where(u => u.UserId == id)
-            .FirstOrDefault().PermissionId;
     }
 }
 

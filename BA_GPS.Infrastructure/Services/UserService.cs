@@ -4,10 +4,9 @@ using Microsoft.Extensions.Logging;
 using BA_GPS.Common.Authentication;
 using BA_GPS.Infrastructure.Repositories;
 using BA_GPS.Domain.DTO;
-using BA_GPS.Common.Modal;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
 
 
 /// <summary>
@@ -26,22 +25,21 @@ namespace BA_GPS.Infrastructure.Services
         private readonly PasswordHasher _passwordHasher;
         private readonly GenericRepository<User> _repository;
         private readonly GenericRepository<UserPermission> _userPerRepo;
-        private readonly IMemoryCache _cache;
-        private readonly IDistributedCache _cache1;
-        //private readonly string _cacheKey = "productsCacheKey";
+        private readonly IDistributedCache _cache;
+
 
         public UserService(ILogger<UserService> logger
             , PasswordHasher passwordHasher
             , GenericRepository<User> repository
-            , IMemoryCache cache
-            , IDistributedCache cache1
+
+            , IDistributedCache cache
             , GenericRepository<UserPermission> userPerRepo)
         {
             _passwordHasher = passwordHasher;
             _logger = logger;
             _repository = repository;
             _cache = cache;
-            _cache1 = cache1;
+            //_cache1 = cache1;
             _userPerRepo = userPerRepo;
         }
 
@@ -90,14 +88,16 @@ namespace BA_GPS.Infrastructure.Services
         }
 
         /// <summary>
-        /// Tạo người dùng mới
+        /// Tạo mới người dùng
         /// </summary>
-        /// <param name="newUser">Thông tin người dùng mới</param>
-        /// <returns>Người dùng mới</returns>
-        /// <exception cref="ArgumentException"></exception>
+        /// <param name="newUser">Người dùng mới</param>
+        /// <param name="permissionId">Id quyền</param>
+        /// <returns>Kết quả true/false</returns>
         public async Task<bool> Create(User newUser, byte permissionId)
         {
+            //Mã hoá mật khẩu
             var hashedPassword = _passwordHasher.HashPassword(newUser.PassWordHash);
+
             newUser.Id = Guid.NewGuid();
             newUser.PassWordHash = hashedPassword;
             newUser.CreateDate = DateTime.UtcNow;
@@ -116,7 +116,6 @@ namespace BA_GPS.Infrastructure.Services
                     return true;
 
                 else return false;
-
 
             }
             catch (Exception ex)
@@ -182,37 +181,37 @@ namespace BA_GPS.Infrastructure.Services
         {
             var cacheKey = GenerateCacheKey(searchRequest);
 
-            if (_cache.TryGetValue(cacheKey, out SearchRequest cachedSearchRequest))
-            {
-                if (CheckSearchRequestChanged(searchRequest, cachedSearchRequest))
-                {
-
-                    if (_cache.TryGetValue(cacheKey, out DataListResponse<User> cachedResult))
-                    {
-                        _logger.LogInformation("Dữ liệu được lấy từ cache.");
-                        return cachedResult;
-                    }
-                }
-            }
-
-            var userDataResponse = new DataListResponse<User>();
-
             try
             {
+                var cachedResult = _cache.Get(cacheKey);
+                if (cachedResult != null)
+                {
+                    _logger.LogInformation("Data retrieved from cache.");
+                    return JsonSerializer.Deserialize<DataListResponse<User>>(cachedResult);
+                }
+
+                var userDataResponse = new DataListResponse<User>();
                 var query = ApplySearchFilters(_repository.GetAll(), searchRequest);
 
                 userDataResponse.DataList = query.ToList();
                 userDataResponse.TotalPage = (int)Math.Ceiling((double)query.Count() / searchRequest.PageSize);
 
-                _cache.Set(cacheKey, userDataResponse, TimeSpan.FromMinutes(10));
+                var serializedData = JsonSerializer.SerializeToUtf8Bytes(userDataResponse);
 
+                _cache.Set(cacheKey, serializedData, new DistributedCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+                });
+
+                return userDataResponse;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Lỗi tìm kiếm người dùng");
+                _logger.LogError(ex, "Error searching for users");
+                return new DataListResponse<User>();
             }
-            return userDataResponse;
         }
+
 
         /// <summary>
         /// Tạo ra cache key
