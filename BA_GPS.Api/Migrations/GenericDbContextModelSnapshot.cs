@@ -25,10 +25,7 @@ namespace BA_GPS.Api.Migrations
             modelBuilder.Entity("BA_GPS.Domain.Entity.Permission", b =>
                 {
                     b.Property<byte>("PermissionId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<byte>("PermissionId"));
 
                     b.Property<string>("PermissionName")
                         .IsRequired()
@@ -83,9 +80,6 @@ namespace BA_GPS.Api.Migrations
                     b.Property<string>("PassWordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte>("PermissionId")
-                        .HasColumnType("tinyint");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()

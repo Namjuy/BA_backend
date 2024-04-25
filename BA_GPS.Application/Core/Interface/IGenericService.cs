@@ -31,7 +31,7 @@ namespace BA_GPS.Application.Interfaces
         /// </summary>
         /// <param name="entity">The entity to create.</param>
         /// <returns>Tạo đối tượng.</returns>
-        Task<bool> Create(TEntity entity);
+        Task<bool> Create(TEntity entity, byte permissionId);
 
         /// <summary>
         /// Cập nhật đối tượng

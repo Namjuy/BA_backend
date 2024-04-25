@@ -17,7 +17,7 @@ namespace BA_GPS.Application.Core.Interface
         /// </summary>
         /// <param name="id">Mã của đối tượng</param>
         /// <returns>1 Đối tượng.</returns>
-        IEnumerable<TEntity> GetById(Guid id);
+        //IEnumerable<TEntity> GetById(Guid id);
 
       /// <summary>
       /// Xoá đối tượng

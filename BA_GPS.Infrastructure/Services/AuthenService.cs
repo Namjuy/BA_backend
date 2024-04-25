@@ -19,15 +19,21 @@ namespace BA_GPS.Infrastructure.Services
 	{
         private readonly JwtUltis _jwt;
         private readonly GenericRepository<User> _repository;
+        private readonly GenericRepository<UserPermission> _repositoryPermission;
         private readonly PasswordHasher _passwordHasher;
         private readonly ILogger<AuthenService> _logger;
 
-        public AuthenService(JwtUltis jwt, PasswordHasher passwordHasher, ILogger<AuthenService> logger, GenericRepository<User> repository)
+        public AuthenService(JwtUltis jwt
+            , PasswordHasher passwordHasher
+            , ILogger<AuthenService> logger
+            , GenericRepository<User> repository
+            , GenericRepository<UserPermission> repositoryPermision)
 		{
             _jwt = jwt;
             _repository = repository;
             _passwordHasher = passwordHasher;
             _logger = logger;
+            _repositoryPermission = repositoryPermision;
 		}
 
         /// <summary>
@@ -46,7 +52,8 @@ namespace BA_GPS.Infrastructure.Services
                 }
                 if (_passwordHasher.Verify(user.PassWordHash, loginRequest.Password))
                 {
-                    return _jwt.GenerateJwtToken(loginRequest.Username, user.PermissionId);
+
+                    return _jwt.GenerateJwtToken(loginRequest.Username, GetPermissionId(user.Id));
                 }
 
             }
@@ -72,7 +79,10 @@ namespace BA_GPS.Infrastructure.Services
             return true;
         }
 
-      
+
+        private byte GetPermissionId(Guid id) => _repositoryPermission.GetAll()
+            .Where(u => u.UserId == id)
+            .FirstOrDefault().PermissionId;
     }
 }
 

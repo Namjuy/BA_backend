@@ -25,6 +25,7 @@ namespace BA_GPS.Infrastructure.Services
         private readonly ILogger<UserService> _logger;
         private readonly PasswordHasher _passwordHasher;
         private readonly GenericRepository<User> _repository;
+        private readonly GenericRepository<UserPermission> _userPerRepo;
         private readonly IMemoryCache _cache;
         private readonly IDistributedCache _cache1;
         //private readonly string _cacheKey = "productsCacheKey";
@@ -33,13 +34,15 @@ namespace BA_GPS.Infrastructure.Services
             , PasswordHasher passwordHasher
             , GenericRepository<User> repository
             , IMemoryCache cache
-            , IDistributedCache cache1)
+            , IDistributedCache cache1
+            , GenericRepository<UserPermission> userPerRepo)
         {
             _passwordHasher = passwordHasher;
             _logger = logger;
             _repository = repository;
             _cache = cache;
             _cache1 = cache1;
+            _userPerRepo = userPerRepo;
         }
 
         /// <summary>
@@ -77,7 +80,7 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
-                return _repository.GetById(id).FirstOrDefault();
+                return _repository.GetAll().Where(u => u.Id == id).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -92,7 +95,7 @@ namespace BA_GPS.Infrastructure.Services
         /// <param name="newUser">Thông tin người dùng mới</param>
         /// <returns>Người dùng mới</returns>
         /// <exception cref="ArgumentException"></exception>
-        public async Task<bool> Create(User newUser)
+        public async Task<bool> Create(User newUser, byte permissionId)
         {
             var hashedPassword = _passwordHasher.HashPassword(newUser.PassWordHash);
             newUser.Id = Guid.NewGuid();
@@ -101,10 +104,20 @@ namespace BA_GPS.Infrastructure.Services
             newUser.LastModifyDate = DateTime.UtcNow;
             newUser.DeletedDate = null;
             newUser.IsDeleted = false;
+
+            var userPermission = new UserPermission
+            {
+                UserId = newUser.Id,
+                PermissionId = permissionId
+            };
             try
             {
-               return await _repository.Create(newUser);
-                
+                if (await _repository.Create(newUser) && await _userPerRepo.Create(userPermission))
+                    return true;
+
+                else return false;
+
+
             }
             catch (Exception ex)
             {
@@ -265,7 +278,7 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
-                return await _repository.GetAll().FirstOrDefaultAsync(item => item.UserName == userName) is null;
+                return await _repository.GetAll().Where(u => !u.IsDeleted).FirstOrDefaultAsync(item => item.UserName == userName) is null;
             }
             catch (Exception ex)
             {
@@ -283,7 +296,7 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
-                return await _repository.GetAll().FirstOrDefaultAsync(item => item.PhoneNumber == phone) is null;
+                return await _repository.GetAll().Where(u => !u.IsDeleted).FirstOrDefaultAsync(item => item.PhoneNumber == phone) is null;
             }
             catch (Exception ex)
             {
@@ -351,7 +364,7 @@ namespace BA_GPS.Infrastructure.Services
         }
 
 
-     
+
 
 
     }

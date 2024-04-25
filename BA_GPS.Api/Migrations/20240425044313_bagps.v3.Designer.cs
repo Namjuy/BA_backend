@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BA_GPS.Api.Migrations
 {
     [DbContext(typeof(GenericDbContext))]
-    [Migration("20240411011342_bagps.v3")]
+    [Migration("20240425044313_bagps.v3")]
     partial class bagpsv3
     {
         /// <inheritdoc />
@@ -28,10 +28,7 @@ namespace BA_GPS.Api.Migrations
             modelBuilder.Entity("BA_GPS.Domain.Entity.Permission", b =>
                 {
                     b.Property<byte>("PermissionId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("tinyint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<byte>("PermissionId"));
 
                     b.Property<string>("PermissionName")
                         .IsRequired()
@@ -86,9 +83,6 @@ namespace BA_GPS.Api.Migrations
                     b.Property<string>("PassWordHash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte>("PermissionId")
-                        .HasColumnType("tinyint");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()

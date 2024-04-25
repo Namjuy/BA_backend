@@ -120,6 +120,7 @@ builder.Services.AddAuthentication(options =>
 // Add database service
 builder.Services.AddDbContext<GenericDbContext>(otp => otp.UseSqlServer(configuration.GetConnectionString("BAconnection"), b => b.MigrationsAssembly("BA_GPS.Api")));
 builder.Services.AddScoped<GenericRepository<User>>();
+builder.Services.AddScoped<GenericRepository<UserPermission>>();
 builder.Services.AddScoped<PasswordHasher>();
 builder.Services.AddScoped<JwtUltis>();
 builder.Services.AddScoped<UserService>();

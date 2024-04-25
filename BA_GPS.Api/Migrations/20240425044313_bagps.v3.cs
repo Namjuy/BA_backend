@@ -15,8 +15,7 @@ namespace BA_GPS.Api.Migrations
                 name: "Permission",
                 columns: table => new
                 {
-                    PermissionId = table.Column<byte>(type: "tinyint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PermissionId = table.Column<byte>(type: "tinyint", nullable: false),
                     PermissionName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
@@ -35,7 +34,6 @@ namespace BA_GPS.Api.Migrations
                     DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsMale = table.Column<byte>(type: "tinyint", nullable: true),
                     PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PermissionId = table.Column<byte>(type: "tinyint", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CompanyId = table.Column<int>(type: "int", nullable: false),

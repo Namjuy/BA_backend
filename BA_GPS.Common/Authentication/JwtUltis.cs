@@ -29,12 +29,12 @@ namespace BA_GPS.Common.Authentication
         /// <param name="username">Tên đăng nhập</param>
         /// <param name="role">Quyền</param>
         /// <returns>Chuỗi ký tự bao gồm thông tin đã được mã hoá</returns>
-        public string GenerateJwtToken(string username, byte? permission)
+        public string GenerateJwtToken(string username, byte? permissionId)
         {
             var claims = new[]
             {
                 new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.Role, permission?.ToString())
+                new Claim(ClaimTypes.Role, permissionId?.ToString())
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Auth0:SecretKey"]));

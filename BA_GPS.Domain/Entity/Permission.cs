@@ -22,7 +22,6 @@ namespace BA_GPS.Domain.Entity
         }
 
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public byte PermissionId { get; set; }
 
         [NotNull]

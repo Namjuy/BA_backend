@@ -105,7 +105,7 @@ namespace BA_GPS.Api.Controllers
 
             try
             {
-                if (((Application.Interfaces.IGenericService<User>)_service).GetById(userToUpdate.Id) == null)
+                if (_service.GetById(userToUpdate.Id) == null)
                 {
                     return NotFound("Không tìm thấy người dùng phù hợp");
                 }
@@ -128,7 +128,7 @@ namespace BA_GPS.Api.Controllers
         /// <returns>Trạng thái yêu cầu</returns>
         [Authorize(Roles = "0")]
         [HttpPost(Name = "CreateUser")]
-        public async Task<IActionResult> CreateUser([FromBody] User newUser)
+        public async Task<IActionResult> CreateUser([FromBody] User newUser, byte permissionId)
         {
             if (!_service.CheckUserValid(newUser))
             {
@@ -136,7 +136,7 @@ namespace BA_GPS.Api.Controllers
             }
             try
             {
-                await _service.Create(newUser);
+                await _service.Create(newUser, permissionId);
             }
             catch (Exception ex)
             {

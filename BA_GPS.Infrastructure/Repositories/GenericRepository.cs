@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 /// </Modified>
 namespace BA_GPS.Infrastructure.Repositories
 {
-    public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : BaseEntity
+    public class GenericRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         private readonly GenericDbContext _dbContext;
 
@@ -35,12 +35,6 @@ namespace BA_GPS.Infrastructure.Repositories
         /// <returns>Kết quả lệnh truy vấn</returns>
         public IQueryable<TEntity> GetAll(Func<TEntity, bool> expression) => _dbContext.Set<TEntity>().AsNoTracking().Where(expression).AsQueryable();
 
-        /// <summary>
-        /// Tìm kiếm theo Id
-        /// </summary>
-        /// <param name="id">Id đối tượng</param>
-        /// <returns>Đối tượng có id</returns>
-        public IEnumerable<TEntity> GetById(Guid id) => _dbContext.Set<TEntity>().AsNoTracking().AsQueryable().Where(u => u.Id == id).AsEnumerable();
 
         /// <summary>
         /// Tạo đối tượng mới
