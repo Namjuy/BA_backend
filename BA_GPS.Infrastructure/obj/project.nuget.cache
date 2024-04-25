@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aXfFzzDOQvNl7JsKw/dJJ5vxjYT9kfqlLHjRy7+nDVUMVAnGcTdpY+PX5t4BoeWnrOzhQVmIdtAFNLzcmDdSBQ==",
+  "dgSpecHash": "sshwxeaM+/iO7vfNZGDJaz42mPA+PzHmdfOH5mgjnVHfK0iUJSoVbA7l08h1AYE6vWXD51bzJcxpsa8g0oJ8IQ==",
   "success": true,
-  "projectFilePath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/BA_GPS.Infrastructure.csproj",
+  "projectFilePath": "/Users/user/BAbackend/BA_backend/BA_GPS.Infrastructure/BA_GPS.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/user/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

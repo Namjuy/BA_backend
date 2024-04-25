@@ -4221,11 +4221,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/BA_GPS.Api.csproj",
+      "projectUniqueName": "/Users/user/BAbackend/BA_backend/BA_GPS.Api/BA_GPS.Api.csproj",
       "projectName": "BA_GPS.Api",
-      "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/BA_GPS.Api.csproj",
+      "projectPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Api/BA_GPS.Api.csproj",
       "packagesPath": "/Users/user/.nuget/packages/",
-      "outputPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Api/obj/",
+      "outputPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/user/.nuget/NuGet/NuGet.Config"
@@ -4235,20 +4235,21 @@
       ],
       "sources": {
         "/usr/local/share/dotnet/library-packs": {},
+        "/usr/local/share/dotnet/sdk/7.0.315/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/BA_GPS.Common.csproj": {
-              "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/BA_GPS.Common.csproj"
+            "/Users/user/BAbackend/BA_backend/BA_GPS.Common/BA_GPS.Common.csproj": {
+              "projectPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Common/BA_GPS.Common.csproj"
             },
-            "/Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/BA_GPS.Domain.csproj": {
-              "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Domain/BA_GPS.Domain.csproj"
+            "/Users/user/BAbackend/BA_backend/BA_GPS.Domain/BA_GPS.Domain.csproj": {
+              "projectPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Domain/BA_GPS.Domain.csproj"
             },
-            "/Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/BA_GPS.Infrastructure.csproj": {
-              "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Infrastructure/BA_GPS.Infrastructure.csproj"
+            "/Users/user/BAbackend/BA_backend/BA_GPS.Infrastructure/BA_GPS.Infrastructure.csproj": {
+              "projectPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Infrastructure/BA_GPS.Infrastructure.csproj"
             }
           }
         }
@@ -4345,7 +4346,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
       }
     }
   },

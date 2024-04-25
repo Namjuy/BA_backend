@@ -1228,11 +1228,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/BA_GPS.Common.csproj",
+      "projectUniqueName": "/Users/user/BAbackend/BA_backend/BA_GPS.Common/BA_GPS.Common.csproj",
       "projectName": "BA_GPS.Common",
-      "projectPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/BA_GPS.Common.csproj",
+      "projectPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Common/BA_GPS.Common.csproj",
       "packagesPath": "/Users/user/.nuget/packages/",
-      "outputPath": "/Users/user/Projects/BA_GPS.V3/BA_GPS.Common/obj/",
+      "outputPath": "/Users/user/BAbackend/BA_backend/BA_GPS.Common/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/user/.nuget/NuGet/NuGet.Config"
@@ -1303,7 +1303,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.315/RuntimeIdentifierGraph.json"
       }
     }
   }
