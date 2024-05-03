@@ -230,3 +230,7 @@
 /Users/user/BAbackend/BA_backend/BA_GPS.Api/obj/Debug/net7.0/BA_GPS.Api.pdb
 /Users/user/BAbackend/BA_backend/BA_GPS.Api/obj/Debug/net7.0/BA_GPS.Api.genruntimeconfig.cache
 /Users/user/BAbackend/BA_backend/BA_GPS.Api/obj/Debug/net7.0/ref/BA_GPS.Api.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/Microsoft.Bcl.TimeProvider.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/System.Collections.Immutable.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/System.IO.Hashing.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/Yarp.ReverseProxy.dll

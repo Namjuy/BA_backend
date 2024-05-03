@@ -1,36 +1,36 @@
-﻿<Properties StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http" GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Infrastructure/Services/UserService.cs">
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.BA__GPS.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Api/Program.cs">
     <Files>
-      <File FileName="BA_GPS.Application/Core/Interface/IGenericService.cs" Line="36" Column="22" />
-      <File FileName="BA_GPS.Api/Controllers/UserApi.cs" Line="56" Column="77" />
-      <File FileName="BA_GPS.Api/Controllers/AuthenApi.cs" Line="1" Column="1" />
-      <File FileName="BA_GPS.Api/appsettings.json" Line="1" Column="1" />
-      <File FileName="BA_GPS.Infrastructure/Services/AuthenService.cs" Line="87" Column="71" />
-      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" Line="218" Column="23" />
+      <File FileName="BA_GPS.Api/Program.cs" Line="66" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BA_GPS.V3" expanded="True" selected="True">
+          <Node name="BA_GPS.V3" expanded="True">
             <Node name="BA_GPS.Api">
-              <Node name="Migrations" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
-            <Node name="BA_GPS.Common" expanded="True" />
-            <Node name="BA_GPS.Domain" expanded="True" />
-            <Node name="BA_GPS.Infrastructure">
-              <Node name="Repositories" expanded="True" />
+            <Node name="BA_GPS.Application" expanded="True">
+              <Node name="Core" expanded="True">
+                <Node name="Interface" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="BA_GPS.Infrastructure" expanded="True">
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.BA__GPS.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rUc4YG6PN/mYdocW83st9DX9KQgY842fBTexSmAjOYumYScIrx5E0F2dBRvk6Ln3RH++mcl0Gfi7KjgmRHoFOg==",
+  "dgSpecHash": "CPpawI4fVxcJtNR3nPxg3eGGgiy2W64RaU6x0tZAUffwDohFBRSm5CH+P5FYJF65HIAXcuX4kE/yBai2YuHi6Q==",
   "success": true,
   "projectFilePath": "/Users/user/BAbackend/BA_backend/BA_GPS.Api/BA_GPS.Api.csproj",
   "expectedPackageFiles": [
@@ -12,7 +12,8 @@
     "/Users/user/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.16/microsoft.aspnetcore.authentication.jwtbearer.7.0.16.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.aspnetcore.openapi/7.0.17/microsoft.aspnetcore.openapi.7.0.17.nupkg.sha512",
-    "/Users/user/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.bcl.asyncinterfaces/6.0.0/microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/microsoft.bcl.timeprovider/8.0.0/microsoft.bcl.timeprovider.8.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.data.sqlclient/5.1.4/microsoft.data.sqlclient.5.1.4.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.1/microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "/Users/user/.nuget/packages/microsoft.entityframeworkcore/7.0.16/microsoft.entityframeworkcore.7.0.16.nupkg.sha512",
@@ -67,12 +68,14 @@
     "/Users/user/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
     "/Users/user/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.configuration.configurationmanager/6.0.1/system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/system.diagnostics.diagnosticsource/8.0.0/system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.drawing.common/6.0.0/system.drawing.common.6.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.formats.asn1/5.0.0/system.formats.asn1.5.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.identitymodel.tokens.jwt/7.5.0/system.identitymodel.tokens.jwt.7.5.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.io.filesystem.accesscontrol/5.0.0/system.io.filesystem.accesscontrol.5.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/system.io.hashing/7.0.0/system.io.hashing.7.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
     "/Users/user/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
     "/Users/user/.nuget/packages/system.memory.data/1.0.2/system.memory.data.1.0.2.nupkg.sha512",
@@ -88,7 +91,8 @@
     "/Users/user/.nuget/packages/system.text.encodings.web/8.0.0/system.text.encodings.web.8.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.text.json/8.0.0/system.text.json.8.0.0.nupkg.sha512",
     "/Users/user/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "/Users/user/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512"
+    "/Users/user/.nuget/packages/system.windows.extensions/6.0.0/system.windows.extensions.6.0.0.nupkg.sha512",
+    "/Users/user/.nuget/packages/yarp.reverseproxy/2.1.0/yarp.reverseproxy.2.1.0.nupkg.sha512"
   ],
   "logs": [
     {

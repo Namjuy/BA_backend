@@ -40,8 +40,7 @@ namespace BA_GPS.Api.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
-            var token = "";
-
+            string? token;
             try
             {
                 if (!_authenService.CheckLoginRequestValid(loginRequest))

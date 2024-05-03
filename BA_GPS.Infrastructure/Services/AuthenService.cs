@@ -45,14 +45,17 @@ namespace BA_GPS.Infrastructure.Services
         {
             try
             {
+                // Trả về user tương ứng nếu tồn tại username 
                 var user = await _repository.GetAll().Where(u => !u.IsDeleted).FirstOrDefaultAsync(user => user.UserName == loginRequest.Username);
                 if (user == null)
                 {
                     return "";
                 }
+
+                // Kiểm tra tính chính xác của mật khẩu 
                 if (_passwordHasher.Verify(user.PassWordHash, loginRequest.Password))
                 {
-
+                    // Trả về token
                     return _jwt.GenerateJwtToken(loginRequest.Username, GetPermissionId(user.Id));
                 }
 

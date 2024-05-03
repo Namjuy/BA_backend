@@ -42,22 +42,22 @@ namespace BA_GPS.Api.Controllers
         [EnableRateLimiting("sliding")]
         public IActionResult GetUser(int pageIndex, int pageSize)
         {
-            var userDataResponse = new DataListResponse<User>();
+          //  var userDataResponse = new DataListResponse<User>();
             if (!_common.CheckPaginatedItemValid(pageIndex, pageSize))
             {
                 return BadRequest("Dữ liệu phân trang không hợp lệ");
             }
             try
             {
-                userDataResponse = _service.GetPage(pageIndex, pageSize);
+                 return new OkObjectResult(_service.GetPage(pageIndex, pageSize));
             }
             catch (Exception ex)
             {
                 _logger.LogInformation(ex.Message, "Lỗi khi lấy danh sách người dùng");
-                userDataResponse = _service.GetPage(1, 5);
+               // userDataResponse = _service.GetPage(1, 5);
                 return new StatusCodeResult(500);
             }
-            return new OkObjectResult(userDataResponse);
+           
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace BA_GPS.Api.Controllers
         /// </summary>
         /// <param name="newUser">Thông tin người dùng tạo mới</param>
         /// <returns>Trạng thái yêu cầu</returns>
-        [Authorize(Roles = "0")]
+        //[Authorize(Roles = "0")]
         [HttpPost(Name = "CreateUser")]
         public async Task<IActionResult> CreateUser([FromBody] User newUser, byte permissionId)
         {
@@ -152,10 +152,10 @@ namespace BA_GPS.Api.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Trạng thái yêu cầu</returns>
-        [Authorize(Roles = "0")]
+        //[Authorize(Roles = "0")]
         [HttpPut("ban/{id}", Name = "Delete User")]
         public IActionResult RemoveUser(Guid id)
-        {
+        {   
             if (id == Guid.Empty)
             {
                 return BadRequest("Id không hợp lệ");
@@ -199,8 +199,7 @@ namespace BA_GPS.Api.Controllers
 
             try
             {
-                var dataListResponse = _service.Search(searchRequest);
-                return Ok(dataListResponse);
+                return Ok(_service.Search(searchRequest));
             }
             catch (Exception ex)
             {
@@ -217,7 +216,7 @@ namespace BA_GPS.Api.Controllers
         [HttpGet("checkExist", Name = "CheckExist")]
         public async Task<IActionResult> CheckExist(string? value)
         {
-            var check = true;
+            bool check;
             try
             {
                 if (value is null)
@@ -246,9 +245,10 @@ namespace BA_GPS.Api.Controllers
         [HttpGet("checkPhoneExist",Name ="CheckPhoneExist")]
         public async Task<IActionResult> CheckPhoneExist(string phone)
         {
-            var check = true;
+            bool check;
             try
             {
+
                 if (!_service.CheckPhoneValid(phone))
                 {
                     check = false;
@@ -257,7 +257,6 @@ namespace BA_GPS.Api.Controllers
                 {
                     check = await _service.CheckPhoneExist(phone);
                 }
-
             }
             catch (Exception ex)
             {

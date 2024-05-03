@@ -183,23 +183,43 @@ namespace BA_GPS.Infrastructure.Services
 
             try
             {
+                //Lấy ra giá trị tìm kiếm đã được lưu trữ trong cache
                 var cachedResult = _cache.Get(cacheKey);
-                if (cachedResult != null)
+                var cacheSearchRequest = _cache.Get("searchFilter");
+                //Nếu tồn tại giá trị trong cache trả về danh sách tìm kiếm đã lưu
+
+                if (cachedResult != null && CheckSearchRequestChanged(searchRequest, JsonSerializer.Deserialize<SearchRequest>(cacheSearchRequest)))
                 {
                     _logger.LogInformation("Data retrieved from cache.");
                     return JsonSerializer.Deserialize<DataListResponse<User>>(cachedResult);
                 }
 
                 var userDataResponse = new DataListResponse<User>();
-                var query = ApplySearchFilters(_repository.GetAll(), searchRequest);
 
-                userDataResponse.DataList = query.ToList();
+                //Lọc điều kiện tìm kiếm
+                var query = ApplySearchFilters(_repository.GetAll().Where(u=>!u.IsDeleted), searchRequest);
+
+                userDataResponse.DataList = query
+                    .Skip(searchRequest.PageSize * (searchRequest.PageIndex - 1))
+                    .Take(searchRequest.PageSize)
+                    .OrderByDescending(u => u.LastModifyDate)
+                    .ToList(); ;
                 userDataResponse.TotalPage = (int)Math.Ceiling((double)query.Count() / searchRequest.PageSize);
 
                 var serializedData = JsonSerializer.SerializeToUtf8Bytes(userDataResponse);
+                var serializedSearch = JsonSerializer.SerializeToUtf8Bytes(searchRequest);
 
+                //Lưu kêt quả tìm kiếm vào cache
                 _cache.Set(cacheKey, serializedData, new DistributedCacheEntryOptions
                 {
+                    //Thời hạn lưu trữ 10 phút
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
+                });
+
+                //Lưu điều kiện tìm kiếm vào cache
+                _cache.Set("searchFilter", serializedSearch, new DistributedCacheEntryOptions
+                {
+                    //Thời hạn lưu trữ 10 phút
                     AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10)
                 });
 
@@ -361,10 +381,6 @@ namespace BA_GPS.Infrastructure.Services
                    searchRequest.PageIndex == cachedSearchRequest.PageIndex &&
                    searchRequest.PageSize == cachedSearchRequest.PageSize;
         }
-
-
-
-
 
     }
 }
