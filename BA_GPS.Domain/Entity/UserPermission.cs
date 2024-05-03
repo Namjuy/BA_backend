@@ -16,10 +16,8 @@ namespace BA_GPS.Domain.Entity
 		{
 		}
 
-		public User User { get; set; }
 		public Guid UserId { get; set; }
 
-		public Permission Permission { get; set; }
 		public byte PermissionId { get; set; }
 
 	}
