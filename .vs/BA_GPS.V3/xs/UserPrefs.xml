@@ -1,28 +1,40 @@
 ﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{8019F91D-1467-4752-9A64-9F3ED3ADDB37}|http">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.BA__GPS.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Api/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BA_GPS.Api/Controllers/UserApi.cs">
     <Files>
-      <File FileName="BA_GPS.Api/Program.cs" Line="66" Column="1" />
+      <File FileName="BA_GPS.Api/Controllers/AuthenApi.cs" />
+      <File FileName="BA_GPS.Api/Program.cs" Line="117" Column="30" />
+      <File FileName="BA_GPS.Api/appsettings.json" Line="24" Column="48" />
+      <File FileName="BA_GPS.Infrastructure/Repositories/GenericRepository.cs" Line="68" Column="1" />
+      <File FileName="BA_GPS.Infrastructure/Services/UserService.cs" Line="370" Column="23" />
+      <File FileName="BA_GPS.Api/Controllers/UserApi.cs" Line="59" Column="14" />
+      <File FileName="BA_GPS.Domain/Entity/Permission.cs" Line="23" Column="1" />
+      <File FileName="BA_GPS.Domain/Entity/UserPermission.cs" Line="18" Column="1" />
+      <File FileName="BA_GPS.Infrastructure/GenericDbContext.cs" />
+      <File FileName="BA_GPS.Api/Dockerfile" Line="27" Column="1" />
+      <File FileName="BA_GPS.Common/BaseEntity.cs" Line="18" Column="1" />
+      <File FileName="BA_GPS.Domain/Entity/User.cs" Line="1" Column="1" />
+      <File FileName="BA_GPS.Application/Core/Interface/IRepository.cs" Line="21" Column="23" />
+      <File FileName="BA_GPS.Application/Core/Interface/IGenericService.cs" Line="13" Column="20" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="BA_GPS.V3" expanded="True">
             <Node name="BA_GPS.Api">
-              <Node name="Controllers" expanded="True" />
-              <Node name="appsettings.json" expanded="True" />
-              <Node name="Program.cs" selected="True" />
-            </Node>
-            <Node name="BA_GPS.Application" expanded="True">
-              <Node name="Core" expanded="True">
-                <Node name="Interface" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="UserApi.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="BA_GPS.Infrastructure" expanded="True">
+            <Node name="BA_GPS.Common" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Authentication" expanded="True" />
+              <Node name="Modal" expanded="True" />
+            </Node>
+            <Node name="BA_GPS.Domain" expanded="True">
+              <Node name="DTO" expanded="True" />
+              <Node name="Entity" expanded="True" />
+            </Node>
+            <Node name="BA_GPS.Infrastructure">
               <Node name="Services" expanded="True" />
             </Node>
           </Node>
@@ -31,6 +43,11 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="user" Email="najumy1807.2k@gmail.com" Copyright="" Company="" Trademark="" />
+  <MonoDevelop.Ide.ItemProperties.BA__GPS.Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

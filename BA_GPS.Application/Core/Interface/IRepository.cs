@@ -1,9 +1,13 @@
-﻿using System;
-using BA_GPS.Domain.DTO;
-
+﻿
+/// <summary>
+/// 
+/// </summary>
+/// <Modified>
+/// Name    Date    Comments
+/// Duypn   04/04/2024 Created
+/// </Modified>
 namespace BA_GPS.Application.Core.Interface
 {
-    // 4-4
 	public interface IRepository<TEntity>
 	{
         /// <summary>

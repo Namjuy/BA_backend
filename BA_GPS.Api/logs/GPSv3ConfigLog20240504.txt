@@ -1,0 +1,88 @@
+2024-05-04 08:31:12.236 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-05-04 08:31:12.272 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-05-04 08:31:12.277 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-05-04 08:31:12.279 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-05-04 08:31:12.295 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-05-04 08:31:12.302 +07:00 [INF] Applying migration '20240504013050_bagps3'.
+2024-05-04 08:31:12.337 +07:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Permission] (
+    [PermissionId] tinyint NOT NULL,
+    [PermissionName] nvarchar(20) NOT NULL,
+    CONSTRAINT [PK_Permission] PRIMARY KEY ([PermissionId])
+);
+2024-05-04 08:31:12.353 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [User] (
+    [Id] uniqueidentifier NOT NULL,
+    [UserName] nvarchar(50) NOT NULL,
+    [PassWordHash] nvarchar(max) NOT NULL,
+    [FullName] nvarchar(200) NOT NULL,
+    [DateOfBirth] datetime2 NOT NULL,
+    [IsMale] tinyint NULL,
+    [PhoneNumber] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Address] nvarchar(max) NOT NULL,
+    [CompanyId] int NOT NULL,
+    [CreateDate] datetime2 NOT NULL,
+    [LastModifyDate] datetime2 NOT NULL,
+    [IsDeleted] bit NOT NULL,
+    [DeletedDate] datetime2 NULL,
+    CONSTRAINT [PK_User] PRIMARY KEY ([Id])
+);
+2024-05-04 08:31:12.355 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [UserPermissions] (
+    [UserId] uniqueidentifier NOT NULL,
+    [PermissionId] tinyint NOT NULL,
+    CONSTRAINT [PK_UserPermissions] PRIMARY KEY ([UserId], [PermissionId])
+);
+2024-05-04 08:31:12.358 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240504013050_bagps3', N'7.0.16');
+2024-05-04 08:54:20.339 +07:00 [INF] User profile is available. Using '/Users/user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-05-04 08:54:20.430 +07:00 [INF] Now listening on: http://localhost:5159
+2024-05-04 08:54:20.432 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-04 08:54:20.432 +07:00 [INF] Hosting environment: Development
+2024-05-04 08:54:20.432 +07:00 [INF] Content root path: /Users/user/BAbackend/BA_backend/BA_GPS.Api
+2024-05-04 08:54:21.596 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/index.html - null null
+2024-05-04 08:54:21.691 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/index.html - 200 null text/html;charset=utf-8 95.6492ms
+2024-05-04 08:54:21.696 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui.css - null null
+2024-05-04 08:54:21.697 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - null null
+2024-05-04 08:54:21.698 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-standalone-preset.js - null null
+2024-05-04 08:54:21.918 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-05-04 08:54:21.918 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-05-04 08:54:21.918 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-05-04 08:54:21.920 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 223.1282ms
+2024-05-04 08:54:21.920 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui.css - 200 144929 text/css 223.9092ms
+2024-05-04 08:54:21.920 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 222.7952ms
+2024-05-04 08:54:22.012 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - null null
+2024-05-04 08:54:22.090 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 78.1397ms
+2024-05-04 08:54:28.130 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - null null
+2024-05-04 08:54:28.140 +07:00 [WRN] Failed to determine the https port for redirect.
+2024-05-04 08:54:28.142 +07:00 [INF] Executing endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-05-04 08:54:28.155 +07:00 [INF] Route matched with {action = "GetUser", controller = "UserApi"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUser(Int32, Int32) on controller BA_GPS.Api.Controllers.UserApi (BA_GPS.Api).
+2024-05-04 08:54:28.561 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-04 08:54:28.564 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-05-04 08:54:28.860 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Address], [t].[CompanyId], [t].[CreateDate], [t].[DateOfBirth], [t].[DeletedDate], [t].[Email], [t].[FullName], [t].[IsDeleted], [t].[IsMale], [t].[LastModifyDate], [t].[PassWordHash], [t].[PhoneNumber], [t].[UserName]
+FROM (
+    SELECT [u].[Id], [u].[Address], [u].[CompanyId], [u].[CreateDate], [u].[DateOfBirth], [u].[DeletedDate], [u].[Email], [u].[FullName], [u].[IsDeleted], [u].[IsMale], [u].[LastModifyDate], [u].[PassWordHash], [u].[PhoneNumber], [u].[UserName]
+    FROM [User] AS [u]
+    WHERE [u].[IsDeleted] = CAST(0 AS bit)
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+ORDER BY [t].[LastModifyDate] DESC
+2024-05-04 08:54:28.893 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+2024-05-04 08:54:28.899 +07:00 [INF] Executing OkObjectResult, writing value of type 'BA_GPS.Domain.DTO.DataListResponse`1[[BA_GPS.Domain.Entity.User, BA_GPS.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-05-04 08:54:28.910 +07:00 [INF] Executed action BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api) in 753.3837ms
+2024-05-04 08:54:28.910 +07:00 [INF] Executed endpoint 'BA_GPS.Api.Controllers.UserApi.GetUser (BA_GPS.Api)'
+2024-05-04 08:54:28.911 +07:00 [INF] HTTP GET /UserApi responded 200 in 775.1198 ms
+2024-05-04 08:54:28.915 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5159/UserApi?pageIndex=1&pageSize=5 - 200 null application/json; charset=utf-8 785.534ms

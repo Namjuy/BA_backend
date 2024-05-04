@@ -234,3 +234,16 @@
 /Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/System.Collections.Immutable.dll
 /Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/System.IO.Hashing.dll
 /Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/Yarp.ReverseProxy.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/AWSSDK.Core.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/AWSSDK.SecurityToken.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/DnsClient.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/MongoDB.Bson.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/MongoDB.Driver.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/MongoDB.Driver.Core.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/MongoDB.Libmongocrypt.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/SharpCompress.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/Snappier.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/ZstdSharp.dll
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/runtimes/linux/native/libmongocrypt.so
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/user/BAbackend/BA_backend/BA_GPS.Api/bin/Debug/net7.0/runtimes/win/native/mongocrypt.dll

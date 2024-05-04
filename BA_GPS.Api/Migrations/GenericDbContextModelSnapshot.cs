@@ -105,28 +105,7 @@ namespace BA_GPS.Api.Migrations
 
                     b.HasKey("UserId", "PermissionId");
 
-                    b.HasIndex("PermissionId");
-
                     b.ToTable("UserPermissions");
-                });
-
-            modelBuilder.Entity("BA_GPS.Domain.Entity.UserPermission", b =>
-                {
-                    b.HasOne("BA_GPS.Domain.Entity.Permission", "Permission")
-                        .WithMany()
-                        .HasForeignKey("PermissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("BA_GPS.Domain.Entity.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Permission");
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

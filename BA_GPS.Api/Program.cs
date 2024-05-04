@@ -142,9 +142,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Chạy Cors
-app.UseCors("CorsPolicy");
-
 // Thêm vào để thực hiện phân quyền
 app.UseAuthentication();
 
@@ -164,7 +161,10 @@ app.UseSerilogRequestLogging();
 app.UseHttpsRedirection();
 
 
-app.UseRateLimiter();
+// Chạy Cors
+app.UseCors("CorsPolicy");
+
+//app.UseRateLimiter();
 
 app.MapControllers();
 

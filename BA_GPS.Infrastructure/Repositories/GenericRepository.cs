@@ -1,7 +1,4 @@
 ﻿using BA_GPS.Application.Core.Interface;
-using BA_GPS.Common;
-using BA_GPS.Domain.DTO;
-using BA_GPS.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
 /// <summary>
@@ -43,7 +40,7 @@ namespace BA_GPS.Infrastructure.Repositories
         /// <returns>Kết quả true/false</returns>
         public async Task<bool> Create(TEntity entity)
         {
-            await _dbContext.Set<TEntity>().AddAsync(entity);
+           await _dbContext.Set<TEntity>().AddAsync(entity);
            return await _dbContext.SaveChangesAsync()>0;
         }
 
